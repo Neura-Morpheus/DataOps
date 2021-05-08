@@ -12,7 +12,7 @@ StateProvince | Estado ou provincia
 CountryRegion | País
 PostalCode | Código postal
 rowguid | UUID de identificação da linha
-ModifiedDate | Data de modificação
+ModifiedDate | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
@@ -36,7 +36,7 @@ Phone | Telefone de contato
 PasswordHash | Código Hash para criptografia da senha
 PasswordSalt | Senha criptografada
 rowguid | UUID de identificação da linha
-ModifiedDate | Data de modificação
+ModifiedDate | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
@@ -50,7 +50,7 @@ CustomerID | Código de identificação do cliente cadastrado
 AddressID | Código de identificação do endereço cadastrado
 AddressType | Tipo de endereço do cliente (ex: Main Office)
 rowguid | UUID de identificação da linha
-ModifiedDate | Data de modificação
+ModifiedDate | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
@@ -62,7 +62,7 @@ Campo | Descrição
 ------------ | -------------
 LogDate | Data da ocorrência
 LogMessage | Mensagem recebida pela aplicação
-UserName | Nome do usuário 
+UserName | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
@@ -88,7 +88,7 @@ DiscontinuedDate | Data de Descontinuação
 ThumbNailPhoto | Miniatura da foto do produto
 ThumbnailPhotoFileName | Nome da foto do produto
 rowguid | UUID de identificação da linha
-ModifiedDate | Data de modificação
+ModifiedDate | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
@@ -102,7 +102,7 @@ ProductCategoryID | Código de identificação da categoria do produto
 ParentProductCategoryID | Código de identificação da categoria pai do produto
 Name | Nome da categoria do produto
 rowguid | UUID de identificação da linha
-ModifiedDate | Data de modificação
+ModifiedDate | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
@@ -115,7 +115,7 @@ Campo | Descrição
 ProductDescriptionID | Código da descrição do produto
 Description | Descrição do produto
 rowguid | UUID de identificação da linha
-ModifiedDate | Data da modificação da descrição do produto
+ModifiedDate | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
@@ -127,9 +127,9 @@ Campo | Descrição
 ------------ | -------------
 ProductModelID | Código do modelo
 Name | Nome do modelo
-CatalogDescription | Descrião de catálogo
+CatalogDescription | Descrição do catálogo
 rowguid | UUID de identificação da linha
-ModifiedDate | Data da modificação do modelo
+ModifiedDate | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
@@ -143,7 +143,7 @@ ProductModelID | Código do modelo do produto
 ProductDescriptionID | Código da descrição do produto
 Culture | Tradução
 rowguid | UUID de identificação da linha
-ModifiedDate | Data da modificação da descrição do produto
+ModifiedDate | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
@@ -161,7 +161,7 @@ UnitPrice | Preço unitário do Produto
 UnitPriceDiscount | Desconto de Preço unitário
 LineTotal | Valor total do item
 rowguid | UUID de identificação da linha
-ModifiedDate | Data da modificação do registro
+ModifiedDate | Data da última modificação do registro
 
 <p>&nbsp;</p>
 
