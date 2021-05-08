@@ -9,7 +9,7 @@ AddressLine1 | Primeira linha do endereço
 AddressLine2 | Segunda linha para o endereço
 City | Cidade 
 StateProvince | Estado ou provincia
-CountryRegion | Páis
+CountryRegion | País
 PostalCode | Código postal
 rowguid | UUID de identificação da linha
 ModifiedDate | Data de modificação
@@ -102,81 +102,91 @@ ModifiedDate |
 
 # ProductDescription
 
+Tabela de descrição dos produtos
+
 Campo | Descrição
 ------------ | -------------
-ProductDescriptionID |
-Description |
-rowguid |
-ModifiedDate |
+ProductDescriptionID | Código da descrição do produto
+Description | Descrição do produto
+rowguid | UUID de identificação da linha
+ModifiedDate | Data da modificação da descrição do produto
 
 <p>&nbsp;</p>
 
 # ProductModel
 
+Tabela de Cadastro dos Modelos
+
 Campo | Descrição
 ------------ | -------------
-ProductModelID |
-Name |
-CatalogDescription |
-rowguid |
-ModifiedDate |
+ProductModelID | Código do modelo
+Name | Nome do modelo
+CatalogDescription | Descrião de catálogo
+rowguid | UUID de identificação da linha
+ModifiedDate | Data da modificação do modelo
 
 <p>&nbsp;</p>
 
 # ProductModelProductDescription
 
+Tabela de Tradução das Descrições dos Produtos
+
 Campo | Descrição
 ------------ | -------------
-ProductModelID |
-ProductDescriptionID |
-Culture |
-rowguid |
-ModifiedDate |
+ProductModelID | Código do modelo do produto
+ProductDescriptionID | Código da descrição do produto
+Culture | Tradução
+rowguid | UUID de identificação da linha
+ModifiedDate | Data da modificação da descrição do produto
 
 <p>&nbsp;</p>
 
 # SalesOrderDetail
 
+Tabela de Itens de Ordens de Vendas
+
 Campo | Descrição
 ------------ | -------------
-SalesOrderID |
-SalesOrderDetailID |
-OrderQty |
-ProductID |
-UnitPrice |
-UnitPriceDiscount |
-LineTotal |
-rowguid |
-ModifiedDate |
+SalesOrderID | Código da Ordem de Vendas
+SalesOrderDetailID | Código do Item da Ordem de Vendas
+OrderQty | Quantidade do item da ordem de vendas
+ProductID | Código do Produto
+UnitPrice | Preço unitário do Produto
+UnitPriceDiscount | Desconto de Preço unitário
+LineTotal | Valor total do item
+rowguid | UUID de identificação da linha
+ModifiedDate | Data da modificação do registro
 
 <p>&nbsp;</p>
 
 # SalesOrderHeader
 
+Tabela de Capa das Ordens de Vendas
+
 Campo | Descrição
 ------------ | -------------
-SalesOrderID | Identificador da Ordem de Vendas
-RevisionNumber | Código da revisão 
+SalesOrderID | Código da Ordem de Vendas
+RevisionNumber | Número da revisão 
 OrderDate | Data da criação da Ordem de Venda
 DueDate | Data de Vencimento da Ordem de Venda
 ShipDate | Data do envio da mercadoria
-Status | 
-OnlineOrderFlag |
-SalesOrderNumber |
-PurchaseOrderNumber |
-AccountNumber |
-CustomerID |
-ShipToAddressID |
-BillToAddressID |
-ShipMethod |
-CreditCardApprovalCode |
-SubTotal |
-TaxAmt |
-Freight |
-TotalDue |
-Comment |
-rowguid |
-ModifiedDate |
+Status | Status da Ordem 
+OnlineOrderFlag | Verificador de Ordem no meio eletrònico
+SalesOrderNumber | Número da Ordem de Vendas
+PurchaseOrderNumber | Número da Ordem de Compra
+AccountNumber | Número Contábil
+CustomerID | Código do Cliente
+ShipToAddressID | Código do Endereço de Entrega
+BillToAddressID | Código do Endereço de Cobrança
+ShipMethod | Método de Envio da Mercadoria
+CreditCardApprovalCode | Código aprovação da operadora de cartão de crédito
+SubTotal | SubTotal 
+TaxAmt | Valor dos Impostos
+Freight | Valor do Frete
+TotalDue | Valor Total da Ordem de Vendas
+Comment | Observações e anotações acerca do pedido
+rowguid | UUID de identificação da linha
+ModifiedDate | Data da última modificação do registro
 
 
 <p>&nbsp;</p>
