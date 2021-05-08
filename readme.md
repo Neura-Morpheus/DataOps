@@ -1,15 +1,15 @@
 # Address
 Campo | Descrição
 ------------ | -------------
-AddressID |
-AddressLine1 |
-AddressLine2 |
-City |
-StateProvince |
-CountryRegion |
-PostalCode |
-rowguid |
-ModifiedDate |
+AddressID | Código de identificação do endereço
+AddressLine1 | Primeira linha do endereço
+AddressLine2 | Segunda linha para o endereço
+City | Cidade 
+StateProvince | Estado ou provincia
+CountryRegion | Páis
+PostalCode | Código postal
+rowguid | Identificador da linha
+ModifiedDate | Data de modificação
 
 <p>&nbsp;</p>
 
