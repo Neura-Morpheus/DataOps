@@ -1,6 +1,6 @@
 # Address
 
-Tabela para armazenar os endereços
+Tabela de endereços
 
 Campo | Descrição
 ------------ | -------------
@@ -18,10 +18,12 @@ ModifiedDate | Data de modificação
 
 # Customer
 
+Tabela de clientes
+
 Campo | Descrição
 ------------ | -------------
 CustomerID | Código de identificação do cliente
-NameStyle | 
+NameStyle | Estilo a ser aplicado ao nome
 Title | Pronome de tratamento (Mr., Ms.)
 FirstName | Primeiro nome do cliente
 MiddleName | Nome do meio do cliente
@@ -44,8 +46,8 @@ Tabela de endereços dos clientes
 
 Campo | Descrição
 ------------ | -------------
-CustomerID | Código do cliente cadastrado
-AddressID | Código do endereço cadastrado
+CustomerID | Código de identificação do cliente cadastrado
+AddressID | Código de identificação do endereço cadastrado
 AddressType | Tipo de endereço do cliente (ex: Main Office)
 rowguid | UUID de identificação da linha
 ModifiedDate | Data de modificação
@@ -66,37 +68,41 @@ UserName | Nome do usuário
 
 # Product
 
+Tabela de produtos
+
 Campo | Descrição
 ------------ | -------------
-ProductID |
-Name |
-ProductNumber |
-Color |
-StandardCost |
-ListPrice |
-Size |
-Weight |
-ProductCategoryID |
-ProductModelID |
-SellStartDate |
-SellEndDate |
-DiscontinuedDate |
-ThumbNailPhoto |
-ThumbnailPhotoFileName |
-rowguid |
-ModifiedDate |
+ProductID | Código de identificação do produto
+Name | Nome do produto
+ProductNumber | SKU do produto
+Color | Cor do produto
+StandardCost | Custo padrão
+ListPrice | Lista de preço correspondente ao produto
+Size | Tamanho do produto
+Weight | Peso do produto
+ProductCategoryID | Código da categoria do produto
+ProductModelID | Código do modelo do Produto
+SellStartDate | Data de inicio de venda
+SellEndDate | Data de encerramento das vendas
+DiscontinuedDate | Data de Descontinuação
+ThumbNailPhoto | Miniatura da foto do produto
+ThumbnailPhotoFileName | Nome da foto do produto
+rowguid | UUID de identificação da linha
+ModifiedDate | Data de modificação
 
 <p>&nbsp;</p>
 
 # ProductCategory
 
+Tabela de categoria dos produtos
+
 Campo | Descrição
 ------------ | -------------
-ProductCategoryID |
-ParentProductCategoryID |
-Name |
-rowguid |
-ModifiedDate |
+ProductCategoryID | Código de identificação da categoria do produto
+ParentProductCategoryID | Código de identificação da categoria pai do produto
+Name | Nome da categoria do produto
+rowguid | UUID de identificação da linha
+ModifiedDate | Data de modificação
 
 <p>&nbsp;</p>
 
