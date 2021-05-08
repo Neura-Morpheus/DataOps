@@ -54,11 +54,13 @@ ModifiedDate | Data de modificação
 
 # Logger
 
+Tabela de logs
+
 Campo | Descrição
 ------------ | -------------
-LogDate |
-LogMessage |
-UserName |
+LogDate | Data da ocorrência
+LogMessage | Mensagem recebida pela aplicação
+UserName | Nome do usuário 
 
 <p>&nbsp;</p>
 
