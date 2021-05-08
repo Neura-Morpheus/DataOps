@@ -1,6 +1,6 @@
 # Address
 
-Tabela para armazenar o endeço dos clientes
+Tabela para armazenar os endereços
 
 Campo | Descrição
 ------------ | -------------
