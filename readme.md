@@ -11,7 +11,7 @@ City | Cidade
 StateProvince | Estado ou provincia
 CountryRegion | Páis
 PostalCode | Código postal
-rowguid | Identificador da linha
+rowguid | UUID de identificação da linha
 ModifiedDate | Data de modificação
 
 <p>&nbsp;</p>
@@ -20,33 +20,35 @@ ModifiedDate | Data de modificação
 
 Campo | Descrição
 ------------ | -------------
-CustomerID |
-NameStyle |
-Title |
-FirstName |
-MiddleName |
-LastName |
-Suffix |
-CompanyName |
-SalesPerson |
-EmailAddress |
-Phone |
-PasswordHash |
-PasswordSalt |
-rowguid |
-ModifiedDate |
+CustomerID | Código de identificação do cliente
+NameStyle | 
+Title | Pronome de tratamento (Mr., Ms.)
+FirstName | Primeiro nome do cliente
+MiddleName | Nome do meio do cliente
+LastName | Último nome do cliente
+Suffix | Abreviação (Sr., PhD, IV, II, Jr.)
+CompanyName | Nome da empresa que o cliente representa
+SalesPerson | Vendedor que atendeu o cliente
+EmailAddress | Email de contato 
+Phone | Telefone de contato
+PasswordHash | Código Hash para criptografia da senha
+PasswordSalt | Senha criptografada
+rowguid | UUID de identificação da linha
+ModifiedDate | Data de modificação
 
 <p>&nbsp;</p>
 
 # CustomerAddress
 
+Tabela de endereços dos clientes
+
 Campo | Descrição
 ------------ | -------------
-CustomerID |
-AddressID |
-AddressType |
-rowguid |
-ModifiedDate |
+CustomerID | Código do cliente cadastrado
+AddressID | Código do endereço cadastrado
+AddressType | Tipo de endereço do cliente (ex: Main Office)
+rowguid | UUID de identificação da linha
+ModifiedDate | Data de modificação
 
 <p>&nbsp;</p>
 
