@@ -1,4 +1,7 @@
 # Address
+
+Tabela para armazenar o endeço dos clientes
+
 Campo | Descrição
 ------------ | -------------
 AddressID | Código de identificação do endereço
