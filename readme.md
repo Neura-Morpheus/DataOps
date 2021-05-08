@@ -151,12 +151,12 @@ ModifiedDate |
 
 Campo | Descrição
 ------------ | -------------
-SalesOrderID |
-RevisionNumber |
-OrderDate |
-DueDate |
-ShipDate |
-Status |
+SalesOrderID | Identificador da Ordem de Vendas
+RevisionNumber | Código da revisão 
+OrderDate | Data da criação da Ordem de Venda
+DueDate | Data de Vencimento da Ordem de Venda
+ShipDate | Data do envio da mercadoria
+Status | 
 OnlineOrderFlag |
 SalesOrderNumber |
 PurchaseOrderNumber |
