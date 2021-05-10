@@ -1,0 +1,173 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxySqlServerv2k5 class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableProxySqlServerv2k5" name="SalesOrderHeader" directorySegmentName="seg_0" id="F05E0A8D-0071-E997-EE7A-884A3FA95E44">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<schemaObject>40AA5BBF-3CBC-6DD3-214A-3B9228F04B62</schemaObject>
+<database>DB_NULLELEMENT</database>
+<schema>DDB76B22-37F8-F425-1BDB-6EAF49DDBAA8</schema>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Comment" id="064A5139-2B48-28AC-73F5-92FAC93DB1E5">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<collation>SQL_Latin1_General_CP1_CI_AS</collation>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="SubTotal" id="19EDE174-85D4-5FA6-326E-31689AA96FE5">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="ShipDate" id="1E6DE575-0213-D733-8035-AFA1FF5FD86E">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="SalesOrderNumber" id="4986FCD8-1D36-E649-2829-1A6C06AE9E31">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<collation>SQL_Latin1_General_CP1_CI_AS</collation>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="ModifiedDate" id="4C98FDF7-B573-8E87-208A-B11979492EE8">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="BillToAddressID" id="4DA14DB6-D958-237A-4093-0FB8851149A5">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="rowguid" id="578F60EA-5C12-6012-7E4A-56E3363BD11C">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="PurchaseOrderNumber" id="58958B23-54B3-7BBB-82E3-55AD3095E2A1">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<collation>SQL_Latin1_General_CP1_CI_AS</collation>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="OrderDate" id="5DA1B66F-BABC-AA93-60FA-EF2CBE046059">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="CreditCardApprovalCode" id="689BDCBE-6959-9D59-C330-D3A7D60D7C92">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<collation>SQL_Latin1_General_CP1_CI_AS</collation>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Freight" id="73F15DE6-DC82-2E6F-5EB6-33853D7C8508">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="AccountNumber" id="7BD266FD-F12A-C393-D26A-5041C73149D2">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<collation>SQL_Latin1_General_CP1_CI_AS</collation>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="OnlineOrderFlag" id="8D01EDE2-9705-1A2E-A9B4-56B9415B6FC8">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="SalesOrderID" id="A3002F91-8B66-B17E-EEFF-4EB63F72A465">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="CustomerID" id="A7E68783-600C-A33E-D29A-7D352E8F4BD8">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="DueDate" id="B2ED9C1A-9D29-480E-768C-FF12BDB49919">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="Status" id="C010E816-1558-77AD-1AB4-BF8A31FF5054">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="TotalDue" id="CD704F30-A461-2B3F-4607-5BF75AB665EE">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="TaxAmt" id="DD4C2749-8377-6A70-8554-225CC618F552">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="RevisionNumber" id="E31CFABA-2BDC-AC3C-7C1F-AA74FEF245CF">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="ShipToAddressID" id="FAB5F6EA-8170-6246-193D-6309268432AC">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="ShipMethod" id="FDD3FE4C-D9FA-DDD9-FDC3-6B7EAE7E4760">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<collation>SQL_Latin1_General_CP1_CI_AS</collation>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.IndexProxySqlServerv2k12" name="IX_SalesOrderHeader_CustomerID" id="79A62539-5883-47C9-63F0-658AFB5B377B">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<fillFactor>100</fillFactor>
+<recomputeStatistics>ON</recomputeStatistics>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="FK_SalesOrderHeader_Address_ShipTo_AddressID" id="0C2051D1-420E-0A80-0F18-6C699890D611">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks_DDL</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="FK_SalesOrderHeader_Address_BillTo_AddressID" id="B2A113F3-0EF4-6DF1-299A-CED803D0EDB3">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks_DDL</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="FK_SalesOrderHeader_Customer_CustomerID" id="D1957992-E7E1-F89B-AF39-0F11CD07A87A">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks_DDL</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.PKProxySqlServerv2k5" name="PK_SalesOrderHeader_SalesOrderID" id="6797392C-7C4C-1D2E-C7B2-F0C2CB37FAF3">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<clustered>true</clustered>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.UniqueProxySqlServerv2k5" name="AK_SalesOrderHeader_SalesOrderNumber" id="01A64271-ACDC-08E0-7CCD-63077C4127DE">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</UniqueKey>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.UniqueProxySqlServerv2k5" name="AK_SalesOrderHeader_rowguid" id="FCE96B36-D3D1-2698-F873-10EA26B436E2">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</UniqueKey>
+</uniqueKeys>
+</TableProxySqlServerv2k5>

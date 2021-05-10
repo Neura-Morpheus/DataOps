@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="AdventureWorks" id="D0E3C8F9-F61D-CC5E-06D2-C39A79B9E373" version="3.5">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 00:56:16 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>D0E3C8F9-F61D-CC5E-06D2-C39A79B9E373</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="3F7446C4-A773-61AB-9EAC-8DBDAAFA6146">
+<designStoragePath>C:\AdventureWorks_DDL</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

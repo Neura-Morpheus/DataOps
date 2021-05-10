@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxySqlServerv2k5 class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.TableProxySqlServerv2k5" name="CustomerAddress" directorySegmentName="seg_0" id="EAD94A18-0B44-B3CA-7220-EA2D365A4491">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<schemaObject>40AA5BBF-3CBC-6DD3-214A-3B9228F04B62</schemaObject>
+<database>DB_NULLELEMENT</database>
+<schema>DDB76B22-37F8-F425-1BDB-6EAF49DDBAA8</schema>
+<columnProxies>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="AddressID" id="7CDA0B08-62E8-6ECE-2F21-67495F282DF4">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="AddressType" id="A5C92C65-1A58-CDAA-75F1-C2B643B1AA0B">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<collation>SQL_Latin1_General_CP1_CI_AS</collation>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="ModifiedDate" id="B982161A-88B6-3392-26E2-6B9865825F61">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="CustomerID" id="D1639B11-335D-A70E-4F9B-B055F65D3C70">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k12.ColumnProxySqlServerv2k12" name="rowguid" id="F28A1897-7886-2A58-014B-E066C550DD86">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="FK_CustomerAddress_Address_AddressID" id="26DB1ADE-B3F8-D8AC-47E2-56A20FCBBCE0">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks_DDL</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.FKProxySqlServerv2k5" name="FK_CustomerAddress_Customer_CustomerID" id="3A4066E8-11D9-35D4-EB66-09C2BFADD26C">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks_DDL</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.PKProxySqlServerv2k5" name="PK_CustomerAddress_CustomerID_AddressID" id="01AB9D05-E9C4-285A-1B28-7341234DF83D">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<clustered>true</clustered>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.sqlserver.v2k5.UniqueProxySqlServerv2k5" name="AK_CustomerAddress_rowguid" id="E837F921-142E-52E5-4E1E-8F3975C37F1C">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+</UniqueKey>
+</uniqueKeys>
+</TableProxySqlServerv2k5>

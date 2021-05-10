@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="AdventureWorks_DDL" id="0A708302-E673-34EF-869A-DACB5F46D220" mainViewID="EF77B2E8-390A-C434-62DD-D20C2725F19B">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 00:58:13 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>980FCE9E-D688-BDF0-C89A-C9FB2DCAED45</selectedRDBMSSite>
+<importDDLFileStamps>
+<importDDLFileStamp class="oracle.dbtools.crest.imports.DDLFileStamp">
+<fileName>AdventureWorks_DDL.sql</fileName>
+<pathName>C:\Users\USER\OneDrive\FIAP\12ABD\repos\DataOps\Documentacao</pathName>
+<dbType>13</dbType>
+</importDDLFileStamp>
+</importDDLFileStamps>
+</relationalModel>

@@ -1,0 +1,417 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F05E0A8D-0071-E997-EE7A-884A3FA95E44" schemaObject="40AA5BBF-3CBC-6DD3-214A-3B9228F04B62" name="SalesOrderHeader">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>9595C50C-A664-05AC-F230-41F9D9DCA608</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="SalesOrderID" id="A3002F91-8B66-B17E-EEFF-4EB63F72A465">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>E1831244-6137-AF85-EC75-763B9D987FC8</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>D96115A4-C489-1FD1-2BFF-06F6FBB23075</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RevisionNumber" id="E31CFABA-2BDC-AC3C-7C1F-AA74FEF245CF">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>0D0C17F4-1C47-7732-57EB-9A775540FB3E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT042</logicalDatatype>
+<domain>7750EDAF-1F27-8FB4-B039-2223AE5A06F1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OrderDate" id="5DA1B66F-BABC-AA93-60FA-EF2CBE046059">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>56A5B019-B506-79FD-0A79-B26F0986CF26</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<domain>301122D1-2DA0-0015-26E1-5C78E0C68F7E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DueDate" id="B2ED9C1A-9D29-480E-768C-FF12BDB49919">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>2ED30096-CEE5-6737-650D-AA81C14E9D76</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<domain>301122D1-2DA0-0015-26E1-5C78E0C68F7E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ShipDate" id="1E6DE575-0213-D733-8035-AFA1FF5FD86E">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>AC1E59B5-63A3-3F18-A65F-8992CEEFF57C</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<domain>301122D1-2DA0-0015-26E1-5C78E0C68F7E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Status" id="C010E816-1558-77AD-1AB4-BF8A31FF5054">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>C43E8002-4F5B-0DCB-0DAE-BE390FD173FD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT042</logicalDatatype>
+<domain>7750EDAF-1F27-8FB4-B039-2223AE5A06F1</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OnlineOrderFlag" id="8D01EDE2-9705-1A2E-A9B4-56B9415B6FC8">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>2AE97D8C-FE5D-3F7E-CB47-3ED18D10663C</importedID>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SalesOrderNumber" id="4986FCD8-1D36-E649-2829-1A6C06AE9E31">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>C15AB102-499F-76F1-517C-3DA8F923534E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<domain>207927F1-F1E1-06E9-E1C5-785B9C3BC4E2</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PurchaseOrderNumber" id="58958B23-54B3-7BBB-82E3-55AD3095E2A1">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>A8CC47FF-2F07-AF39-8391-ADAA43781B74</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AccountNumber" id="7BD266FD-F12A-C393-D26A-5041C73149D2">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>9FB49003-6B4A-8383-5755-5A7B14709FF3</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CustomerID" id="A7E68783-600C-A33E-D29A-7D352E8F4BD8">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>86BB6F18-431C-2AE4-97E2-03373FA6F48D</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>D96115A4-C489-1FD1-2BFF-06F6FBB23075</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D197C828-7D2D-2463-0D70-9E541A20F6ED" referredColumn="E434BC11-2D6A-4057-33A1-2D4DB9999A36"/>
+</associations>
+</Column>
+<Column name="ShipToAddressID" id="FAB5F6EA-8170-6246-193D-6309268432AC">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>69062A24-EBA3-6C8A-D7E0-D16D6759E584</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>D96115A4-C489-1FD1-2BFF-06F6FBB23075</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D55B790-8D98-A064-EE9B-3CDC2AFBD7A9" referredColumn="C23C0850-526D-4725-8999-CAB7E3A1C1E2"/>
+</associations>
+</Column>
+<Column name="BillToAddressID" id="4DA14DB6-D958-237A-4093-0FB8851149A5">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>0119CF09-C2A0-1EF9-F4D8-2B13B2C1FA50</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>D96115A4-C489-1FD1-2BFF-06F6FBB23075</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6F61E02C-6B33-F206-8FA5-4C55D5E83284" referredColumn="C23C0850-526D-4725-8999-CAB7E3A1C1E2"/>
+</associations>
+</Column>
+<Column name="ShipMethod" id="FDD3FE4C-D9FA-DDD9-FDC3-6B7EAE7E4760">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>0B26EA38-6FBD-3B1E-BCDA-F31A35893A18</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<domain>7182F5FF-871B-AA61-9170-136D790DE0FF</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CreditCardApprovalCode" id="689BDCBE-6959-9D59-C330-D3A7D60D7C92">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>D699636C-73B9-A06D-7E3D-8DE050E50035</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>33F772EE-8C72-C2F9-8A6C-5C4C70071E0B</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SubTotal" id="19EDE174-85D4-5FA6-326E-31689AA96FE5">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>3D095E21-2AEF-96D6-011F-C3BF4EA08F2F</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<domain>FB1EAD30-2484-3993-DBD9-FE7CC3BECF98</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TaxAmt" id="DD4C2749-8377-6A70-8554-225CC618F552">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>58E0EA19-2306-CA41-7A8A-6B3E1D4FBEBA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<domain>FB1EAD30-2484-3993-DBD9-FE7CC3BECF98</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Freight" id="73F15DE6-DC82-2E6F-5EB6-33853D7C8508">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>EFA9A470-6419-C7F9-8201-3614C3EADEBA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<domain>FB1EAD30-2484-3993-DBD9-FE7CC3BECF98</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TotalDue" id="CD704F30-A461-2B3F-4607-5BF75AB665EE">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>88079894-1025-21A8-BEFE-3C78110A7EB1</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT043</logicalDatatype>
+<domain>FB1EAD30-2484-3993-DBD9-FE7CC3BECF98</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Comment" id="064A5139-2B48-28AC-73F5-92FAC93DB1E5">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>B2303F3E-9A4E-8E95-50BF-89495201DBEE</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<domain>8157E44A-3767-9CC8-65F5-BA09C6094767</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rowguid" id="578F60EA-5C12-6012-7E4A-56E3363BD11C">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>4F13F0A0-B5A6-300A-7ED3-07C3D1015947</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<domain>EC230040-E17F-E09A-5285-D9792BCD3B2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ModifiedDate" id="4C98FDF7-B573-8E87-208A-B11979492EE8">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>F3AC0B77-8021-C088-0B9B-E4CD86BBC14A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<domain>301122D1-2DA0-0015-26E1-5C78E0C68F7E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6797392C-7C4C-1D2E-C7B2-F0C2CB37FAF3" name="PK_SalesOrderHeader_SalesOrderID">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>A19DEF1C-A76D-592C-16C7-DBE78F161CAD</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A3002F91-8B66-B17E-EEFF-4EB63F72A465"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="01A64271-ACDC-08E0-7CCD-63077C4127DE" name="AK_SalesOrderHeader_SalesOrderNumber">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>0FAA22CE-CD2B-8506-7CC2-3EB0775A8E4F</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4986FCD8-1D36-E649-2829-1A6C06AE9E31"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FCE96B36-D3D1-2698-F873-10EA26B436E2" name="AK_SalesOrderHeader_rowguid">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>46AFCB2D-3B3E-2790-91BA-C6D8D23E4BF9</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="578F60EA-5C12-6012-7E4A-56E3363BD11C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="79A62539-5883-47C9-63F0-658AFB5B377B" name="IX_SalesOrderHeader_CustomerID">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>580F06C6-BCBF-C3E9-F962-9D370142EA02</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A7E68783-600C-A33E-D29A-7D352E8F4BD8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B2A113F3-0EF4-6DF1-299A-CED803D0EDB3" name="FK_SalesOrderHeader_Address_BillTo_AddressID">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4DA14DB6-D958-237A-4093-0FB8851149A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0C2051D1-420E-0A80-0F18-6C699890D611" name="FK_SalesOrderHeader_Address_ShipTo_AddressID">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FAB5F6EA-8170-6246-193D-6309268432AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D1957992-E7E1-F89B-AF39-0F11CD07A87A" name="FK_SalesOrderHeader_Customer_CustomerID">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A7E68783-600C-A33E-D29A-7D352E8F4BD8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_SalesOrderHeader_DueDate" directorySegmentName="seg_0" id="6D001031-322A-F44A-9299-3D0DC7E38CED">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>BC4A8110-04B5-61A9-D772-456ED7663E92</importedID>
+<rule><![CDATA[null]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_SalesOrderHeader_Freight" directorySegmentName="seg_0" id="9A7697A4-7F4D-AD17-9636-76F5E14D8CC9">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>FD75EEF0-BC32-580B-7C63-B8D497A7BEB6</importedID>
+<rule><![CDATA[null]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_SalesOrderHeader_ShipDate" directorySegmentName="seg_0" id="1E29A4FE-9149-B88C-BD90-75E9BC461E30">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>865FA17F-56E5-47B3-A862-3601B65F91E4</importedID>
+<rule><![CDATA[null]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_SalesOrderHeader_Status" directorySegmentName="seg_0" id="1A64BA25-DFAD-03D9-B475-5A34F9E59AC1">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>4A356856-5973-96C0-FFC5-D860C6B6442B</importedID>
+<rule><![CDATA[null]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_SalesOrderHeader_SubTotal" directorySegmentName="seg_0" id="ADA17ADB-2A76-3685-4015-710168C7354C">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>092F3ECB-0D2F-6C1A-8ECF-6AEB0DFDD7A6</importedID>
+<rule><![CDATA[null]]></rule>
+</tableCheckConstraint>
+<tableCheckConstraint name="CK_SalesOrderHeader_TaxAmt" directorySegmentName="seg_0" id="56C50B48-1A73-808D-93CA-8DEF4C2E7D86">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>2F1C9AB1-A3FB-181F-D175-8BAD3C98B2F3</importedID>
+<rule><![CDATA[null]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

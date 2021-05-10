@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EAD94A18-0B44-B3CA-7220-EA2D365A4491" schemaObject="40AA5BBF-3CBC-6DD3-214A-3B9228F04B62" name="CustomerAddress">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>C553579C-B8BF-DF00-79D8-916E1CB148A1</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CustomerID" id="D1639B11-335D-A70E-4F9B-B055F65D3C70">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>A022B5E9-AEEB-A1A6-5682-4E736608E98E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>D96115A4-C489-1FD1-2BFF-06F6FBB23075</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E20D5052-46D5-877A-A09D-F7559363E314" referredColumn="E434BC11-2D6A-4057-33A1-2D4DB9999A36"/>
+</associations>
+</Column>
+<Column name="AddressID" id="7CDA0B08-62E8-6ECE-2F21-67495F282DF4">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>A2729B07-0DC5-EFDF-EE02-25D71F8337C7</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>D96115A4-C489-1FD1-2BFF-06F6FBB23075</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="28983009-FCCD-CA53-2F2A-10503B087592" referredColumn="C23C0850-526D-4725-8999-CAB7E3A1C1E2"/>
+</associations>
+</Column>
+<Column name="AddressType" id="A5C92C65-1A58-CDAA-75F1-C2B643B1AA0B">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>21A4BA1B-BD6C-4EA5-24C1-627C0FE29A2D</importedID>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rowguid" id="F28A1897-7886-2A58-014B-E066C550DD86">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>7C90445A-5BD4-C759-BD5E-6EFC46B494B6</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<domain>EC230040-E17F-E09A-5285-D9792BCD3B2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ModifiedDate" id="B982161A-88B6-3392-26E2-6B9865825F61">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>F12F7910-BA03-203C-B97B-CE754E052580</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<domain>301122D1-2DA0-0015-26E1-5C78E0C68F7E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="01AB9D05-E9C4-285A-1B28-7341234DF83D" name="PK_CustomerAddress_CustomerID_AddressID">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>3BAA5F2D-EB44-43D5-E3A9-0EDC0BD795F2</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1639B11-335D-A70E-4F9B-B055F65D3C70"/>
+<colUsage columnID="7CDA0B08-62E8-6ECE-2F21-67495F282DF4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E837F921-142E-52E5-4E1E-8F3975C37F1C" name="AK_CustomerAddress_rowguid">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>D17FAF40-E71E-D4A0-305C-7CDCB6EAF709</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F28A1897-7886-2A58-014B-E066C550DD86"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26DB1ADE-B3F8-D8AC-47E2-56A20FCBBCE0" name="FK_CustomerAddress_Address_AddressID">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7CDA0B08-62E8-6ECE-2F21-67495F282DF4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3A4066E8-11D9-35D4-EB66-09C2BFADD26C" name="FK_CustomerAddress_Customer_CustomerID">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D1639B11-335D-A70E-4F9B-B055F65D3C70"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

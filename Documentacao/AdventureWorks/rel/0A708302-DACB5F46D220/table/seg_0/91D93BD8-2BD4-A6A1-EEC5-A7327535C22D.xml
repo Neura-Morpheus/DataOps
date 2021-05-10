@@ -1,0 +1,174 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="91D93BD8-2BD4-A6A1-EEC5-A7327535C22D" schemaObject="40AA5BBF-3CBC-6DD3-214A-3B9228F04B62" name="Address">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>D93309F2-FBD0-04FB-F051-0C60FC74D0D6</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="AddressID" id="C23C0850-526D-4725-8999-CAB7E3A1C1E2">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>1AA7878B-F72B-4610-77AB-D8D631EC2661</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<domain>D96115A4-C489-1FD1-2BFF-06F6FBB23075</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AddressLine1" id="263E2129-CDF3-D7CA-AD11-83B9AD34CD13">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>03356C06-6D8E-58E2-52A4-ACBEEF9B75CD</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<domain>772A8DA7-2C42-D9C8-1556-064976B5335A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AddressLine2" id="4A4E4CE3-7E88-E565-F486-2C58F11444D6">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>2DF12799-081B-5321-929C-37BBF585513A</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<domain>772A8DA7-2C42-D9C8-1556-064976B5335A</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="City" id="CC93FC91-5FCB-B51D-24B9-A4B5C95318CD">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>C051B653-363F-D567-D8BE-0B4A59B32454</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<domain>1FA3D9B3-176C-37B4-26B8-BEA4EDAAD2C8</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="StateProvince" id="7802CE84-D2F2-E803-1996-81E45ADCDB99">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>64C07042-E939-55A5-B9E4-782CDAC17577</importedID>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CountryRegion" id="09C4A36C-388B-8F06-BDE4-A020FC000CCA">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>6E3FD9A8-22EF-4D44-8216-19274BD24EE5</importedID>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PostalCode" id="0B55E6FF-EBCF-C991-9812-05453E9A7B4D">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>CD44AC5A-7CFF-C7FB-DF3E-5BD0D78291AF</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<domain>74893485-F2B4-203B-7377-D3CB89A01572</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rowguid" id="9C8D2609-7FC1-098B-A8F2-12ED0EF1DE07">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>182BCC6D-FF3B-79C4-DC1D-7B3BAC1ADD9E</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT057</logicalDatatype>
+<domain>EC230040-E17F-E09A-5285-D9792BCD3B2C</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ModifiedDate" id="21A4FB37-7150-31BC-DA18-B1897BF1D6CD">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>4ED3A3BF-FEC3-E137-6FB6-A029B8AC3992</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<domain>301122D1-2DA0-0015-26E1-5C78E0C68F7E</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BB2F9B7F-8CB1-B720-056C-9A37799C73D6" name="PK_Address_AddressID">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>6EC90280-5335-138F-722C-6A537350DF25</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C23C0850-526D-4725-8999-CAB7E3A1C1E2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F54A8C6-0562-F4EC-3CA2-9BB81B5CFFEE" name="AK_Address_rowguid">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>D62B7AB3-94FD-7495-2AE8-70A05A1EFC86</importedID>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9C8D2609-7FC1-098B-A8F2-12ED0EF1DE07"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="58541D8B-3514-F02D-822B-A95E4AE57F19" name="IX_Address_AddressLine1_AddressLine2_City_StateProvince_PostalCode_CountryRegion">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>40C7F6B4-DEBE-29F0-0B9C-8BD9AD4C4452</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="263E2129-CDF3-D7CA-AD11-83B9AD34CD13"/>
+<colUsage columnID="4A4E4CE3-7E88-E565-F486-2C58F11444D6"/>
+<colUsage columnID="CC93FC91-5FCB-B51D-24B9-A4B5C95318CD"/>
+<colUsage columnID="7802CE84-D2F2-E803-1996-81E45ADCDB99"/>
+<colUsage columnID="0B55E6FF-EBCF-C991-9812-05453E9A7B4D"/>
+<colUsage columnID="09C4A36C-388B-8F06-BDE4-A020FC000CCA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EF0849A6-BAC4-6C1D-1957-806E31B98576" name="IX_Address_StateProvince">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>AC2B1371-9029-E2AA-786A-0FDFF1B65BD0</importedID>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7802CE84-D2F2-E803-1996-81E45ADCDB99"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

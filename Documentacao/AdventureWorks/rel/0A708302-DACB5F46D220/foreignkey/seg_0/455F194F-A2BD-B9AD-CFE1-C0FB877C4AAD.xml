@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="455F194F-A2BD-B9AD-CFE1-C0FB877C4AAD" containerWithKeyObject="D4558E93-1C88-F999-3D90-D10396B40C98" localFKIndex="790A5073-2633-C2F0-4DFD-7D81C527F3AA" name="FK_ProductCategory_ProductCategory_ParentProductCategoryID_ProductCategoryID">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>EAD24BB3-F65B-5482-8A34-B2DD3537E6FE</importedID>
+<referredTableLongName>SalesLT.ProductCategory</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D4558E93-1C88-F999-3D90-D10396B40C98</referredTableID>
+<keyObject>9581142F-2785-3C61-2DC8-BD6C092B0AD1</keyObject>
+<referredKeyID>9581142F-2785-3C61-2DC8-BD6C092B0AD1</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>ProductCategoryID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

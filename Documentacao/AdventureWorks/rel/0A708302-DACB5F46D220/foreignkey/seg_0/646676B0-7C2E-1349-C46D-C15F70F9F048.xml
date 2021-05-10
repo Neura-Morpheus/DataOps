@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="646676B0-7C2E-1349-C46D-C15F70F9F048" containerWithKeyObject="BF3D7058-990F-BA67-7785-065B7AC1B6ED" localFKIndex="BB74F521-7D47-C657-D967-B90BEE0B855B" name="FK_ProductModelProductDescription_ProductModel_ProductModelID">
+<sourceDDLFile>AdventureWorks_DDL.sql</sourceDDLFile>
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>AEC63839-3AAE-CAEB-DDAD-3EA0A0A26FA6</importedID>
+<referredTableLongName>SalesLT.ProductModel</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F727EC42-ADE6-9640-F164-C576576E17A9</referredTableID>
+<keyObject>8508DF68-8FCD-0EE0-47C1-2046B951601C</keyObject>
+<referredKeyID>8508DF68-8FCD-0EE0-47C1-2046B951601C</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>ProductModelID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

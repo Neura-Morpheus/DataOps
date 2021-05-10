@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="SalesLT" directorySegmentName="seg_0" id="40AA5BBF-3CBC-6DD3-214A-3B9228F04B62">
+<createdBy>asait</createdBy>
+<createdTime>2021-05-09 01:00:08 UTC</createdTime>
+<ownerDesignName>AdventureWorks</ownerDesignName>
+<importedID>76882854-758A-E9BE-B92F-8B0157B8B02E</importedID>
+</SchemaObject>
