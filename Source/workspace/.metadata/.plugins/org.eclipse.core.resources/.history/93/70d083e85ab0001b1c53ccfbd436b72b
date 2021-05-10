@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_RpMOwLBaEeu-NNTBVO-Zew" id="_pWyh8LBZEeu-NNTBVO-Zew" label="AdventureWorks" purpose="Conexão ao Banco AdventureWorks SQL Server" description="Conexão ao banco de dados para a disciplina de DataOps 12ABD" version="0.1" statusCode="" item="_RpMOwrBaEeu-NNTBVO-Zew" displayName="AdventureWorks">
+    <author href="../../talend.project#_vIbl4LBYEeu-NNTBVO-Zew"/>
+    <additionalProperties xmi:id="_RpP5ILBaEeu-NNTBVO-Zew" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_RpP5IbBaEeu-NNTBVO-Zew" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_RpP5IrBaEeu-NNTBVO-Zew" key="created_date" value="2021-05-08T21:05:34.258-0300"/>
+    <additionalProperties xmi:id="_RpP5I7BaEeu-NNTBVO-Zew" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_RpP5JLBaEeu-NNTBVO-Zew" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_RpP5JbBaEeu-NNTBVO-Zew" key="modified_date" value="2021-05-08T21:06:35.635-0300"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_RpMOwbBaEeu-NNTBVO-Zew" path=""/>
+  <TalendProperties:DatabaseConnectionItem xmi:id="_RpMOwrBaEeu-NNTBVO-Zew" property="_RpMOwLBaEeu-NNTBVO-Zew" state="_RpMOwbBaEeu-NNTBVO-Zew" typeName="Microsoft SQL Server">
+    <connection href="AdventureWorks_0.1.item#_RpJLcLBaEeu-NNTBVO-Zew"/>
+  </TalendProperties:DatabaseConnectionItem>
+</xmi:XMI>

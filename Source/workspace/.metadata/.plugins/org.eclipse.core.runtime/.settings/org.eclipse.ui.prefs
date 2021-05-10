@@ -1,0 +1,14 @@
+CLOSE_EDITORS_ON_EXIT=true
+Connections.new=[{"complete"\:true,"description"\:"Conex\u00E3o padr\u00E3o","dynamicFields"\:{},"id"\:"local","name"\:"Local","password"\:"","user"\:"asaito2001@gmail.com"}]
+LICENSE_VALIDATION_DONE=1
+LOGINCOUNT=4
+NOT_SHOW_ONBOARDING_AT_STARTUP=true
+PREFERENCE_TALEND_LOGON_STARTUP_TIMES=9
+REGISTRATION_DONE=1
+eclipse.preferences.version=1
+lastUSedProject=ADVENTURE_PROJECT
+last_started_project_type=NO_TYPE
+logonDialog.alwaysAskMeAtStartUp=true
+showIntro=false
+user@talend.com=asaito2001@gmail.com\:AlexandreTSaito\:e196d4f8742bd58f2b04e55f52d32117d5d09e46
+workspaceTasksDone=org.talend.core.InitConnectionsMigrationTask|org.talend.core.EmptyConnectionsMigrationTask|org.talend.designer.core.ui.preferences.migration.AddQuotesForStatLogsPreference|org.talend.designer.runprocess.migrationtask.changeClasspath|org.talend.designer.runprocess.maven.ChangeCodeProjectClasspathMigrationTask2|org.talend.migrationTool.InitWorkspaceMigrationTask|org.talend.repository.model.migration.ChangeProjectTechinicalName
