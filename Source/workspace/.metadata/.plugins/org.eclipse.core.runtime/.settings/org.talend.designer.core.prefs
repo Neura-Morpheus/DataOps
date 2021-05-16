@@ -1,4 +1,4 @@
-Palette.RecentlyUsed.ComponentsList=tDBInput\:1620609094638,tFileOutputDelimited\:1620602728378,tFileOutputRaw\:1620601837971,tLogRow\:1620599784617,tFilterColumns\:1620527912142,tXMLMap\:1620527126480
+Palette.RecentlyUsed.ComponentsList=tDBInput\:1620782432294,tFileOutputJSON\:1620782252128,tLogRow\:1620782090019,tRunJob\:1620780417130,tFileOutputDelimited\:1620602728378,tFileOutputRaw\:1620601837971,tFilterColumns\:1620527912142,tXMLMap\:1620527126480
 TalendEditorPaletteFactory.Size=125
 TalendEditorPaletteFactory.StateAS400=1
 TalendEditorPaletteFactory.StateAccess=1
@@ -31,7 +31,6 @@ TalendEditorPaletteFactory.StateEXASolution=1
 TalendEditorPaletteFactory.StateEntrada=1
 TalendEditorPaletteFactory.StateFTP=1
 TalendEditorPaletteFactory.StateFields=1
-TalendEditorPaletteFactory.StateFile=0
 TalendEditorPaletteFactory.StateFirebird=1
 TalendEditorPaletteFactory.StateGerenciamento=1
 TalendEditorPaletteFactory.StateGoogle=1

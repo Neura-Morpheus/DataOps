@@ -1,0 +1,6 @@
+**/*.localz
+**/*.local
+**/*.git
+**/*.DS_Store
+#	Ignorar os arquivos csv's da pasta dados
+Dados/

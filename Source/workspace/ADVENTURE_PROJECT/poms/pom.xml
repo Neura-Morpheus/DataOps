@@ -11,6 +11,8 @@
   <modules>
     <module>code/routines</module>
     <module>jobs/process/DataOps/raw_0.1</module>
+    <module>jobs/process/DataOps/qq_coisa_0.1</module>
+    <module>jobs/process/DataOps/orquestracao_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ADVENTURE_PROJECT</talend.project.name>

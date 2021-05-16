@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_hojowLK7EeuG5NEDelb-Yg" id="_hojBsLK7EeuG5NEDelb-Yg" label="Orquestracao" purpose="Teste Orquestração" description="Não aceita caracteres especiais" version="0.1" statusCode="" item="_hojowrK7EeuG5NEDelb-Yg" displayName="Orquestracao">
+    <author href="../../talend.project#_vIbl4LBYEeu-NNTBVO-Zew"/>
+    <additionalProperties xmi:id="_hopvYLK7EeuG5NEDelb-Yg" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_hopvYbK7EeuG5NEDelb-Yg" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_hopvYrK7EeuG5NEDelb-Yg" key="created_date" value="2021-05-11T21:46:45.077-0300"/>
+    <additionalProperties xmi:id="_hopvY7K7EeuG5NEDelb-Yg" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_hopvZLK7EeuG5NEDelb-Yg" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_hopvZbK7EeuG5NEDelb-Yg" key="modified_date" value="2021-05-11T21:46:45.370-0300"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_hojowbK7EeuG5NEDelb-Yg" path="DataOps" locked="true" lockDate="2021-05-11T21:46:45.370-0300">
+    <locker href="../../talend.project#_vIbl4LBYEeu-NNTBVO-Zew"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:ProcessItem xmi:id="_hojowrK7EeuG5NEDelb-Yg" property="_hojowLK7EeuG5NEDelb-Yg" state="_hojowbK7EeuG5NEDelb-Yg">
+    <process href="Orquestracao_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

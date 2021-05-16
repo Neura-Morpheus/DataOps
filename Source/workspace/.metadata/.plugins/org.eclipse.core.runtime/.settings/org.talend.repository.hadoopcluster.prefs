@@ -1,2 +1,2 @@
 eclipse.preferences.version=1
-hadoopcluster.token.records={"ADVENTURE_PROJECT"\:{"HADOOPCLUSTER"\:{"types"\:{}}}}
+hadoopcluster.token.records={"ADVENTURE_PROJECT"\:{"HADOOPCLUSTER"\:{"types"\:{}}},"TESTE"\:{"HADOOPCLUSTER"\:{"types"\:{}}}}
