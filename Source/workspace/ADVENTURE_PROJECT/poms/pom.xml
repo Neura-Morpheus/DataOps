@@ -10,9 +10,33 @@
   <url>http://www.talend.org/</url>
   <modules>
     <module>code/routines</module>
+    <module>jobs/process/DataOps/RAW/product_0.1</module>
+    <module>jobs/process/DataOps/RAW/customer_0.1</module>
+    <module>jobs/process/DataOps/RAW/address_0.1</module>
+    <module>jobs/process/DataOps/RAW/customeraddress_0.1</module>
+    <module>jobs/process/DataOps/RAW/productcategory_0.1</module>
+    <module>jobs/process/DataOps/RAW/productdescription_0.1</module>
+    <module>jobs/process/DataOps/RAW/productmodel_0.1</module>
+    <module>jobs/process/DataOps/RAW/productmodelproductdescription_0.1</module>
+    <module>jobs/process/DataOps/RAW/salesorderdetail_0.1</module>
+    <module>jobs/process/DataOps/RAW/salesorderheader_0.1</module>
     <module>jobs/process/DataOps/raw_0.1</module>
-    <module>jobs/process/DataOps/qq_coisa_0.1</module>
-    <module>jobs/process/DataOps/orquestracao_0.1</module>
+    <module>jobs/process/DataOps/HARMONIZED/customer_harm_0.1</module>
+    <module>jobs/process/DataOps/HARMONIZED/customeraddress_harm_0.1</module>
+    <module>jobs/process/DataOps/HARMONIZED/productmodel_harm_0.1</module>
+    <module>jobs/process/DataOps/HARMONIZED/productcategory_harm_0.1</module>
+    <module>jobs/process/DataOps/HARMONIZED/productdescription_harm_0.1</module>
+    <module>jobs/process/DataOps/HARMONIZED/product_harm_0.1</module>
+    <module>jobs/process/DataOps/HARMONIZED/salesorderdetail_harm_0.1</module>
+    <module>jobs/process/DataOps/HARMONIZED/salesorderheader_harm_0.1</module>
+    <module>jobs/process/DataOps/harmonized_0.1</module>
+    <module>jobs/process/DataOps/CURATED/dim_product_0.1</module>
+    <module>jobs/process/DataOps/CURATED/dim_customer_0.1</module>
+    <module>jobs/process/DataOps/CURATED/dim_salesperson_0.1</module>
+    <module>jobs/process/DataOps/CURATED/fato_sales_0.1</module>
+    <module>jobs/process/DataOps/CURATED/dim_order_0.1</module>
+    <module>jobs/process/DataOps/CURATED/dim_tempo_0.1</module>
+    <module>jobs/process/DataOps/CURATED/rel_semanal_vendas_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ADVENTURE_PROJECT</talend.project.name>

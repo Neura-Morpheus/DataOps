@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="__ncEgeMlEeu4Y76m70UyTA" name="Dim_SalesPerson" id="__ncEgOMlEeu4Y76m70UyTA" dataPackage="__ncEguMlEeu4Y76m70UyTA" Server="Localhost 127.0.0.1" FilePath="C:/Users/USER/OneDrive/FIAP/12ABD/repos/DataOps/Dados/CURATED/DIM_Vendedor.csv" Format="WINDOWS" Encoding="UTF-8" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" EscapeChar="&quot;\&quot;&quot;" TextEnclosure="&quot;\&quot;&quot;"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="__ncEguMlEeu4Y76m70UyTA" name="default" dataManager="__ncEgeMlEeu4Y76m70UyTA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="__ncEg-MlEeu4Y76m70UyTA" id="_pXqPoOMlEeu4Y76m70UyTA" comment="Entidade Vendedor" label="Dim_SalesPerson">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__ncEhOMlEeu4Y76m70UyTA" label="SalesSK" length="10" talendType="id_Integer" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="__ncEheMlEeu4Y76m70UyTA" label="SalesPerson" length="150" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

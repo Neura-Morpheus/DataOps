@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_-6GtAN1JEeul1675X3Xg4g" id="_-6GF8N1JEeul1675X3Xg4g" label="ProductDescription_HARM" purpose="ETL area HARMONIZED" description="Carga de dados ProductDescription area HARMONIZED" version="0.1" statusCode="" item="_-6GtAt1JEeul1675X3Xg4g" displayName="ProductDescription_HARM">
+    <author href="../../../talend.project#_vIbl4LBYEeu-NNTBVO-Zew"/>
+    <additionalProperties xmi:id="_-6JwUN1JEeul1675X3Xg4g" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_-6JwUd1JEeul1675X3Xg4g" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_-6JwUt1JEeul1675X3Xg4g" key="created_date" value="2021-07-05T01:32:18.901-0300"/>
+    <additionalProperties xmi:id="_-6JwU91JEeul1675X3Xg4g" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_-6JwVN1JEeul1675X3Xg4g" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_-6JwVd1JEeul1675X3Xg4g" key="modified_date" value="2021-07-06T13:02:42.513-0300"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_-6GtAd1JEeul1675X3Xg4g" path="DataOps/HARMONIZED"/>
+  <TalendProperties:ProcessItem xmi:id="_-6GtAt1JEeul1675X3Xg4g" property="_-6GtAN1JEeul1675X3Xg4g" state="_-6GtAd1JEeul1675X3Xg4g">
+    <process href="ProductDescription_HARM_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

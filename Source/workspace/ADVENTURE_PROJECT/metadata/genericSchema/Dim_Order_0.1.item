@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_xbk3MOMvEeu4Y76m70UyTA" comment="connectionComment" label="connectionLabel" dataPackage="_xbk3MeMvEeu4Y76m70UyTA"/>
+  <TalendMetadata:GenericPackage xmi:id="_xbk3MeMvEeu4Y76m70UyTA" dataManager="_xbk3MOMvEeu4Y76m70UyTA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_xbk3MuMvEeu4Y76m70UyTA" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3M-MvEeu4Y76m70UyTA" name="SalesOrderID" id="13114" label="SalesOrderID" length="10" talendType="id_Integer" key="true" nullable="false" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3NOMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3NeMvEeu4Y76m70UyTA" name="RevisionNumber" id="13115" label="RevisionNumber" length="3" talendType="id_Short" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3NuMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3N-MvEeu4Y76m70UyTA" name="OrderDate" id="13116" label="OrderDate" length="23" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3OOMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3OeMvEeu4Y76m70UyTA" name="DueDate" id="13117" label="DueDate" length="23" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3OuMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3O-MvEeu4Y76m70UyTA" name="ShipDate" id="13118" label="ShipDate" length="23" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3POMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3PeMvEeu4Y76m70UyTA" name="Status" id="13119" label="Status" length="3" talendType="id_Short" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3PuMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3P-MvEeu4Y76m70UyTA" name="OnlineOrderFlag" id="13120" label="OnlineOrderFlag" length="1" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3QOMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3QeMvEeu4Y76m70UyTA" name="SalesOrderNumber" id="13121" label="SalesOrderNumber" length="25" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3QuMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3Q-MvEeu4Y76m70UyTA" name="PurchaseOrderNumber" id="13122" label="PurchaseOrderNumber" length="25" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3ROMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3ReMvEeu4Y76m70UyTA" name="AccountNumber" id="13123" label="AccountNumber" length="15" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3RuMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3R-MvEeu4Y76m70UyTA" name="ShipToAddressID" id="13125" label="ShipToAddressID" length="10" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3SOMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3SeMvEeu4Y76m70UyTA" name="BillToAddressID" id="13126" label="BillToAddressID" length="10" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3SuMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3S-MvEeu4Y76m70UyTA" name="ShipMethod" id="13127" label="ShipMethod" length="50" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3TOMvEeu4Y76m70UyTA"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_xbk3TeMvEeu4Y76m70UyTA" name="CustomerID" id="13134" label="CustomerID" length="10" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_xbk3TuMvEeu4Y76m70UyTA"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>

@@ -26,6 +26,7 @@
 	</section>
 	<section name="ExportItemWizard">
 		<section name="destinationFile">
+			<item value="C:\Users\USER\OneDrive\FIAP\12ABD\repos\DataOps\Dados\RAW" key="directoryPath"/>
 		</section>
 	</section>
 </section>

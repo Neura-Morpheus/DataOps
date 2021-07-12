@@ -257,7 +257,17 @@
         <dependencySet>
             <outputDirectory>${talend.job.name}</outputDirectory>
             <includes>
-                <include>org.example.adventure_project.job:Raw:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:Address:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:Customer:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:ProductDescription:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:ProductModel:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:CustomerAddress:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:ProductModelProductDescription:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:SalesOrderDetail:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:Product:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:ProductCategory:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:SalesOrderHeader:jar:0.1.0</include>
+                <include>org.example.adventure_project.job:RAW:jar:0.1.0</include>
             </includes>
             <outputFileNameMapping>${artifact.build.finalName}.${artifact.extension}</outputFileNameMapping>
             <useProjectArtifact>true</useProjectArtifact>

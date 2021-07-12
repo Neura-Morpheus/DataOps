@@ -1,0 +1,36 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="TalendDate.getPartOfDate(&quot;WEEK_OF_YEAR&quot;,row1.OrderDate)">
+  <variables name="row1.SalesOrderID" value="0" talendType="id_Integer"/>
+  <variables name="row1.RevisionNumber" value="null" talendType="id_Short" nullable="true"/>
+  <variables name="row1.OrderDate" value="null" talendType="id_Date" nullable="true"/>
+  <variables name="row1.DueDate" value="null" talendType="id_Date" nullable="true"/>
+  <variables name="row1.ShipDate" value="null" talendType="id_Date" nullable="true"/>
+  <variables name="row1.Status" value="null" talendType="id_Short" nullable="true"/>
+  <variables name="row1.OnlineOrderFlag" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.SalesOrderNumber" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.PurchaseOrderNumber" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.AccountNumber" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.CustomerID" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.ShipToAddressID" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.BillToAddressID" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.ShipMethod" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.CreditCardApprovalCode" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.SubTotal" value="null" talendType="id_Float" nullable="true"/>
+  <variables name="row1.TaxAmt" value="null" talendType="id_Float" nullable="true"/>
+  <variables name="row1.Freight" value="null" talendType="id_Float" nullable="true"/>
+  <variables name="row1.TotalDue" value="null" talendType="id_Float" nullable="true"/>
+  <variables name="row1.Comment" value="null" talendType="id_String" nullable="true"/>
+  <variables name="TalendDate.addDate(row1.OrderDate,2,&quot;MM&quot;) " value="null" talendType="id_Date"/>
+  <variables name="TalendDate.getPartOfDate(&quot;DAY_OF_WEEK&quot;,TalendDate.parseDate(&quot;yyyy-MM-dd&quot;, row1.OrderDate)) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;YEAR&quot;,TalendDate.parseDate(&quot;yyyy-MM-dd&quot;, row1.OrderDate6)) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;YEAR&quot;,TalendDate.parseDate(&quot;yyyy-MM-dd&quot;, row1.OrderDate)) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.parseDate(&quot;yyyy-MM-dd&quot;, row1.OrderDate)) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;DAY_OF_WEEK&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.OrderDate)) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;YEAR&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.OrderDate)) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.OrderDate)) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;DAY_OF_WEEK&quot;,row1.OrderDate) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;YEAR&quot;,row1.OrderDate) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;MONTH&quot;,row1.OrderDate) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.getCurrentDate()) " value="0" talendType="id_Integer"/>
+  <variables name="TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.addDate(row1.OrderDate,1,&quot;MM&quot;)) " value="0" talendType="id_Integer"/>
+</expression:EMFExpression>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_A_X9ceNKEeu4Y76m70UyTA" name="DIM_Tempo" dataPackage="_A_X9cuNKEeu4Y76m70UyTA" Server="Localhost 127.0.0.1" FilePath="C:/Users/USER/OneDrive/FIAP/12ABD/repos/DataOps/Dados/CURATED/DIM_Tempo.csv" Format="WINDOWS" Encoding="UTF-8" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true" EscapeType="CSV" EscapeChar="&quot;\&quot;&quot;" TextEnclosure="&quot;\&quot;&quot;" CsvOption="true"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_A_X9cuNKEeu4Y76m70UyTA" name="default" dataManager="_A_X9ceNKEeu4Y76m70UyTA">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_A_YkgONKEeu4Y76m70UyTA" id="_xYlOwONJEeu4Y76m70UyTA" comment="Metadata Dim Tempo" label="Dim_Tempo">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_A_YkgeNKEeu4Y76m70UyTA" label="OrderDate" length="23" precision="3" talendType="id_Date" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_A_YkguNKEeu4Y76m70UyTA" label="Ano" length="10" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_A_Ykg-NKEeu4Y76m70UyTA" label="Mes" length="10" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_A_YkhONKEeu4Y76m70UyTA" label="SemanaAno" length="10" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

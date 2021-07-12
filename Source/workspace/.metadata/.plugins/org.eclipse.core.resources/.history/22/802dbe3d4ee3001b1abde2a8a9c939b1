@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_9L_egLdvEeuVvoisiESpIA" id="_9L7NELdvEeuVvoisiESpIA" label="Analitico" purpose="OLAP" description="Criacao de Dimensoes e Fatos" version="0.1" statusCode="" item="_9MAFkLdvEeuVvoisiESpIA" displayName="Analitico">
+    <author href="../../talend.project#_vIbl4LBYEeu-NNTBVO-Zew"/>
+    <additionalProperties xmi:id="_9MGMMLdvEeuVvoisiESpIA" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_9MGMMbdvEeuVvoisiESpIA" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_9MGMMrdvEeuVvoisiESpIA" key="created_date" value="2021-05-17T21:28:24.051-0300"/>
+    <additionalProperties xmi:id="_9MGMM7dvEeuVvoisiESpIA" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_9MGMNLdvEeuVvoisiESpIA" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_9MGMNbdvEeuVvoisiESpIA" key="modified_date" value="2021-07-12T17:17:47.881-0300"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_9L_egbdvEeuVvoisiESpIA" path="DataOps" locked="true" lockDate="2021-07-12T17:17:47.880-0300">
+    <locker href="../../talend.project#_vIbl4LBYEeu-NNTBVO-Zew"/>
+  </TalendProperties:ItemState>
+  <TalendProperties:ProcessItem xmi:id="_9MAFkLdvEeuVvoisiESpIA" property="_9L_egLdvEeuVvoisiESpIA" state="_9L_egbdvEeuVvoisiESpIA">
+    <process href="Analitico_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>

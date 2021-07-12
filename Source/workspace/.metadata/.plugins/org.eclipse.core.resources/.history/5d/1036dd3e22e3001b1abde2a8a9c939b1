@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Property xmi:id="_PS2KQOMiEeu4Y76m70UyTA" id="_PSwqsOMiEeu4Y76m70UyTA" label="Fato_Sales" purpose="ETL entidade venda" description="carga de dados para a tabela FATO" version="0.1" statusCode="" item="_PS2xUOMiEeu4Y76m70UyTA" displayName="Fato_Sales">
+    <author href="../../../talend.project#_vIbl4LBYEeu-NNTBVO-Zew"/>
+    <additionalProperties xmi:id="_PS838OMiEeu4Y76m70UyTA" key="created_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_PS838eMiEeu4Y76m70UyTA" key="created_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_PS9fAOMiEeu4Y76m70UyTA" key="created_date" value="2021-07-12T12:02:55.983-0300"/>
+    <additionalProperties xmi:id="_PS9fAeMiEeu4Y76m70UyTA" key="modified_product_fullname" value="Talend Open Studio for Big Data"/>
+    <additionalProperties xmi:id="_PS9fAuMiEeu4Y76m70UyTA" key="modified_product_version" value="7.3.1.20200219_1130"/>
+    <additionalProperties xmi:id="_PS9fA-MiEeu4Y76m70UyTA" key="modified_date" value="2021-07-12T12:02:58.454-0300"/>
+  </TalendProperties:Property>
+  <TalendProperties:ItemState xmi:id="_PS2KQeMiEeu4Y76m70UyTA" path="DataOps/CURATED"/>
+  <TalendProperties:ProcessItem xmi:id="_PS2xUOMiEeu4Y76m70UyTA" property="_PS2KQOMiEeu4Y76m70UyTA" state="_PS2KQeMiEeu4Y76m70UyTA">
+    <process href="Fato_Sales_0.1.item#/"/>
+  </TalendProperties:ProcessItem>
+</xmi:XMI>
