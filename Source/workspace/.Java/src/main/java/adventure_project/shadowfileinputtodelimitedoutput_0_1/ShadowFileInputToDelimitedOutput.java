@@ -315,6 +315,114 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 			return this.row3;
 		}
 
+		public String row4;
+
+		public String getRow4() {
+			return this.row4;
+		}
+
+		public String row5;
+
+		public String getRow5() {
+			return this.row5;
+		}
+
+		public String row6;
+
+		public String getRow6() {
+			return this.row6;
+		}
+
+		public String row7;
+
+		public String getRow7() {
+			return this.row7;
+		}
+
+		public String row8;
+
+		public String getRow8() {
+			return this.row8;
+		}
+
+		public String row9;
+
+		public String getRow9() {
+			return this.row9;
+		}
+
+		public String row10;
+
+		public String getRow10() {
+			return this.row10;
+		}
+
+		public String row11;
+
+		public String getRow11() {
+			return this.row11;
+		}
+
+		public String row12;
+
+		public String getRow12() {
+			return this.row12;
+		}
+
+		public String row13;
+
+		public String getRow13() {
+			return this.row13;
+		}
+
+		public String row14;
+
+		public String getRow14() {
+			return this.row14;
+		}
+
+		public String row15;
+
+		public String getRow15() {
+			return this.row15;
+		}
+
+		public String row16;
+
+		public String getRow16() {
+			return this.row16;
+		}
+
+		public String row17;
+
+		public String getRow17() {
+			return this.row17;
+		}
+
+		public String row18;
+
+		public String getRow18() {
+			return this.row18;
+		}
+
+		public String row19;
+
+		public String getRow19() {
+			return this.row19;
+		}
+
+		public String row20;
+
+		public String getRow20() {
+			return this.row20;
+		}
+
+		public String row21;
+
+		public String getRow21() {
+			return this.row21;
+		}
+
 		private String readString(ObjectInputStream dis) throws IOException {
 			String strReturn = null;
 			int length = 0;
@@ -363,6 +471,42 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 					this.row3 = readString(dis);
 
+					this.row4 = readString(dis);
+
+					this.row5 = readString(dis);
+
+					this.row6 = readString(dis);
+
+					this.row7 = readString(dis);
+
+					this.row8 = readString(dis);
+
+					this.row9 = readString(dis);
+
+					this.row10 = readString(dis);
+
+					this.row11 = readString(dis);
+
+					this.row12 = readString(dis);
+
+					this.row13 = readString(dis);
+
+					this.row14 = readString(dis);
+
+					this.row15 = readString(dis);
+
+					this.row16 = readString(dis);
+
+					this.row17 = readString(dis);
+
+					this.row18 = readString(dis);
+
+					this.row19 = readString(dis);
+
+					this.row20 = readString(dis);
+
+					this.row21 = readString(dis);
+
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 
@@ -391,6 +535,78 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 				writeString(this.row3, dos);
 
+				// String
+
+				writeString(this.row4, dos);
+
+				// String
+
+				writeString(this.row5, dos);
+
+				// String
+
+				writeString(this.row6, dos);
+
+				// String
+
+				writeString(this.row7, dos);
+
+				// String
+
+				writeString(this.row8, dos);
+
+				// String
+
+				writeString(this.row9, dos);
+
+				// String
+
+				writeString(this.row10, dos);
+
+				// String
+
+				writeString(this.row11, dos);
+
+				// String
+
+				writeString(this.row12, dos);
+
+				// String
+
+				writeString(this.row13, dos);
+
+				// String
+
+				writeString(this.row14, dos);
+
+				// String
+
+				writeString(this.row15, dos);
+
+				// String
+
+				writeString(this.row16, dos);
+
+				// String
+
+				writeString(this.row17, dos);
+
+				// String
+
+				writeString(this.row18, dos);
+
+				// String
+
+				writeString(this.row19, dos);
+
+				// String
+
+				writeString(this.row20, dos);
+
+				// String
+
+				writeString(this.row21, dos);
+
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -406,6 +622,24 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 			sb.append(",row1=" + row1);
 			sb.append(",row2=" + row2);
 			sb.append(",row3=" + row3);
+			sb.append(",row4=" + row4);
+			sb.append(",row5=" + row5);
+			sb.append(",row6=" + row6);
+			sb.append(",row7=" + row7);
+			sb.append(",row8=" + row8);
+			sb.append(",row9=" + row9);
+			sb.append(",row10=" + row10);
+			sb.append(",row11=" + row11);
+			sb.append(",row12=" + row12);
+			sb.append(",row13=" + row13);
+			sb.append(",row14=" + row14);
+			sb.append(",row15=" + row15);
+			sb.append(",row16=" + row16);
+			sb.append(",row17=" + row17);
+			sb.append(",row18=" + row18);
+			sb.append(",row19=" + row19);
+			sb.append(",row20=" + row20);
+			sb.append(",row21=" + row21);
 			sb.append("]");
 
 			return sb.toString();
@@ -479,7 +713,7 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 				String fileName_tFileOutputDelimited = "";
 				fileName_tFileOutputDelimited = (new java.io.File(
-						"C:/Users/USER/OneDrive/FIAP/12ABD/repos/DataOps/Source/workspace/ADVENTURE_PROJECT/temp/preview/DIM_Tempo.csv"))
+						"C:/Repos/DataOps/Source/workspace/ADVENTURE_PROJECT/temp/preview/SalesOrderHeader.csv"))
 								.getAbsolutePath().replace("\\", "/");
 				String fullName_tFileOutputDelimited = null;
 				String extension_tFileOutputDelimited = null;
@@ -512,7 +746,7 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 				boolean isFileGenerated_tFileOutputDelimited = true;
 				java.io.File filetFileOutputDelimited = new java.io.File(fileName_tFileOutputDelimited);
 				globalMap.put("tFileOutputDelimited_FILE_NAME", fileName_tFileOutputDelimited);
-				String[] headColutFileOutputDelimited = new String[4];
+				String[] headColutFileOutputDelimited = new String[22];
 				class CSVBasicSet_tFileOutputDelimited {
 					private char field_Delim;
 					private char row_Delim;
@@ -687,10 +921,7 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 				}
 
 				Object filename_tFileInputDelimited = /** Start field tFileInputDelimited:FILENAME */
-						"C:/Users/USER/OneDrive/FIAP/12ABD/repos/DataOps/Dados/CURATED/DIM_Tempo.csv"/**
-																										 * End field
-																										 * tFileInputDelimited:FILENAME
-																										 */
+						"C:/Repos/DataOps/Dados/RAW/SalesOrderHeader.csv"/** End field tFileInputDelimited:FILENAME */
 				;
 				com.talend.csv.CSVReader csvReadertFileInputDelimited = null;
 
@@ -834,6 +1065,42 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 								Row.row3 = null;
 
+								Row.row4 = null;
+
+								Row.row5 = null;
+
+								Row.row6 = null;
+
+								Row.row7 = null;
+
+								Row.row8 = null;
+
+								Row.row9 = null;
+
+								Row.row10 = null;
+
+								Row.row11 = null;
+
+								Row.row12 = null;
+
+								Row.row13 = null;
+
+								Row.row14 = null;
+
+								Row.row15 = null;
+
+								Row.row16 = null;
+
+								Row.row17 = null;
+
+								Row.row18 = null;
+
+								Row.row19 = null;
+
+								Row.row20 = null;
+
+								Row.row21 = null;
+
 							} else {
 
 								int columnIndexWithD_tFileInputDelimited = 0; // Column Index
@@ -886,6 +1153,222 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 								}
 
+								columnIndexWithD_tFileInputDelimited = 4;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row4 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row4 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 5;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row5 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row5 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 6;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row6 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row6 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 7;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row7 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row7 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 8;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row8 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row8 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 9;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row9 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row9 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 10;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row10 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row10 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 11;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row11 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row11 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 12;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row12 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row12 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 13;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row13 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row13 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 14;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row14 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row14 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 15;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row15 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row15 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 16;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row16 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row16 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 17;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row17 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row17 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 18;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row18 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row18 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 19;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row19 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row19 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 20;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row20 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row20 = null;
+
+								}
+
+								columnIndexWithD_tFileInputDelimited = 21;
+
+								if (columnIndexWithD_tFileInputDelimited < rowtFileInputDelimited.length) {
+
+									Row.row21 = rowtFileInputDelimited[columnIndexWithD_tFileInputDelimited];
+
+								} else {
+
+									Row.row21 = null;
+
+								}
+
 							}
 
 							if (rowstate_tFileInputDelimited.getException() != null) {
@@ -934,11 +1417,29 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 
 							currentComponent = "tFileOutputDelimited";
 
-							String[] rowtFileOutputDelimited = new String[4];
+							String[] rowtFileOutputDelimited = new String[22];
 							rowtFileOutputDelimited[0] = Row.row0 == null ? null : Row.row0;
 							rowtFileOutputDelimited[1] = Row.row1 == null ? null : Row.row1;
 							rowtFileOutputDelimited[2] = Row.row2 == null ? null : Row.row2;
 							rowtFileOutputDelimited[3] = Row.row3 == null ? null : Row.row3;
+							rowtFileOutputDelimited[4] = Row.row4 == null ? null : Row.row4;
+							rowtFileOutputDelimited[5] = Row.row5 == null ? null : Row.row5;
+							rowtFileOutputDelimited[6] = Row.row6 == null ? null : Row.row6;
+							rowtFileOutputDelimited[7] = Row.row7 == null ? null : Row.row7;
+							rowtFileOutputDelimited[8] = Row.row8 == null ? null : Row.row8;
+							rowtFileOutputDelimited[9] = Row.row9 == null ? null : Row.row9;
+							rowtFileOutputDelimited[10] = Row.row10 == null ? null : Row.row10;
+							rowtFileOutputDelimited[11] = Row.row11 == null ? null : Row.row11;
+							rowtFileOutputDelimited[12] = Row.row12 == null ? null : Row.row12;
+							rowtFileOutputDelimited[13] = Row.row13 == null ? null : Row.row13;
+							rowtFileOutputDelimited[14] = Row.row14 == null ? null : Row.row14;
+							rowtFileOutputDelimited[15] = Row.row15 == null ? null : Row.row15;
+							rowtFileOutputDelimited[16] = Row.row16 == null ? null : Row.row16;
+							rowtFileOutputDelimited[17] = Row.row17 == null ? null : Row.row17;
+							rowtFileOutputDelimited[18] = Row.row18 == null ? null : Row.row18;
+							rowtFileOutputDelimited[19] = Row.row19 == null ? null : Row.row19;
+							rowtFileOutputDelimited[20] = Row.row20 == null ? null : Row.row20;
+							rowtFileOutputDelimited[21] = Row.row21 == null ? null : Row.row21;
 							nb_line_tFileOutputDelimited++;
 							resourceMap.put("nb_line_tFileOutputDelimited", nb_line_tFileOutputDelimited);
 							CsvWritertFileOutputDelimited.writeNext(rowtFileOutputDelimited);
@@ -1416,6 +1917,6 @@ public class ShadowFileInputToDelimitedOutput implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 49644 characters generated by Talend Open Studio for Big Data on the 12 de
- * Julho de 2021 16h46min57s BRT
+ * 63334 characters generated by Talend Open Studio for Big Data on the 13 de
+ * Julho de 2021 13h37min2s BRT
  ************************************************************************************************/

@@ -37,6 +37,7 @@
     <module>jobs/process/DataOps/CURATED/dim_order_0.1</module>
     <module>jobs/process/DataOps/CURATED/dim_tempo_0.1</module>
     <module>jobs/process/DataOps/CURATED/rel_semanal_vendas_0.1</module>
+    <module>jobs/process/DataOps/curated_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ADVENTURE_PROJECT</talend.project.name>

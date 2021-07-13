@@ -18,15 +18,23 @@
 		<item value="false" key="JavaJobScriptsExportWizardPage.APPLY_TO_CHILDREN_ID"/>
 		<item value="POJO" key="JavaJobScriptsExportWizardPage.STORE_EXPORTTYPE_ID"/>
 		<list key="JavaJobScriptsExportWizardPage.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Repos\DataOps\Executavel\Job Designs.zip"/>
 			<item value="C:\Users\USER\OneDrive\FIAP\12ABD\DataOps\Raw_0.1.zip"/>
 		</list>
 		<section name="destinationFile">
-			<item value="C:\Users\USER\OneDrive\FIAP\12ABD\DataOps\Raw_0.1.zip" key="destinationFile"/>
+			<item value="C:\Repos\DataOps\Executavel\Job Designs.zip" key="destinationFile"/>
 		</section>
 	</section>
 	<section name="ExportItemWizard">
 		<section name="destinationFile">
 			<item value="C:\Users\USER\OneDrive\FIAP\12ABD\repos\DataOps\Dados\RAW" key="directoryPath"/>
 		</section>
+	</section>
+	<section name="GenerateDocAsHTMLWizard">
+		<section name="destinationFile">
+			<item value="C:\Users\USER\OneDrive\FIAP\TOS_BD-20200219_1130-V7.3.1\DataOps.zip" key="destinationFile"/>
+		</section>
+	</section>
+	<section name="ZipFileExportWizard">
 	</section>
 </section>

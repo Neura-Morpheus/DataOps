@@ -14,6 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 package adventure_project.customeraddress_harm_0_1;
 
 import routines.Numeric;
@@ -40,26 +41,31 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
 import java.util.Comparator;
+ 
+
+
+
+
 
 @SuppressWarnings("unused")
 
 /**
  * Job: CustomerAddress_HARM Purpose: ETL area HARMONIZED<br>
  * Description: Carga de dados CustomerAddress area HARMONIZED <br>
- * 
  * @author user@talend.com
  * @version 7.3.1.20200219_1130
- * @status
+ * @status 
  */
 public class CustomerAddress_HARM implements TalendJob {
 
-	protected static void logIgnoredError(String message, Throwable cause) {
-		System.err.println(message);
-		if (cause != null) {
-			cause.printStackTrace();
-		}
+protected static void logIgnoredError(String message, Throwable cause) {
+       System.err.println(message);
+       if (cause != null) {
+               cause.printStackTrace();
+       }
 
-	}
+}
+
 
 	public final Object obj = new Object();
 
@@ -73,3881 +79,4677 @@ public class CustomerAddress_HARM implements TalendJob {
 	public void setValueObject(Object valueObject) {
 		this.valueObject = valueObject;
 	}
-
+	
 	private final static String defaultCharset = java.nio.charset.Charset.defaultCharset().name();
 
+	
 	private final static String utf8Charset = "UTF-8";
-
-	// contains type for every context property
+	//contains type for every context property
 	public class PropertiesWithType extends java.util.Properties {
 		private static final long serialVersionUID = 1L;
-		private java.util.Map<String, String> propertyTypes = new java.util.HashMap<>();
-
-		public PropertiesWithType(java.util.Properties properties) {
+		private java.util.Map<String,String> propertyTypes = new java.util.HashMap<>();
+		
+		public PropertiesWithType(java.util.Properties properties){
 			super(properties);
 		}
-
-		public PropertiesWithType() {
+		public PropertiesWithType(){
 			super();
 		}
-
+		
 		public void setContextType(String key, String type) {
-			propertyTypes.put(key, type);
+			propertyTypes.put(key,type);
 		}
-
+	
 		public String getContextType(String key) {
 			return propertyTypes.get(key);
 		}
 	}
-
+	
 	// create and load default properties
 	private java.util.Properties defaultProps = new java.util.Properties();
-
 	// create application properties with default
 	public class ContextProperties extends PropertiesWithType {
 
 		private static final long serialVersionUID = 1L;
 
-		public ContextProperties(java.util.Properties properties) {
+		public ContextProperties(java.util.Properties properties){
 			super(properties);
 		}
-
-		public ContextProperties() {
+		public ContextProperties(){
 			super();
 		}
 
-		public void synchronizeContext() {
-
+		public void synchronizeContext(){
+			
 		}
 
 	}
-
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
-
 	public ContextProperties getContext() {
 		return this.context;
 	}
-
 	private final String jobVersion = "0.1";
 	private final String jobName = "CustomerAddress_HARM";
 	private final String projectName = "ADVENTURE_PROJECT";
 	public Integer errorCode = null;
 	private String currentComponent = "";
+	
+		private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
+        private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
+	
+		private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
+		private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
+		private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
+		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
+	
 
-	private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
-	private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
-
-	private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
-	private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
-	private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
-	public final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
-
-	private RunStat runStat = new RunStat();
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
-
+	
 	private final static String KEY_DB_DATASOURCES_RAW = "KEY_DB_DATASOURCES_RAW";
 
 	public void setDataSources(java.util.Map<String, javax.sql.DataSource> dataSources) {
 		java.util.Map<String, routines.system.TalendDataSource> talendDataSources = new java.util.HashMap<String, routines.system.TalendDataSource>();
 		for (java.util.Map.Entry<String, javax.sql.DataSource> dataSourceEntry : dataSources.entrySet()) {
-			talendDataSources.put(dataSourceEntry.getKey(),
-					new routines.system.TalendDataSource(dataSourceEntry.getValue()));
+			talendDataSources.put(dataSourceEntry.getKey(), new routines.system.TalendDataSource(dataSourceEntry.getValue()));
 		}
 		globalMap.put(KEY_DB_DATASOURCES, talendDataSources);
 		globalMap.put(KEY_DB_DATASOURCES_RAW, new java.util.HashMap<String, javax.sql.DataSource>(dataSources));
 	}
 
-	private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
-	private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
 
-	public String getExceptionStackTrace() {
-		if ("failure".equals(this.getStatus())) {
-			errorMessagePS.flush();
-			return baos.toString();
-		}
-		return null;
+private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
+private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
+
+public String getExceptionStackTrace() {
+	if ("failure".equals(this.getStatus())) {
+		errorMessagePS.flush();
+		return baos.toString();
+	}
+	return null;
+}
+
+private Exception exception;
+
+public Exception getException() {
+	if ("failure".equals(this.getStatus())) {
+		return this.exception;
+	}
+	return null;
+}
+
+private class TalendException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+
+	private java.util.Map<String, Object> globalMap = null;
+	private Exception e = null;
+	private String currentComponent = null;
+	private String virtualComponentName = null;
+	
+	public void setVirtualComponentName (String virtualComponentName){
+		this.virtualComponentName = virtualComponentName;
 	}
 
-	private Exception exception;
+	private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
+		this.currentComponent= errorComponent;
+		this.globalMap = globalMap;
+		this.e = e;
+	}
 
 	public Exception getException() {
-		if ("failure".equals(this.getStatus())) {
-			return this.exception;
-		}
-		return null;
+		return this.e;
 	}
 
-	private class TalendException extends Exception {
+	public String getCurrentComponent() {
+		return this.currentComponent;
+	}
 
-		private static final long serialVersionUID = 1L;
+	
+    public String getExceptionCauseMessage(Exception e){
+        Throwable cause = e;
+        String message = null;
+        int i = 10;
+        while (null != cause && 0 < i--) {
+            message = cause.getMessage();
+            if (null == message) {
+                cause = cause.getCause();
+            } else {
+                break;          
+            }
+        }
+        if (null == message) {
+            message = e.getClass().getName();
+        }   
+        return message;
+    }
 
-		private java.util.Map<String, Object> globalMap = null;
-		private Exception e = null;
-		private String currentComponent = null;
-		private String virtualComponentName = null;
-
-		public void setVirtualComponentName(String virtualComponentName) {
-			this.virtualComponentName = virtualComponentName;
+	@Override
+	public void printStackTrace() {
+		if (!(e instanceof TalendException || e instanceof TDieException)) {
+			if(virtualComponentName!=null && currentComponent.indexOf(virtualComponentName+"_")==0){
+				globalMap.put(virtualComponentName+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
+			}
+			globalMap.put(currentComponent+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
+			System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
 		}
-
-		private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
-			this.currentComponent = errorComponent;
-			this.globalMap = globalMap;
-			this.e = e;
+		if (!(e instanceof TDieException)) {
+			if(e instanceof TalendException){
+				e.printStackTrace();
+			} else {
+				e.printStackTrace();
+				e.printStackTrace(errorMessagePS);
+				CustomerAddress_HARM.this.exception = e;
+			}
 		}
-
-		public Exception getException() {
-			return this.e;
-		}
-
-		public String getCurrentComponent() {
-			return this.currentComponent;
-		}
-
-		public String getExceptionCauseMessage(Exception e) {
-			Throwable cause = e;
-			String message = null;
-			int i = 10;
-			while (null != cause && 0 < i--) {
-				message = cause.getMessage();
-				if (null == message) {
-					cause = cause.getCause();
-				} else {
+		if (!(e instanceof TalendException)) {
+		try {
+			for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
+				if (m.getName().compareTo(currentComponent + "_error") == 0) {
+					m.invoke(CustomerAddress_HARM.this, new Object[] { e , currentComponent, globalMap});
 					break;
 				}
 			}
-			if (null == message) {
-				message = e.getClass().getName();
-			}
-			return message;
-		}
 
-		@Override
-		public void printStackTrace() {
-			if (!(e instanceof TalendException || e instanceof TDieException)) {
-				if (virtualComponentName != null && currentComponent.indexOf(virtualComponentName + "_") == 0) {
-					globalMap.put(virtualComponentName + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
-				}
-				globalMap.put(currentComponent + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
-				System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
+			if(!(e instanceof TDieException)){
 			}
-			if (!(e instanceof TDieException)) {
-				if (e instanceof TalendException) {
-					e.printStackTrace();
-				} else {
-					e.printStackTrace();
-					e.printStackTrace(errorMessagePS);
-					CustomerAddress_HARM.this.exception = e;
-				}
+		} catch (Exception e) {
+			this.e.printStackTrace();
+		}
+		}
+	}
+}
+
+			public void tDBInput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
-			if (!(e instanceof TalendException)) {
-				try {
-					for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
-						if (m.getName().compareTo(currentComponent + "_error") == 0) {
-							m.invoke(CustomerAddress_HARM.this, new Object[] { e, currentComponent, globalMap });
-							break;
+			
+			public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBInput_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_row2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_1_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_1_AGGIN_error(exception, errorComponent, globalMap);
+						
 						}
-					}
+					
+			public void tAggregateRow_1_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBInput_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
-					if (!(e instanceof TDieException)) {
-					}
-				} catch (Exception e) {
-					this.e.printStackTrace();
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+	
+
+
+
+
+
+
+public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+    final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+    static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public Integer CustomerID;
+
+				public Integer getCustomerID () {
+					return this.CustomerID;
 				}
-			}
-		}
-	}
-
-	public void tDBInput_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileOutputDelimited_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tDBInput_2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAdvancedHash_row2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAggregateRow_1_AGGOUT_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		tAggregateRow_1_AGGIN_error(exception, errorComponent, globalMap);
-
-	}
-
-	public void tAggregateRow_1_AGGIN_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tDBInput_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-		final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
-
-		public String loopKey;
-
-		public Integer CustomerID;
-
-		public Integer getCustomerID() {
-			return this.CustomerID;
-		}
-
-		public Integer AddressID;
-
-		public Integer getAddressID() {
-			return this.AddressID;
-		}
-
-		public String AddressType;
-
-		public String getAddressType() {
-			return this.AddressType;
-		}
-
-		public String AddressLine1;
-
-		public String getAddressLine1() {
-			return this.AddressLine1;
-		}
-
-		public String AddressLine2;
-
-		public String getAddressLine2() {
-			return this.AddressLine2;
-		}
-
-		public String City;
-
-		public String getCity() {
-			return this.City;
-		}
-
-		public String StateProvince;
-
-		public String getStateProvince() {
-			return this.StateProvince;
-		}
-
-		public String CountryRegion;
-
-		public String getCountryRegion() {
-			return this.CountryRegion;
-		}
-
-		public String PostalCode;
-
-		public String getPostalCode() {
-			return this.PostalCode;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.CustomerID == null) ? 0 : this.CustomerID.hashCode());
-
-				result = prime * result + ((this.AddressID == null) ? 0 : this.AddressID.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row3Struct other = (row3Struct) obj;
-
-			if (this.CustomerID == null) {
-				if (other.CustomerID != null)
-					return false;
-
-			} else if (!this.CustomerID.equals(other.CustomerID))
-
-				return false;
-
-			if (this.AddressID == null) {
-				if (other.AddressID != null)
-					return false;
-
-			} else if (!this.AddressID.equals(other.AddressID))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row3Struct other) {
-
-			other.CustomerID = this.CustomerID;
-			other.AddressID = this.AddressID;
-			other.AddressType = this.AddressType;
-			other.AddressLine1 = this.AddressLine1;
-			other.AddressLine2 = this.AddressLine2;
-			other.City = this.City;
-			other.StateProvince = this.StateProvince;
-			other.CountryRegion = this.CountryRegion;
-			other.PostalCode = this.PostalCode;
-
-		}
-
-		public void copyKeysDataTo(row3Struct other) {
-
-			other.CustomerID = this.CustomerID;
-			other.AddressID = this.AddressID;
-
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
-					if (length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
-					} else {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
-					}
+				
+			    public Integer AddressID;
+
+				public Integer getAddressID () {
+					return this.AddressID;
 				}
-				dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
-				strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
-			}
-			return strReturn;
+				
+			    public String AddressType;
+
+				public String getAddressType () {
+					return this.AddressType;
+				}
+				
+			    public String AddressLine1;
+
+				public String getAddressLine1 () {
+					return this.AddressLine1;
+				}
+				
+			    public String AddressLine2;
+
+				public String getAddressLine2 () {
+					return this.AddressLine2;
+				}
+				
+			    public String City;
+
+				public String getCity () {
+					return this.City;
+				}
+				
+			    public String StateProvince;
+
+				public String getStateProvince () {
+					return this.StateProvince;
+				}
+				
+			    public String CountryRegion;
+
+				public String getCountryRegion () {
+					return this.CountryRegion;
+				}
+				
+			    public String PostalCode;
+
+				public String getPostalCode () {
+					return this.PostalCode;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.CustomerID == null) ? 0 : this.CustomerID.hashCode());
+					
+						result = prime * result + ((this.AddressID == null) ? 0 : this.AddressID.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
+		return this.hashCode;
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row3Struct other = (row3Struct) obj;
+		
+						if (this.CustomerID == null) {
+							if (other.CustomerID != null)
+								return false;
+						
+						} else if (!this.CustomerID.equals(other.CustomerID))
+						
+							return false;
+					
+						if (this.AddressID == null) {
+							if (other.AddressID != null)
+								return false;
+						
+						} else if (!this.AddressID.equals(other.AddressID))
+						
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(row3Struct other) {
+
+		other.CustomerID = this.CustomerID;
+	            other.AddressID = this.AddressID;
+	            other.AddressType = this.AddressType;
+	            other.AddressLine1 = this.AddressLine1;
+	            other.AddressLine2 = this.AddressLine2;
+	            other.City = this.City;
+	            other.StateProvince = this.StateProvince;
+	            other.CountryRegion = this.CountryRegion;
+	            other.PostalCode = this.PostalCode;
+	            
+	}
+
+	public void copyKeysDataTo(row3Struct other) {
+
+		other.CustomerID = this.CustomerID;
+	            	other.AddressID = this.AddressID;
+	            	
+	}
+
+
+
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void readData(ObjectInputStream dis) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			synchronized (commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
+				if(length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
+				} else {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
+			strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
 
-				try {
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-					int length = 0;
+    public void readData(ObjectInputStream dis) {
 
-					this.CustomerID = readInteger(dis);
+		synchronized(commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
 
-					this.AddressID = readInteger(dis);
+        	try {
 
+        		int length = 0;
+		
+						this.CustomerID = readInteger(dis);
+					
+						this.AddressID = readInteger(dis);
+					
 					this.AddressType = readString(dis);
-
+					
 					this.AddressLine1 = readString(dis);
-
+					
 					this.AddressLine2 = readString(dis);
-
+					
 					this.City = readString(dis);
-
+					
 					this.StateProvince = readString(dis);
-
+					
 					this.CountryRegion = readString(dis);
-
+					
 					this.PostalCode = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// Integer
+				
+						writeInteger(this.CustomerID,dos);
+					
+					// Integer
+				
+						writeInteger(this.AddressID,dos);
+					
+					// String
+				
+						writeString(this.AddressType,dos);
+					
+					// String
+				
+						writeString(this.AddressLine1,dos);
+					
+					// String
+				
+						writeString(this.AddressLine2,dos);
+					
+					// String
+				
+						writeString(this.City,dos);
+					
+					// String
+				
+						writeString(this.StateProvince,dos);
+					
+					// String
+				
+						writeString(this.CountryRegion,dos);
+					
+					// String
+				
+						writeString(this.PostalCode,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("CustomerID="+String.valueOf(CustomerID));
+		sb.append(",AddressID="+String.valueOf(AddressID));
+		sb.append(",AddressType="+AddressType);
+		sb.append(",AddressLine1="+AddressLine1);
+		sb.append(",AddressLine2="+AddressLine2);
+		sb.append(",City="+City);
+		sb.append(",StateProvince="+StateProvince);
+		sb.append(",CountryRegion="+CountryRegion);
+		sb.append(",PostalCode="+PostalCode);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row3Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.CustomerID, other.CustomerID);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_1 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_1> {
+    final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+    static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public Integer CustomerID;
+
+				public Integer getCustomerID () {
+					return this.CustomerID;
 				}
+				
+			    public Integer AddressID;
 
-			}
+				public Integer getAddressID () {
+					return this.AddressID;
+				}
+				
+			    public String AddressType;
 
+				public String getAddressType () {
+					return this.AddressType;
+				}
+				
+			    public String AddressLine1;
+
+				public String getAddressLine1 () {
+					return this.AddressLine1;
+				}
+				
+			    public String AddressLine2;
+
+				public String getAddressLine2 () {
+					return this.AddressLine2;
+				}
+				
+			    public String City;
+
+				public String getCity () {
+					return this.City;
+				}
+				
+			    public String StateProvince;
+
+				public String getStateProvince () {
+					return this.StateProvince;
+				}
+				
+			    public String CountryRegion;
+
+				public String getCountryRegion () {
+					return this.CountryRegion;
+				}
+				
+			    public String PostalCode;
+
+				public String getPostalCode () {
+					return this.PostalCode;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.CustomerID == null) ? 0 : this.CustomerID.hashCode());
+					
+						result = prime * result + ((this.AddressID == null) ? 0 : this.AddressID.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// Integer
-
-				writeInteger(this.CustomerID, dos);
-
-				// Integer
-
-				writeInteger(this.AddressID, dos);
-
-				// String
-
-				writeString(this.AddressType, dos);
-
-				// String
-
-				writeString(this.AddressLine1, dos);
-
-				// String
-
-				writeString(this.AddressLine2, dos);
-
-				// String
-
-				writeString(this.City, dos);
-
-				// String
-
-				writeString(this.StateProvince, dos);
-
-				// String
-
-				writeString(this.CountryRegion, dos);
-
-				// String
-
-				writeString(this.PostalCode, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("CustomerID=" + String.valueOf(CustomerID));
-			sb.append(",AddressID=" + String.valueOf(AddressID));
-			sb.append(",AddressType=" + AddressType);
-			sb.append(",AddressLine1=" + AddressLine1);
-			sb.append(",AddressLine2=" + AddressLine2);
-			sb.append(",City=" + City);
-			sb.append(",StateProvince=" + StateProvince);
-			sb.append(",CountryRegion=" + CountryRegion);
-			sb.append(",PostalCode=" + PostalCode);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row3Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.CustomerID, other.CustomerID);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class OnRowsEndStructtAggregateRow_1
-			implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_1> {
-		final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final OnRowsEndStructtAggregateRow_1 other = (OnRowsEndStructtAggregateRow_1) obj;
+		
+						if (this.CustomerID == null) {
+							if (other.CustomerID != null)
+								return false;
+						
+						} else if (!this.CustomerID.equals(other.CustomerID))
+						
+							return false;
+					
+						if (this.AddressID == null) {
+							if (other.AddressID != null)
+								return false;
+						
+						} else if (!this.AddressID.equals(other.AddressID))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public Integer CustomerID;
+	public void copyDataTo(OnRowsEndStructtAggregateRow_1 other) {
 
-		public Integer getCustomerID() {
-			return this.CustomerID;
+		other.CustomerID = this.CustomerID;
+	            other.AddressID = this.AddressID;
+	            other.AddressType = this.AddressType;
+	            other.AddressLine1 = this.AddressLine1;
+	            other.AddressLine2 = this.AddressLine2;
+	            other.City = this.City;
+	            other.StateProvince = this.StateProvince;
+	            other.CountryRegion = this.CountryRegion;
+	            other.PostalCode = this.PostalCode;
+	            
+	}
+
+	public void copyKeysDataTo(OnRowsEndStructtAggregateRow_1 other) {
+
+		other.CustomerID = this.CustomerID;
+	            	other.AddressID = this.AddressID;
+	            	
+	}
+
+
+
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public Integer AddressID;
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		public Integer getAddressID() {
-			return this.AddressID;
-		}
-
-		public String AddressType;
-
-		public String getAddressType() {
-			return this.AddressType;
-		}
-
-		public String AddressLine1;
-
-		public String getAddressLine1() {
-			return this.AddressLine1;
-		}
-
-		public String AddressLine2;
-
-		public String getAddressLine2() {
-			return this.AddressLine2;
-		}
-
-		public String City;
-
-		public String getCity() {
-			return this.City;
-		}
-
-		public String StateProvince;
-
-		public String getStateProvince() {
-			return this.StateProvince;
-		}
-
-		public String CountryRegion;
-
-		public String getCountryRegion() {
-			return this.CountryRegion;
-		}
-
-		public String PostalCode;
-
-		public String getPostalCode() {
-			return this.PostalCode;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.CustomerID == null) ? 0 : this.CustomerID.hashCode());
-
-				result = prime * result + ((this.AddressID == null) ? 0 : this.AddressID.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
+				if(length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
+				} else {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
+			strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final OnRowsEndStructtAggregateRow_1 other = (OnRowsEndStructtAggregateRow_1) obj;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-			if (this.CustomerID == null) {
-				if (other.CustomerID != null)
-					return false;
+    public void readData(ObjectInputStream dis) {
 
-			} else if (!this.CustomerID.equals(other.CustomerID))
+		synchronized(commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
 
-				return false;
+        	try {
 
-			if (this.AddressID == null) {
-				if (other.AddressID != null)
-					return false;
-
-			} else if (!this.AddressID.equals(other.AddressID))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(OnRowsEndStructtAggregateRow_1 other) {
-
-			other.CustomerID = this.CustomerID;
-			other.AddressID = this.AddressID;
-			other.AddressType = this.AddressType;
-			other.AddressLine1 = this.AddressLine1;
-			other.AddressLine2 = this.AddressLine2;
-			other.City = this.City;
-			other.StateProvince = this.StateProvince;
-			other.CountryRegion = this.CountryRegion;
-			other.PostalCode = this.PostalCode;
-
-		}
-
-		public void copyKeysDataTo(OnRowsEndStructtAggregateRow_1 other) {
-
-			other.CustomerID = this.CustomerID;
-			other.AddressID = this.AddressID;
-
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
-					if (length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
-					} else {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
-				strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
-
-				try {
-
-					int length = 0;
-
-					this.CustomerID = readInteger(dis);
-
-					this.AddressID = readInteger(dis);
-
+        		int length = 0;
+		
+						this.CustomerID = readInteger(dis);
+					
+						this.AddressID = readInteger(dis);
+					
 					this.AddressType = readString(dis);
-
+					
 					this.AddressLine1 = readString(dis);
-
+					
 					this.AddressLine2 = readString(dis);
-
+					
 					this.City = readString(dis);
-
+					
 					this.StateProvince = readString(dis);
-
+					
 					this.CountryRegion = readString(dis);
-
+					
 					this.PostalCode = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// Integer
+				
+						writeInteger(this.CustomerID,dos);
+					
+					// Integer
+				
+						writeInteger(this.AddressID,dos);
+					
+					// String
+				
+						writeString(this.AddressType,dos);
+					
+					// String
+				
+						writeString(this.AddressLine1,dos);
+					
+					// String
+				
+						writeString(this.AddressLine2,dos);
+					
+					// String
+				
+						writeString(this.City,dos);
+					
+					// String
+				
+						writeString(this.StateProvince,dos);
+					
+					// String
+				
+						writeString(this.CountryRegion,dos);
+					
+					// String
+				
+						writeString(this.PostalCode,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("CustomerID="+String.valueOf(CustomerID));
+		sb.append(",AddressID="+String.valueOf(AddressID));
+		sb.append(",AddressType="+AddressType);
+		sb.append(",AddressLine1="+AddressLine1);
+		sb.append(",AddressLine2="+AddressLine2);
+		sb.append(",City="+City);
+		sb.append(",StateProvince="+StateProvince);
+		sb.append(",CountryRegion="+CountryRegion);
+		sb.append(",PostalCode="+PostalCode);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_1 other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.CustomerID, other.CustomerID);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class saida_CustomerAddressStruct implements routines.system.IPersistableRow<saida_CustomerAddressStruct> {
+    final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+    static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public int CustomerID;
+
+				public int getCustomerID () {
+					return this.CustomerID;
 				}
+				
+			    public int AddressID;
 
-			}
+				public int getAddressID () {
+					return this.AddressID;
+				}
+				
+			    public String AddressType;
 
+				public String getAddressType () {
+					return this.AddressType;
+				}
+				
+			    public String AddressLine1;
+
+				public String getAddressLine1 () {
+					return this.AddressLine1;
+				}
+				
+			    public String AddressLine2;
+
+				public String getAddressLine2 () {
+					return this.AddressLine2;
+				}
+				
+			    public String City;
+
+				public String getCity () {
+					return this.City;
+				}
+				
+			    public String StateProvince;
+
+				public String getStateProvince () {
+					return this.StateProvince;
+				}
+				
+			    public String CountryRegion;
+
+				public String getCountryRegion () {
+					return this.CountryRegion;
+				}
+				
+			    public String PostalCode;
+
+				public String getPostalCode () {
+					return this.PostalCode;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.CustomerID;
+						
+							result = prime * result + (int) this.AddressID;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// Integer
-
-				writeInteger(this.CustomerID, dos);
-
-				// Integer
-
-				writeInteger(this.AddressID, dos);
-
-				// String
-
-				writeString(this.AddressType, dos);
-
-				// String
-
-				writeString(this.AddressLine1, dos);
-
-				// String
-
-				writeString(this.AddressLine2, dos);
-
-				// String
-
-				writeString(this.City, dos);
-
-				// String
-
-				writeString(this.StateProvince, dos);
-
-				// String
-
-				writeString(this.CountryRegion, dos);
-
-				// String
-
-				writeString(this.PostalCode, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("CustomerID=" + String.valueOf(CustomerID));
-			sb.append(",AddressID=" + String.valueOf(AddressID));
-			sb.append(",AddressType=" + AddressType);
-			sb.append(",AddressLine1=" + AddressLine1);
-			sb.append(",AddressLine2=" + AddressLine2);
-			sb.append(",City=" + City);
-			sb.append(",StateProvince=" + StateProvince);
-			sb.append(",CountryRegion=" + CountryRegion);
-			sb.append(",PostalCode=" + PostalCode);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(OnRowsEndStructtAggregateRow_1 other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.CustomerID, other.CustomerID);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class saida_CustomerAddressStruct
-			implements routines.system.IPersistableRow<saida_CustomerAddressStruct> {
-		final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final saida_CustomerAddressStruct other = (saida_CustomerAddressStruct) obj;
+		
+						if (this.CustomerID != other.CustomerID)
+							return false;
+					
+						if (this.AddressID != other.AddressID)
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public int CustomerID;
+	public void copyDataTo(saida_CustomerAddressStruct other) {
 
-		public int getCustomerID() {
-			return this.CustomerID;
-		}
+		other.CustomerID = this.CustomerID;
+	            other.AddressID = this.AddressID;
+	            other.AddressType = this.AddressType;
+	            other.AddressLine1 = this.AddressLine1;
+	            other.AddressLine2 = this.AddressLine2;
+	            other.City = this.City;
+	            other.StateProvince = this.StateProvince;
+	            other.CountryRegion = this.CountryRegion;
+	            other.PostalCode = this.PostalCode;
+	            
+	}
 
-		public int AddressID;
+	public void copyKeysDataTo(saida_CustomerAddressStruct other) {
 
-		public int getAddressID() {
-			return this.AddressID;
-		}
+		other.CustomerID = this.CustomerID;
+	            	other.AddressID = this.AddressID;
+	            	
+	}
 
-		public String AddressType;
 
-		public String getAddressType() {
-			return this.AddressType;
-		}
 
-		public String AddressLine1;
 
-		public String getAddressLine1() {
-			return this.AddressLine1;
-		}
-
-		public String AddressLine2;
-
-		public String getAddressLine2() {
-			return this.AddressLine2;
-		}
-
-		public String City;
-
-		public String getCity() {
-			return this.City;
-		}
-
-		public String StateProvince;
-
-		public String getStateProvince() {
-			return this.StateProvince;
-		}
-
-		public String CountryRegion;
-
-		public String getCountryRegion() {
-			return this.CountryRegion;
-		}
-
-		public String PostalCode;
-
-		public String getPostalCode() {
-			return this.PostalCode;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + (int) this.CustomerID;
-
-				result = prime * result + (int) this.AddressID;
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
+				if(length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
+				} else {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
+			strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final saida_CustomerAddressStruct other = (saida_CustomerAddressStruct) obj;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-			if (this.CustomerID != other.CustomerID)
-				return false;
+    public void readData(ObjectInputStream dis) {
 
-			if (this.AddressID != other.AddressID)
-				return false;
+		synchronized(commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
 
-			return true;
-		}
+        	try {
 
-		public void copyDataTo(saida_CustomerAddressStruct other) {
-
-			other.CustomerID = this.CustomerID;
-			other.AddressID = this.AddressID;
-			other.AddressType = this.AddressType;
-			other.AddressLine1 = this.AddressLine1;
-			other.AddressLine2 = this.AddressLine2;
-			other.City = this.City;
-			other.StateProvince = this.StateProvince;
-			other.CountryRegion = this.CountryRegion;
-			other.PostalCode = this.PostalCode;
-
-		}
-
-		public void copyKeysDataTo(saida_CustomerAddressStruct other) {
-
-			other.CustomerID = this.CustomerID;
-			other.AddressID = this.AddressID;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
-					if (length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
-					} else {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
-				strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
-
-				try {
-
-					int length = 0;
-
-					this.CustomerID = dis.readInt();
-
-					this.AddressID = dis.readInt();
-
+        		int length = 0;
+		
+			        this.CustomerID = dis.readInt();
+					
+			        this.AddressID = dis.readInt();
+					
 					this.AddressType = readString(dis);
-
+					
 					this.AddressLine1 = readString(dis);
-
+					
 					this.AddressLine2 = readString(dis);
-
+					
 					this.City = readString(dis);
-
+					
 					this.StateProvince = readString(dis);
-
+					
 					this.CountryRegion = readString(dis);
-
+					
 					this.PostalCode = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.CustomerID);
+					
+					// int
+				
+		            	dos.writeInt(this.AddressID);
+					
+					// String
+				
+						writeString(this.AddressType,dos);
+					
+					// String
+				
+						writeString(this.AddressLine1,dos);
+					
+					// String
+				
+						writeString(this.AddressLine2,dos);
+					
+					// String
+				
+						writeString(this.City,dos);
+					
+					// String
+				
+						writeString(this.StateProvince,dos);
+					
+					// String
+				
+						writeString(this.CountryRegion,dos);
+					
+					// String
+				
+						writeString(this.PostalCode,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("CustomerID="+String.valueOf(CustomerID));
+		sb.append(",AddressID="+String.valueOf(AddressID));
+		sb.append(",AddressType="+AddressType);
+		sb.append(",AddressLine1="+AddressLine1);
+		sb.append(",AddressLine2="+AddressLine2);
+		sb.append(",City="+City);
+		sb.append(",StateProvince="+StateProvince);
+		sb.append(",CountryRegion="+CountryRegion);
+		sb.append(",PostalCode="+PostalCode);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(saida_CustomerAddressStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.CustomerID, other.CustomerID);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+    final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+    static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+
+	
+			    public int AddressID;
+
+				public int getAddressID () {
+					return this.AddressID;
 				}
+				
+			    public String AddressLine1;
 
+				public String getAddressLine1 () {
+					return this.AddressLine1;
+				}
+				
+			    public String AddressLine2;
+
+				public String getAddressLine2 () {
+					return this.AddressLine2;
+				}
+				
+			    public String City;
+
+				public String getCity () {
+					return this.City;
+				}
+				
+			    public String StateProvince;
+
+				public String getStateProvince () {
+					return this.StateProvince;
+				}
+				
+			    public String CountryRegion;
+
+				public String getCountryRegion () {
+					return this.CountryRegion;
+				}
+				
+			    public String PostalCode;
+
+				public String getPostalCode () {
+					return this.PostalCode;
+				}
+				
+			    public Object rowguid;
+
+				public Object getRowguid () {
+					return this.rowguid;
+				}
+				
+			    public java.util.Date ModifiedDate;
+
+				public java.util.Date getModifiedDate () {
+					return this.ModifiedDate;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
+				if(length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
+				} else {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
+			strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// int
-
-				dos.writeInt(this.CustomerID);
-
-				// int
-
-				dos.writeInt(this.AddressID);
-
-				// String
-
-				writeString(this.AddressType, dos);
-
-				// String
-
-				writeString(this.AddressLine1, dos);
-
-				// String
-
-				writeString(this.AddressLine2, dos);
-
-				// String
-
-				writeString(this.City, dos);
-
-				// String
-
-				writeString(this.StateProvince, dos);
-
-				// String
-
-				writeString(this.CountryRegion, dos);
-
-				// String
-
-				writeString(this.PostalCode, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("CustomerID=" + String.valueOf(CustomerID));
-			sb.append(",AddressID=" + String.valueOf(AddressID));
-			sb.append(",AddressType=" + AddressType);
-			sb.append(",AddressLine1=" + AddressLine1);
-			sb.append(",AddressLine2=" + AddressLine2);
-			sb.append(",City=" + City);
-			sb.append(",StateProvince=" + StateProvince);
-			sb.append(",CountryRegion=" + CountryRegion);
-			sb.append(",PostalCode=" + PostalCode);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(saida_CustomerAddressStruct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.CustomerID, other.CustomerID);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
-		final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public int AddressID;
-
-		public int getAddressID() {
-			return this.AddressID;
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
+		return dateReturn;
+	}
 
-		public String AddressLine1;
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public String getAddressLine1() {
-			return this.AddressLine1;
-		}
+    public void readData(ObjectInputStream dis) {
 
-		public String AddressLine2;
+		synchronized(commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
 
-		public String getAddressLine2() {
-			return this.AddressLine2;
-		}
+        	try {
 
-		public String City;
-
-		public String getCity() {
-			return this.City;
-		}
-
-		public String StateProvince;
-
-		public String getStateProvince() {
-			return this.StateProvince;
-		}
-
-		public String CountryRegion;
-
-		public String getCountryRegion() {
-			return this.CountryRegion;
-		}
-
-		public String PostalCode;
-
-		public String getPostalCode() {
-			return this.PostalCode;
-		}
-
-		public Object rowguid;
-
-		public Object getRowguid() {
-			return this.rowguid;
-		}
-
-		public java.util.Date ModifiedDate;
-
-		public java.util.Date getModifiedDate() {
-			return this.ModifiedDate;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
-					if (length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
-					} else {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
-				strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
-
-				try {
-
-					int length = 0;
-
-					this.AddressID = dis.readInt();
-
+        		int length = 0;
+		
+			        this.AddressID = dis.readInt();
+					
 					this.AddressLine1 = readString(dis);
-
+					
 					this.AddressLine2 = readString(dis);
-
+					
 					this.City = readString(dis);
-
+					
 					this.StateProvince = readString(dis);
-
+					
 					this.CountryRegion = readString(dis);
-
+					
 					this.PostalCode = readString(dis);
-
-					this.rowguid = (Object) dis.readObject();
-
+					
+						this.rowguid = (Object) dis.readObject();
+					
 					this.ModifiedDate = readDate(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
+			} catch(ClassNotFoundException eCNFE) {
+				 throw new RuntimeException(eCNFE);
+		
 
-				} catch (ClassNotFoundException eCNFE) {
-					throw new RuntimeException(eCNFE);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.AddressID);
+					
+					// String
+				
+						writeString(this.AddressLine1,dos);
+					
+					// String
+				
+						writeString(this.AddressLine2,dos);
+					
+					// String
+				
+						writeString(this.City,dos);
+					
+					// String
+				
+						writeString(this.StateProvince,dos);
+					
+					// String
+				
+						writeString(this.CountryRegion,dos);
+					
+					// String
+				
+						writeString(this.PostalCode,dos);
+					
+					// Object
+				
+       			    	dos.writeObject(this.rowguid);
+					
+					// java.util.Date
+				
+						writeDate(this.ModifiedDate,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("AddressID="+String.valueOf(AddressID));
+		sb.append(",AddressLine1="+AddressLine1);
+		sb.append(",AddressLine2="+AddressLine2);
+		sb.append(",City="+City);
+		sb.append(",StateProvince="+StateProvince);
+		sb.append(",CountryRegion="+CountryRegion);
+		sb.append(",PostalCode="+PostalCode);
+		sb.append(",rowguid="+String.valueOf(rowguid));
+		sb.append(",ModifiedDate="+String.valueOf(ModifiedDate));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row1Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class after_tDBInput_1Struct implements routines.system.IPersistableRow<after_tDBInput_1Struct> {
+    final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+    static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public int AddressID;
+
+				public int getAddressID () {
+					return this.AddressID;
 				}
+				
+			    public String AddressLine1;
 
-			}
+				public String getAddressLine1 () {
+					return this.AddressLine1;
+				}
+				
+			    public String AddressLine2;
 
+				public String getAddressLine2 () {
+					return this.AddressLine2;
+				}
+				
+			    public String City;
+
+				public String getCity () {
+					return this.City;
+				}
+				
+			    public String StateProvince;
+
+				public String getStateProvince () {
+					return this.StateProvince;
+				}
+				
+			    public String CountryRegion;
+
+				public String getCountryRegion () {
+					return this.CountryRegion;
+				}
+				
+			    public String PostalCode;
+
+				public String getPostalCode () {
+					return this.PostalCode;
+				}
+				
+			    public Object rowguid;
+
+				public Object getRowguid () {
+					return this.rowguid;
+				}
+				
+			    public java.util.Date ModifiedDate;
+
+				public java.util.Date getModifiedDate () {
+					return this.ModifiedDate;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.AddressID;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// int
-
-				dos.writeInt(this.AddressID);
-
-				// String
-
-				writeString(this.AddressLine1, dos);
-
-				// String
-
-				writeString(this.AddressLine2, dos);
-
-				// String
-
-				writeString(this.City, dos);
-
-				// String
-
-				writeString(this.StateProvince, dos);
-
-				// String
-
-				writeString(this.CountryRegion, dos);
-
-				// String
-
-				writeString(this.PostalCode, dos);
-
-				// Object
-
-				dos.writeObject(this.rowguid);
-
-				// java.util.Date
-
-				writeDate(this.ModifiedDate, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("AddressID=" + String.valueOf(AddressID));
-			sb.append(",AddressLine1=" + AddressLine1);
-			sb.append(",AddressLine2=" + AddressLine2);
-			sb.append(",City=" + City);
-			sb.append(",StateProvince=" + StateProvince);
-			sb.append(",CountryRegion=" + CountryRegion);
-			sb.append(",PostalCode=" + PostalCode);
-			sb.append(",rowguid=" + String.valueOf(rowguid));
-			sb.append(",ModifiedDate=" + String.valueOf(ModifiedDate));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row1Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class after_tDBInput_1Struct implements routines.system.IPersistableRow<after_tDBInput_1Struct> {
-		final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final after_tDBInput_1Struct other = (after_tDBInput_1Struct) obj;
+		
+						if (this.AddressID != other.AddressID)
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public int AddressID;
+	public void copyDataTo(after_tDBInput_1Struct other) {
 
-		public int getAddressID() {
-			return this.AddressID;
-		}
+		other.AddressID = this.AddressID;
+	            other.AddressLine1 = this.AddressLine1;
+	            other.AddressLine2 = this.AddressLine2;
+	            other.City = this.City;
+	            other.StateProvince = this.StateProvince;
+	            other.CountryRegion = this.CountryRegion;
+	            other.PostalCode = this.PostalCode;
+	            other.rowguid = this.rowguid;
+	            other.ModifiedDate = this.ModifiedDate;
+	            
+	}
 
-		public String AddressLine1;
+	public void copyKeysDataTo(after_tDBInput_1Struct other) {
 
-		public String getAddressLine1() {
-			return this.AddressLine1;
-		}
+		other.AddressID = this.AddressID;
+	            	
+	}
 
-		public String AddressLine2;
 
-		public String getAddressLine2() {
-			return this.AddressLine2;
-		}
 
-		public String City;
 
-		public String getCity() {
-			return this.City;
-		}
-
-		public String StateProvince;
-
-		public String getStateProvince() {
-			return this.StateProvince;
-		}
-
-		public String CountryRegion;
-
-		public String getCountryRegion() {
-			return this.CountryRegion;
-		}
-
-		public String PostalCode;
-
-		public String getPostalCode() {
-			return this.PostalCode;
-		}
-
-		public Object rowguid;
-
-		public Object getRowguid() {
-			return this.rowguid;
-		}
-
-		public java.util.Date ModifiedDate;
-
-		public java.util.Date getModifiedDate() {
-			return this.ModifiedDate;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + (int) this.AddressID;
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
+				if(length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
+				} else {
+   					commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
+			strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final after_tDBInput_1Struct other = (after_tDBInput_1Struct) obj;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-			if (this.AddressID != other.AddressID)
-				return false;
-
-			return true;
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
+		return dateReturn;
+	}
 
-		public void copyDataTo(after_tDBInput_1Struct other) {
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-			other.AddressID = this.AddressID;
-			other.AddressLine1 = this.AddressLine1;
-			other.AddressLine2 = this.AddressLine2;
-			other.City = this.City;
-			other.StateProvince = this.StateProvince;
-			other.CountryRegion = this.CountryRegion;
-			other.PostalCode = this.PostalCode;
-			other.rowguid = this.rowguid;
-			other.ModifiedDate = this.ModifiedDate;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
 
-		public void copyKeysDataTo(after_tDBInput_1Struct other) {
+        	try {
 
-			other.AddressID = this.AddressID;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length) {
-					if (length < 1024 && commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM.length == 0) {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[1024];
-					} else {
-						commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length);
-				strReturn = new String(commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM, 0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
-
-				try {
-
-					int length = 0;
-
-					this.AddressID = dis.readInt();
-
+        		int length = 0;
+		
+			        this.AddressID = dis.readInt();
+					
 					this.AddressLine1 = readString(dis);
-
+					
 					this.AddressLine2 = readString(dis);
-
+					
 					this.City = readString(dis);
-
+					
 					this.StateProvince = readString(dis);
-
+					
 					this.CountryRegion = readString(dis);
-
+					
 					this.PostalCode = readString(dis);
-
-					this.rowguid = (Object) dis.readObject();
-
+					
+						this.rowguid = (Object) dis.readObject();
+					
 					this.ModifiedDate = readDate(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
+			} catch(ClassNotFoundException eCNFE) {
+				 throw new RuntimeException(eCNFE);
+		
 
-				} catch (ClassNotFoundException eCNFE) {
-					throw new RuntimeException(eCNFE);
+        }
 
-				}
+		
 
-			}
+      }
 
-		}
 
-		public void writeData(ObjectOutputStream dos) {
-			try {
+    }
 
-				// int
+    public void writeData(ObjectOutputStream dos) {
+        try {
 
-				dos.writeInt(this.AddressID);
+		
+					// int
+				
+		            	dos.writeInt(this.AddressID);
+					
+					// String
+				
+						writeString(this.AddressLine1,dos);
+					
+					// String
+				
+						writeString(this.AddressLine2,dos);
+					
+					// String
+				
+						writeString(this.City,dos);
+					
+					// String
+				
+						writeString(this.StateProvince,dos);
+					
+					// String
+				
+						writeString(this.CountryRegion,dos);
+					
+					// String
+				
+						writeString(this.PostalCode,dos);
+					
+					// Object
+				
+       			    	dos.writeObject(this.rowguid);
+					
+					// java.util.Date
+				
+						writeDate(this.ModifiedDate,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
 
-				// String
 
-				writeString(this.AddressLine1, dos);
+    }
 
-				// String
 
-				writeString(this.AddressLine2, dos);
+    public String toString() {
 
-				// String
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("AddressID="+String.valueOf(AddressID));
+		sb.append(",AddressLine1="+AddressLine1);
+		sb.append(",AddressLine2="+AddressLine2);
+		sb.append(",City="+City);
+		sb.append(",StateProvince="+StateProvince);
+		sb.append(",CountryRegion="+CountryRegion);
+		sb.append(",PostalCode="+PostalCode);
+		sb.append(",rowguid="+String.valueOf(rowguid));
+		sb.append(",ModifiedDate="+String.valueOf(ModifiedDate));
+	    sb.append("]");
 
-				writeString(this.City, dos);
+	    return sb.toString();
+    }
 
-				// String
+    /**
+     * Compare keys
+     */
+    public int compareTo(after_tDBInput_1Struct other) {
 
-				writeString(this.StateProvince, dos);
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
+						if(returnValue != 0) {
+							return returnValue;
+						}
 
-				// String
+					
+	    return returnValue;
+    }
 
-				writeString(this.CountryRegion, dos);
 
-				// String
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
 
-				writeString(this.PostalCode, dos);
+        return returnValue;
+    }
 
-				// Object
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
 
-				dos.writeObject(this.rowguid);
 
-				// java.util.Date
+}
+public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
 
-				writeDate(this.ModifiedDate, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("AddressID=" + String.valueOf(AddressID));
-			sb.append(",AddressLine1=" + AddressLine1);
-			sb.append(",AddressLine2=" + AddressLine2);
-			sb.append(",City=" + City);
-			sb.append(",StateProvince=" + StateProvince);
-			sb.append(",CountryRegion=" + CountryRegion);
-			sb.append(",PostalCode=" + PostalCode);
-			sb.append(",rowguid=" + String.valueOf(rowguid));
-			sb.append(",ModifiedDate=" + String.valueOf(ModifiedDate));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(after_tDBInput_1Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
+ final boolean execStat = this.execStat;
 		String currentVirtualComponent = null;
-
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				tDBInput_2Process(globalMap);
 
-				row1Struct row1 = new row1Struct();
-				saida_CustomerAddressStruct saida_CustomerAddress = new saida_CustomerAddressStruct();
-				row3Struct row3 = new row3Struct();
+		tDBInput_2Process(globalMap);
 
-				/**
-				 * [tAggregateRow_1_AGGOUT begin ] start
-				 */
+		row1Struct row1 = new row1Struct();
+saida_CustomerAddressStruct saida_CustomerAddress = new saida_CustomerAddressStruct();
+row3Struct row3 = new row3Struct();
 
-				ok_Hash.put("tAggregateRow_1_AGGOUT", false);
-				start_Hash.put("tAggregateRow_1_AGGOUT", System.currentTimeMillis());
 
-				currentVirtualComponent = "tAggregateRow_1";
 
-				currentComponent = "tAggregateRow_1_AGGOUT";
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "saida_CustomerAddress");
-				}
 
-				int tos_count_tAggregateRow_1_AGGOUT = 0;
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_1_AGGOUT", false);
+		start_Hash.put("tAggregateRow_1_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"saida_CustomerAddress");
+					}
+				
+		int tos_count_tAggregateRow_1_AGGOUT = 0;
+		
 
 // ------------ Seems it is not used
 
-				java.util.Map hashAggreg_tAggregateRow_1 = new java.util.HashMap();
+java.util.Map hashAggreg_tAggregateRow_1 = new java.util.HashMap(); 
 
 // ------------
-				class AggOperationStruct_tAggregateRow_1 { // G_OutBegin_AggR_100
+	class AggOperationStruct_tAggregateRow_1 { // G_OutBegin_AggR_100
 
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
 
-					int CustomerID;
-					int AddressID;
-					String AddressType;
-					String AddressLine1;
-					String AddressLine2;
-					String City;
-					String StateProvince;
-					String CountryRegion;
-					String PostalCode;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
-							result = prime * result + (int) this.CustomerID;
-
-							result = prime * result + (int) this.AddressID;
-
+    				int CustomerID;
+    				int AddressID;
+    				String AddressType;
+    				String AddressLine1;
+    				String AddressLine2;
+    				String City;
+    				String StateProvince;
+    				String CountryRegion;
+    				String PostalCode;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
+								result = prime * result + (int) this.CustomerID;
+							
+								result = prime * result + (int) this.AddressID;
+							
 							result = prime * result + ((this.AddressType == null) ? 0 : this.AddressType.hashCode());
-
+							
 							result = prime * result + ((this.AddressLine1 == null) ? 0 : this.AddressLine1.hashCode());
-
+							
 							result = prime * result + ((this.AddressLine2 == null) ? 0 : this.AddressLine2.hashCode());
-
+							
 							result = prime * result + ((this.City == null) ? 0 : this.City.hashCode());
-
-							result = prime * result
-									+ ((this.StateProvince == null) ? 0 : this.StateProvince.hashCode());
-
-							result = prime * result
-									+ ((this.CountryRegion == null) ? 0 : this.CountryRegion.hashCode());
-
+							
+							result = prime * result + ((this.StateProvince == null) ? 0 : this.StateProvince.hashCode());
+							
+							result = prime * result + ((this.CountryRegion == null) ? 0 : this.CountryRegion.hashCode());
+							
 							result = prime * result + ((this.PostalCode == null) ? 0 : this.PostalCode.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_1 other = (AggOperationStruct_tAggregateRow_1) obj;
+			
+							if (this.CustomerID != other.CustomerID) 
+								return false;
+						
+							if (this.AddressID != other.AddressID) 
+								return false;
+						
+							if (this.AddressType == null) {
+								if (other.AddressType != null) 
+									return false;
+							} else if (!this.AddressType.equals(other.AddressType)) 
+								return false;
+						
+							if (this.AddressLine1 == null) {
+								if (other.AddressLine1 != null) 
+									return false;
+							} else if (!this.AddressLine1.equals(other.AddressLine1)) 
+								return false;
+						
+							if (this.AddressLine2 == null) {
+								if (other.AddressLine2 != null) 
+									return false;
+							} else if (!this.AddressLine2.equals(other.AddressLine2)) 
+								return false;
+						
+							if (this.City == null) {
+								if (other.City != null) 
+									return false;
+							} else if (!this.City.equals(other.City)) 
+								return false;
+						
+							if (this.StateProvince == null) {
+								if (other.StateProvince != null) 
+									return false;
+							} else if (!this.StateProvince.equals(other.StateProvince)) 
+								return false;
+						
+							if (this.CountryRegion == null) {
+								if (other.CountryRegion != null) 
+									return false;
+							} else if (!this.CountryRegion.equals(other.CountryRegion)) 
+								return false;
+						
+							if (this.PostalCode == null) {
+								if (other.PostalCode != null) 
+									return false;
+							} else if (!this.PostalCode.equals(other.PostalCode)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
 
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
+	AggOperationStruct_tAggregateRow_1 operation_result_tAggregateRow_1 = null;
+	AggOperationStruct_tAggregateRow_1 operation_finder_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
+	java.util.Map<AggOperationStruct_tAggregateRow_1,AggOperationStruct_tAggregateRow_1> hash_tAggregateRow_1 = new java.util.HashMap<AggOperationStruct_tAggregateRow_1,AggOperationStruct_tAggregateRow_1>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGOUT begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_1", false);
+		start_Hash.put("tMap_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
 					}
+				
+		int tos_count_tMap_1 = 0;
+		
 
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final AggOperationStruct_tAggregateRow_1 other = (AggOperationStruct_tAggregateRow_1) obj;
 
-						if (this.CustomerID != other.CustomerID)
-							return false;
 
-						if (this.AddressID != other.AddressID)
-							return false;
-
-						if (this.AddressType == null) {
-							if (other.AddressType != null)
-								return false;
-						} else if (!this.AddressType.equals(other.AddressType))
-							return false;
-
-						if (this.AddressLine1 == null) {
-							if (other.AddressLine1 != null)
-								return false;
-						} else if (!this.AddressLine1.equals(other.AddressLine1))
-							return false;
-
-						if (this.AddressLine2 == null) {
-							if (other.AddressLine2 != null)
-								return false;
-						} else if (!this.AddressLine2.equals(other.AddressLine2))
-							return false;
-
-						if (this.City == null) {
-							if (other.City != null)
-								return false;
-						} else if (!this.City.equals(other.City))
-							return false;
-
-						if (this.StateProvince == null) {
-							if (other.StateProvince != null)
-								return false;
-						} else if (!this.StateProvince.equals(other.StateProvince))
-							return false;
-
-						if (this.CountryRegion == null) {
-							if (other.CountryRegion != null)
-								return false;
-						} else if (!this.CountryRegion.equals(other.CountryRegion))
-							return false;
-
-						if (this.PostalCode == null) {
-							if (other.PostalCode != null)
-								return false;
-						} else if (!this.PostalCode.equals(other.PostalCode))
-							return false;
-
-						return true;
-					}
-
-				} // G_OutBegin_AggR_100
-
-				AggOperationStruct_tAggregateRow_1 operation_result_tAggregateRow_1 = null;
-				AggOperationStruct_tAggregateRow_1 operation_finder_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
-				java.util.Map<AggOperationStruct_tAggregateRow_1, AggOperationStruct_tAggregateRow_1> hash_tAggregateRow_1 = new java.util.HashMap<AggOperationStruct_tAggregateRow_1, AggOperationStruct_tAggregateRow_1>();
-
-				/**
-				 * [tAggregateRow_1_AGGOUT begin ] stop
-				 */
-
-				/**
-				 * [tMap_1 begin ] start
-				 */
-
-				ok_Hash.put("tMap_1", false);
-				start_Hash.put("tMap_1", System.currentTimeMillis());
-
-				currentComponent = "tMap_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
-				}
-
-				int tos_count_tMap_1 = 0;
 
 // ###############################
 // # Lookup's keys initialization
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) 
+					globalMap.get( "tHash_Lookup_row2" ))
+					;					
+					
+	
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) globalMap
-						.get("tHash_Lookup_row2"));
-
-				row2Struct row2HashKey = new row2Struct();
-				row2Struct row2Default = new row2Struct();
+row2Struct row2HashKey = new row2Struct();
+row2Struct row2Default = new row2Struct();
 // ###############################        
 
 // ###############################
 // # Vars initialization
-				class Var__tMap_1__Struct {
-				}
-				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
+class  Var__tMap_1__Struct  {
+}
+Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
 // ###############################
 
 // ###############################
 // # Outputs initialization
-				saida_CustomerAddressStruct saida_CustomerAddress_tmp = new saida_CustomerAddressStruct();
+saida_CustomerAddressStruct saida_CustomerAddress_tmp = new saida_CustomerAddressStruct();
 // ###############################
 
-				/**
-				 * [tMap_1 begin ] stop
-				 */
+        
+        
 
-				/**
-				 * [tDBInput_1 begin ] start
-				 */
 
-				ok_Hash.put("tDBInput_1", false);
-				start_Hash.put("tDBInput_1", System.currentTimeMillis());
 
-				currentComponent = "tDBInput_1";
+        
 
-				int tos_count_tDBInput_1 = 0;
 
-				org.talend.designer.components.util.mssql.MSSqlGenerateTimestampUtil mssqlGTU_tDBInput_1 = org.talend.designer.components.util.mssql.MSSqlUtilFactory
-						.getMSSqlGenerateTimestampUtil();
 
-				java.util.List<String> talendToDBList_tDBInput_1 = new java.util.ArrayList();
-				String[] talendToDBArray_tDBInput_1 = new String[] { "FLOAT", "NUMERIC", "NUMERIC IDENTITY", "DECIMAL",
-						"DECIMAL IDENTITY", "REAL" };
-				java.util.Collections.addAll(talendToDBList_tDBInput_1, talendToDBArray_tDBInput_1);
-				int nb_line_tDBInput_1 = 0;
-				java.sql.Connection conn_tDBInput_1 = null;
+
+
+
+
+
+
+ 
+
+
+
+/**
+ * [tMap_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_1", false);
+		start_Hash.put("tDBInput_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_1";
+
+	
+		int tos_count_tDBInput_1 = 0;
+		
+	
+    
+	
+			org.talend.designer.components.util.mssql.MSSqlGenerateTimestampUtil mssqlGTU_tDBInput_1 = org.talend.designer.components.util.mssql.MSSqlUtilFactory.getMSSqlGenerateTimestampUtil();
+			
+			java.util.List<String> talendToDBList_tDBInput_1 = new java.util.ArrayList();
+			String[] talendToDBArray_tDBInput_1  = new String[]{"FLOAT","NUMERIC","NUMERIC IDENTITY","DECIMAL","DECIMAL IDENTITY","REAL"}; 
+			java.util.Collections.addAll(talendToDBList_tDBInput_1, talendToDBArray_tDBInput_1); 
+		    int nb_line_tDBInput_1 = 0;
+		    java.sql.Connection conn_tDBInput_1 = null;
 				String driverClass_tDBInput_1 = "net.sourceforge.jtds.jdbc.Driver";
-				java.lang.Class jdbcclazz_tDBInput_1 = java.lang.Class.forName(driverClass_tDBInput_1);
+			    java.lang.Class jdbcclazz_tDBInput_1 = java.lang.Class.forName(driverClass_tDBInput_1);
 				String dbUser_tDBInput_1 = "sqlfamily";
-
-				final String decryptedPassword_tDBInput_1 = routines.system.PasswordEncryptUtil.decryptPassword(
-						"enc:routine.encryption.key.v1:WgtakIOMqdWRX9lAjE1OvriQbf9RJFEkTI5pbEciDhjbKcG9/A==");
-
+				
+				 
+	final String decryptedPassword_tDBInput_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:L2iBhTTpGjCNydPQ/mYUQoG4heDVLdSc9yzXxvu7chddQAylhw==");
+				
 				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
+				
+		    String port_tDBInput_1 = "1433";
+		    String dbname_tDBInput_1 = "AdventureWorks" ;
+			String url_tDBInput_1 = "jdbc:jtds:sqlserver://" + "sqlservercentralpublic.database.windows.net" ;
+		    if (!"".equals(port_tDBInput_1)) {
+		    	url_tDBInput_1 += ":" + "1433";
+		    }
+		    if (!"".equals(dbname_tDBInput_1)) {
+				url_tDBInput_1 += "//" + "AdventureWorks"; 
+		    }
+		    url_tDBInput_1 += ";appName=" + projectName + ";" + "";
+		    String dbschema_tDBInput_1 = "SalesLT";
+				
+				conn_tDBInput_1 = java.sql.DriverManager.getConnection(url_tDBInput_1,dbUser_tDBInput_1,dbPwd_tDBInput_1);
+		        
+		    
+			java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
 
-				String port_tDBInput_1 = "1433";
-				String dbname_tDBInput_1 = "AdventureWorks";
-				String url_tDBInput_1 = "jdbc:jtds:sqlserver://" + "sqlservercentralpublic.database.windows.net";
-				if (!"".equals(port_tDBInput_1)) {
-					url_tDBInput_1 += ":" + "1433";
-				}
-				if (!"".equals(dbname_tDBInput_1)) {
-					url_tDBInput_1 += "//" + "AdventureWorks";
-				}
-				url_tDBInput_1 += ";appName=" + projectName + ";" + "";
-				String dbschema_tDBInput_1 = "SalesLT";
+		    String dbquery_tDBInput_1 = "SELECT SalesLT.Address.AddressID,\n		SalesLT.Address.AddressLine1,\n		SalesLT.Address.AddressLine2,\n		SalesLT.Address.Cit"
++"y,\n		SalesLT.Address.StateProvince,\n		SalesLT.Address.CountryRegion,\n		SalesLT.Address.PostalCode,\n		SalesLT.Address.row"
++"guid,\n		SalesLT.Address.ModifiedDate\nFROM	SalesLT.Address";
+			
 
-				conn_tDBInput_1 = java.sql.DriverManager.getConnection(url_tDBInput_1, dbUser_tDBInput_1,
-						dbPwd_tDBInput_1);
+            	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
+		    java.sql.ResultSet rs_tDBInput_1 = null;
 
-				java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
+		    try {
+		    	rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
+		    	int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
 
-				String dbquery_tDBInput_1 = "SELECT SalesLT.Address.AddressID,\n		SalesLT.Address.AddressLine1,\n		SalesLT.Address.AddressLine2,\n		SalesLT.Address.Cit"
-						+ "y,\n		SalesLT.Address.StateProvince,\n		SalesLT.Address.CountryRegion,\n		SalesLT.Address.PostalCode,\n		SalesLT.Address.row"
-						+ "guid,\n		SalesLT.Address.ModifiedDate\nFROM	SalesLT.Address";
-
-				globalMap.put("tDBInput_1_QUERY", dbquery_tDBInput_1);
-				java.sql.ResultSet rs_tDBInput_1 = null;
-
-				try {
-					rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
-					java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
-					int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
-
-					String tmpContent_tDBInput_1 = null;
-
-					while (rs_tDBInput_1.next()) {
-						nb_line_tDBInput_1++;
-
-						if (colQtyInRs_tDBInput_1 < 1) {
-							row1.AddressID = 0;
-						} else {
-
-							row1.AddressID = rs_tDBInput_1.getInt(1);
-							if (rs_tDBInput_1.wasNull()) {
-								throw new RuntimeException("Null value in non-Nullable column");
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 2) {
-							row1.AddressLine1 = null;
-						} else {
-
-							tmpContent_tDBInput_1 = rs_tDBInput_1.getString(2);
-							if (tmpContent_tDBInput_1 != null) {
-								if (talendToDBList_tDBInput_1.contains(
-										rsmd_tDBInput_1.getColumnTypeName(2).toUpperCase(java.util.Locale.ENGLISH))) {
-									row1.AddressLine1 = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
-								} else {
-									row1.AddressLine1 = tmpContent_tDBInput_1;
-								}
+		    String tmpContent_tDBInput_1 = null;
+		    
+		    
+		    while (rs_tDBInput_1.next()) {
+		        nb_line_tDBInput_1++;
+		        
+							if(colQtyInRs_tDBInput_1 < 1) {
+								row1.AddressID = 0;
 							} else {
+		                          
+            row1.AddressID = rs_tDBInput_1.getInt(1);
+            if(rs_tDBInput_1.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 2) {
 								row1.AddressLine1 = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 3) {
-							row1.AddressLine2 = null;
-						} else {
-
-							tmpContent_tDBInput_1 = rs_tDBInput_1.getString(3);
-							if (tmpContent_tDBInput_1 != null) {
-								if (talendToDBList_tDBInput_1.contains(
-										rsmd_tDBInput_1.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
-									row1.AddressLine2 = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
-								} else {
-									row1.AddressLine2 = tmpContent_tDBInput_1;
-								}
 							} else {
+	                         		
+           		tmpContent_tDBInput_1 = rs_tDBInput_1.getString(2);
+            if(tmpContent_tDBInput_1 != null) {
+            	if (talendToDBList_tDBInput_1 .contains(rsmd_tDBInput_1.getColumnTypeName(2).toUpperCase(java.util.Locale.ENGLISH))) {
+            		row1.AddressLine1 = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
+            	} else {
+                	row1.AddressLine1 = tmpContent_tDBInput_1;
+                }
+            } else {
+                row1.AddressLine1 = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 3) {
 								row1.AddressLine2 = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 4) {
-							row1.City = null;
-						} else {
-
-							tmpContent_tDBInput_1 = rs_tDBInput_1.getString(4);
-							if (tmpContent_tDBInput_1 != null) {
-								if (talendToDBList_tDBInput_1.contains(
-										rsmd_tDBInput_1.getColumnTypeName(4).toUpperCase(java.util.Locale.ENGLISH))) {
-									row1.City = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
-								} else {
-									row1.City = tmpContent_tDBInput_1;
-								}
 							} else {
+	                         		
+           		tmpContent_tDBInput_1 = rs_tDBInput_1.getString(3);
+            if(tmpContent_tDBInput_1 != null) {
+            	if (talendToDBList_tDBInput_1 .contains(rsmd_tDBInput_1.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
+            		row1.AddressLine2 = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
+            	} else {
+                	row1.AddressLine2 = tmpContent_tDBInput_1;
+                }
+            } else {
+                row1.AddressLine2 = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 4) {
 								row1.City = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 5) {
-							row1.StateProvince = null;
-						} else {
-
-							tmpContent_tDBInput_1 = rs_tDBInput_1.getString(5);
-							if (tmpContent_tDBInput_1 != null) {
-								if (talendToDBList_tDBInput_1.contains(
-										rsmd_tDBInput_1.getColumnTypeName(5).toUpperCase(java.util.Locale.ENGLISH))) {
-									row1.StateProvince = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
-								} else {
-									row1.StateProvince = tmpContent_tDBInput_1;
-								}
 							} else {
+	                         		
+           		tmpContent_tDBInput_1 = rs_tDBInput_1.getString(4);
+            if(tmpContent_tDBInput_1 != null) {
+            	if (talendToDBList_tDBInput_1 .contains(rsmd_tDBInput_1.getColumnTypeName(4).toUpperCase(java.util.Locale.ENGLISH))) {
+            		row1.City = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
+            	} else {
+                	row1.City = tmpContent_tDBInput_1;
+                }
+            } else {
+                row1.City = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 5) {
 								row1.StateProvince = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 6) {
-							row1.CountryRegion = null;
-						} else {
-
-							tmpContent_tDBInput_1 = rs_tDBInput_1.getString(6);
-							if (tmpContent_tDBInput_1 != null) {
-								if (talendToDBList_tDBInput_1.contains(
-										rsmd_tDBInput_1.getColumnTypeName(6).toUpperCase(java.util.Locale.ENGLISH))) {
-									row1.CountryRegion = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
-								} else {
-									row1.CountryRegion = tmpContent_tDBInput_1;
-								}
 							} else {
+	                         		
+           		tmpContent_tDBInput_1 = rs_tDBInput_1.getString(5);
+            if(tmpContent_tDBInput_1 != null) {
+            	if (talendToDBList_tDBInput_1 .contains(rsmd_tDBInput_1.getColumnTypeName(5).toUpperCase(java.util.Locale.ENGLISH))) {
+            		row1.StateProvince = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
+            	} else {
+                	row1.StateProvince = tmpContent_tDBInput_1;
+                }
+            } else {
+                row1.StateProvince = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 6) {
 								row1.CountryRegion = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 7) {
-							row1.PostalCode = null;
-						} else {
-
-							tmpContent_tDBInput_1 = rs_tDBInput_1.getString(7);
-							if (tmpContent_tDBInput_1 != null) {
-								if (talendToDBList_tDBInput_1.contains(
-										rsmd_tDBInput_1.getColumnTypeName(7).toUpperCase(java.util.Locale.ENGLISH))) {
-									row1.PostalCode = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
-								} else {
-									row1.PostalCode = tmpContent_tDBInput_1;
-								}
 							} else {
+	                         		
+           		tmpContent_tDBInput_1 = rs_tDBInput_1.getString(6);
+            if(tmpContent_tDBInput_1 != null) {
+            	if (talendToDBList_tDBInput_1 .contains(rsmd_tDBInput_1.getColumnTypeName(6).toUpperCase(java.util.Locale.ENGLISH))) {
+            		row1.CountryRegion = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
+            	} else {
+                	row1.CountryRegion = tmpContent_tDBInput_1;
+                }
+            } else {
+                row1.CountryRegion = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 7) {
 								row1.PostalCode = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 8) {
-							row1.rowguid = null;
-						} else {
-
-							row1.rowguid = rs_tDBInput_1.getObject(8);
-							if (rs_tDBInput_1.wasNull()) {
-								throw new RuntimeException("Null value in non-Nullable column");
-							}
-						}
-						if (colQtyInRs_tDBInput_1 < 9) {
-							row1.ModifiedDate = null;
-						} else {
-
-							row1.ModifiedDate = mssqlGTU_tDBInput_1.getDate(rsmd_tDBInput_1, rs_tDBInput_1, 9);
-
-						}
-
-						/**
-						 * [tDBInput_1 begin ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 main ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
-						tos_count_tDBInput_1++;
-
-						/**
-						 * [tDBInput_1 main ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 process_data_begin ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
-						/**
-						 * [tDBInput_1 process_data_begin ] stop
-						 */
-
-						/**
-						 * [tMap_1 main ] start
-						 */
-
-						currentComponent = "tMap_1";
-
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
-						}
-
-						boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
-
-						// ###############################
-						// # Input tables (lookups)
-						boolean rejectedInnerJoin_tMap_1 = false;
-						boolean mainRowRejected_tMap_1 = false;
-
-						///////////////////////////////////////////////
-						// Starting Lookup Table "row2"
-						///////////////////////////////////////////////
-
-						boolean forceLooprow2 = false;
-
-						row2Struct row2ObjectFromLookup = null;
-
-						if (!rejectedInnerJoin_tMap_1) { // G_TM_M_020
-
-							hasCasePrimitiveKeyWithNull_tMap_1 = false;
-
-							Object exprKeyValue_row2__AddressID = row1.AddressID;
-							if (exprKeyValue_row2__AddressID == null) {
-								hasCasePrimitiveKeyWithNull_tMap_1 = true;
 							} else {
-								row2HashKey.AddressID = (int) (Integer) exprKeyValue_row2__AddressID;
-							}
+	                         		
+           		tmpContent_tDBInput_1 = rs_tDBInput_1.getString(7);
+            if(tmpContent_tDBInput_1 != null) {
+            	if (talendToDBList_tDBInput_1 .contains(rsmd_tDBInput_1.getColumnTypeName(7).toUpperCase(java.util.Locale.ENGLISH))) {
+            		row1.PostalCode = FormatterUtils.formatUnwithE(tmpContent_tDBInput_1);
+            	} else {
+                	row1.PostalCode = tmpContent_tDBInput_1;
+                }
+            } else {
+                row1.PostalCode = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 8) {
+								row1.rowguid = null;
+							} else {
+		                          
+            row1.rowguid = rs_tDBInput_1.getObject(8);
+            if(rs_tDBInput_1.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_1 < 9) {
+								row1.ModifiedDate = null;
+							} else {
+										
+			row1.ModifiedDate = mssqlGTU_tDBInput_1.getDate(rsmd_tDBInput_1, rs_tDBInput_1, 9);
+			
+		                    }
+					
 
-							row2HashKey.hashCodeDirty = true;
 
-							if (!hasCasePrimitiveKeyWithNull_tMap_1) { // G_TM_M_091
 
-								tHash_Lookup_row2.lookup(row2HashKey);
 
-							} // G_TM_M_091
 
-							if (hasCasePrimitiveKeyWithNull_tMap_1 || !tHash_Lookup_row2.hasNext()) { // G_TM_M_090
+ 
 
-								forceLooprow2 = true;
 
-							} // G_TM_M_090
 
-						} // G_TM_M_020
+/**
+ * [tDBInput_1 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_1 main ] start
+	 */
 
-						else { // G 20 - G 21
-							forceLooprow2 = true;
-						} // G 21
+	
 
-						row2Struct row2 = null;
+	
+	
+	currentComponent="tDBInput_1";
 
-						while ((tHash_Lookup_row2 != null && tHash_Lookup_row2.hasNext()) || forceLooprow2) { // G_TM_M_043
+	
 
-							// CALL close loop of lookup 'row2'
+ 
 
-							row2Struct fromLookup_row2 = null;
+
+	tos_count_tDBInput_1++;
+
+/**
+ * [tDBInput_1 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_1 process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tMap_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
+
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_1 = false;
+		  boolean mainRowRejected_tMap_1 = false;
+            				    								  
+		
+
+				///////////////////////////////////////////////
+				// Starting Lookup Table "row2" 
+				///////////////////////////////////////////////
+
+
+				
+				
+                            
+ 					    boolean forceLooprow2 = false;
+       		  	    	
+       		  	    	
+ 							row2Struct row2ObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_1) { // G_TM_M_020
+
+								
+								hasCasePrimitiveKeyWithNull_tMap_1 = false;
+								
+	                        		    	Object exprKeyValue_row2__AddressID = row1.AddressID ;
+	                        		    	if(exprKeyValue_row2__AddressID == null) {
+	                        		    		hasCasePrimitiveKeyWithNull_tMap_1 = true;
+	                        		    	} else {
+                        		    			row2HashKey.AddressID = (int)(Integer) exprKeyValue_row2__AddressID;
+                        		    		}
+                        		    		
+
+								
+		                        	row2HashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+	
+		  							if(!hasCasePrimitiveKeyWithNull_tMap_1) { // G_TM_M_091
+		  							
+			  					
+			  					
+			  					
+	  					
+		  							tHash_Lookup_row2.lookup( row2HashKey );
+
+	  							
+
+	  							
+
+			  						} // G_TM_M_091
+			  						
+			  					
+
+ 								
+								  
+								  if(hasCasePrimitiveKeyWithNull_tMap_1 || !tHash_Lookup_row2.hasNext()) { // G_TM_M_090
+
+  								
+		  				
+	  								
+						
+									
+	
+		  								forceLooprow2 = true;
+	  					
+  									
+  									  		
+ 								
+								  
+								  } // G_TM_M_090
+
+  								
+
+
+
+							} // G_TM_M_020
+			           		  	  
+							
+								
+								else { // G 20 - G 21
+   									forceLooprow2 = true;
+			           		  	} // G 21
+                    		  	
+                    		
+
+							row2Struct row2 = null;
+                    		  	 
+							
+
+								while ((tHash_Lookup_row2 != null && tHash_Lookup_row2.hasNext()) || forceLooprow2) { // G_TM_M_043
+
+								
+									 // CALL close loop of lookup 'row2'
+									
+                    		  	 
+							   
+                    		  	 
+	       		  	    	row2Struct fromLookup_row2 = null;
 							row2 = row2Default;
-
-							if (!forceLooprow2) { // G 46
-
+										 
+							
+								
+								if(!forceLooprow2) { // G 46
+								
+							
+								 
+							
+								
 								fromLookup_row2 = tHash_Lookup_row2.next();
 
-								if (fromLookup_row2 != null) {
-									row2 = fromLookup_row2;
-								}
+							
 
-							} // G 46
+							if(fromLookup_row2 != null) {
+								row2 = fromLookup_row2;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	                    	
+	                    		} // G 46
+	                    		  	
+								forceLooprow2 = false;
+									 	
+							
+	            	
+	            	
+	            // ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
+        // ###############################
+        // # Output tables
 
-							forceLooprow2 = false;
+saida_CustomerAddress = null;
 
-							// ###############################
-							{ // start of Var scope
-
-								// ###############################
-								// # Vars tables
-
-								Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
-								// ###############################
-								// # Output tables
-
-								saida_CustomerAddress = null;
 
 // # Output table : 'saida_CustomerAddress'
-								saida_CustomerAddress_tmp.CustomerID = row2.CustomerID;
-								saida_CustomerAddress_tmp.AddressID = row1.AddressID;
-								saida_CustomerAddress_tmp.AddressType = row2.AddressType;
-								saida_CustomerAddress_tmp.AddressLine1 = row1.AddressLine1;
-								saida_CustomerAddress_tmp.AddressLine2 = row1.AddressLine2;
-								saida_CustomerAddress_tmp.City = row1.City;
-								saida_CustomerAddress_tmp.StateProvince = row1.StateProvince;
-								saida_CustomerAddress_tmp.CountryRegion = row1.CountryRegion;
-								saida_CustomerAddress_tmp.PostalCode = row1.PostalCode;
-								saida_CustomerAddress = saida_CustomerAddress_tmp;
+saida_CustomerAddress_tmp.CustomerID = row2.CustomerID ;
+saida_CustomerAddress_tmp.AddressID = row1.AddressID ;
+saida_CustomerAddress_tmp.AddressType = row2.AddressType ;
+saida_CustomerAddress_tmp.AddressLine1 = row1.AddressLine1;
+saida_CustomerAddress_tmp.AddressLine2 = row1.AddressLine2 ;
+saida_CustomerAddress_tmp.City = row1.City ;
+saida_CustomerAddress_tmp.StateProvince = row1.StateProvince ;
+saida_CustomerAddress_tmp.CountryRegion = row1.CountryRegion ;
+saida_CustomerAddress_tmp.PostalCode = row1.PostalCode ;
+saida_CustomerAddress = saida_CustomerAddress_tmp;
 // ###############################
 
-							} // end of Var scope
+} // end of Var scope
 
-							rejectedInnerJoin_tMap_1 = false;
+rejectedInnerJoin_tMap_1 = false;
 
-							tos_count_tMap_1++;
 
-							/**
-							 * [tMap_1 main ] stop
-							 */
 
-							/**
-							 * [tMap_1 process_data_begin ] start
-							 */
 
-							currentComponent = "tMap_1";
 
-							/**
-							 * [tMap_1 process_data_begin ] stop
-							 */
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_1++;
+
+/**
+ * [tMap_1 main ] stop
+ */
+	
+	/**
+	 * [tMap_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 process_data_begin ] stop
+ */
 // Start of branch "saida_CustomerAddress"
-							if (saida_CustomerAddress != null) {
+if(saida_CustomerAddress != null) { 
 
-								/**
-								 * [tAggregateRow_1_AGGOUT main ] start
-								 */
 
-								currentVirtualComponent = "tAggregateRow_1";
 
-								currentComponent = "tAggregateRow_1_AGGOUT";
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT main ] start
+	 */
 
-								if (execStat) {
-									runStat.updateStatOnConnection(iterateId, 1, 1, "saida_CustomerAddress");
-								}
+	
 
-								operation_finder_tAggregateRow_1.CustomerID = saida_CustomerAddress.CustomerID;
-								operation_finder_tAggregateRow_1.AddressID = saida_CustomerAddress.AddressID;
-								operation_finder_tAggregateRow_1.AddressType = saida_CustomerAddress.AddressType;
-								operation_finder_tAggregateRow_1.AddressLine1 = saida_CustomerAddress.AddressLine1;
-								operation_finder_tAggregateRow_1.AddressLine2 = saida_CustomerAddress.AddressLine2;
-								operation_finder_tAggregateRow_1.City = saida_CustomerAddress.City;
-								operation_finder_tAggregateRow_1.StateProvince = saida_CustomerAddress.StateProvince;
-								operation_finder_tAggregateRow_1.CountryRegion = saida_CustomerAddress.CountryRegion;
-								operation_finder_tAggregateRow_1.PostalCode = saida_CustomerAddress.PostalCode;
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
 
-								operation_finder_tAggregateRow_1.hashCodeDirty = true;
-
-								operation_result_tAggregateRow_1 = hash_tAggregateRow_1
-										.get(operation_finder_tAggregateRow_1);
-
-								if (operation_result_tAggregateRow_1 == null) { // G_OutMain_AggR_001
-
-									operation_result_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
-
-									operation_result_tAggregateRow_1.CustomerID = operation_finder_tAggregateRow_1.CustomerID;
-									operation_result_tAggregateRow_1.AddressID = operation_finder_tAggregateRow_1.AddressID;
-									operation_result_tAggregateRow_1.AddressType = operation_finder_tAggregateRow_1.AddressType;
-									operation_result_tAggregateRow_1.AddressLine1 = operation_finder_tAggregateRow_1.AddressLine1;
-									operation_result_tAggregateRow_1.AddressLine2 = operation_finder_tAggregateRow_1.AddressLine2;
-									operation_result_tAggregateRow_1.City = operation_finder_tAggregateRow_1.City;
-									operation_result_tAggregateRow_1.StateProvince = operation_finder_tAggregateRow_1.StateProvince;
-									operation_result_tAggregateRow_1.CountryRegion = operation_finder_tAggregateRow_1.CountryRegion;
-									operation_result_tAggregateRow_1.PostalCode = operation_finder_tAggregateRow_1.PostalCode;
-
-									hash_tAggregateRow_1.put(operation_result_tAggregateRow_1,
-											operation_result_tAggregateRow_1);
-
-								} // G_OutMain_AggR_001
-
-								tos_count_tAggregateRow_1_AGGOUT++;
-
-								/**
-								 * [tAggregateRow_1_AGGOUT main ] stop
-								 */
-
-								/**
-								 * [tAggregateRow_1_AGGOUT process_data_begin ] start
-								 */
-
-								currentVirtualComponent = "tAggregateRow_1";
-
-								currentComponent = "tAggregateRow_1_AGGOUT";
-
-								/**
-								 * [tAggregateRow_1_AGGOUT process_data_begin ] stop
-								 */
-
-								/**
-								 * [tAggregateRow_1_AGGOUT process_data_end ] start
-								 */
-
-								currentVirtualComponent = "tAggregateRow_1";
-
-								currentComponent = "tAggregateRow_1_AGGOUT";
-
-								/**
-								 * [tAggregateRow_1_AGGOUT process_data_end ] stop
-								 */
-
-							} // End of branch "saida_CustomerAddress"
-
-						} // close loop of lookup 'row2' // G_TM_M_043
-
-						/**
-						 * [tMap_1 process_data_end ] start
-						 */
-
-						currentComponent = "tMap_1";
-
-						/**
-						 * [tMap_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 process_data_end ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
-						/**
-						 * [tDBInput_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 end ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"saida_CustomerAddress");
 					}
-				} finally {
-					if (rs_tDBInput_1 != null) {
-						rs_tDBInput_1.close();
-					}
-					if (stmt_tDBInput_1 != null) {
-						stmt_tDBInput_1.close();
-					}
-					if (conn_tDBInput_1 != null && !conn_tDBInput_1.isClosed()) {
+					
+	
+operation_finder_tAggregateRow_1.CustomerID = saida_CustomerAddress.CustomerID;
+			operation_finder_tAggregateRow_1.AddressID = saida_CustomerAddress.AddressID;
+			operation_finder_tAggregateRow_1.AddressType = saida_CustomerAddress.AddressType;
+			operation_finder_tAggregateRow_1.AddressLine1 = saida_CustomerAddress.AddressLine1;
+			operation_finder_tAggregateRow_1.AddressLine2 = saida_CustomerAddress.AddressLine2;
+			operation_finder_tAggregateRow_1.City = saida_CustomerAddress.City;
+			operation_finder_tAggregateRow_1.StateProvince = saida_CustomerAddress.StateProvince;
+			operation_finder_tAggregateRow_1.CountryRegion = saida_CustomerAddress.CountryRegion;
+			operation_finder_tAggregateRow_1.PostalCode = saida_CustomerAddress.PostalCode;
+			
 
-						conn_tDBInput_1.close();
+	operation_finder_tAggregateRow_1.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_1 = hash_tAggregateRow_1.get(operation_finder_tAggregateRow_1);
 
-						if ("com.mysql.cj.jdbc.Driver".equals((String) globalMap.get("driverClass_"))
-								&& routines.system.BundleUtils.inOSGi()) {
-							Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread")
-									.getMethod("checkedShutdown").invoke(null, (Object[]) null);
-						}
+	
 
-					}
-				}
-				globalMap.put("tDBInput_1_NB_LINE", nb_line_tDBInput_1);
+	if(operation_result_tAggregateRow_1 == null) { // G_OutMain_AggR_001
 
-				ok_Hash.put("tDBInput_1", true);
-				end_Hash.put("tDBInput_1", System.currentTimeMillis());
+		operation_result_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
 
-				/**
-				 * [tDBInput_1 end ] stop
-				 */
+		operation_result_tAggregateRow_1.CustomerID = operation_finder_tAggregateRow_1.CustomerID;
+				operation_result_tAggregateRow_1.AddressID = operation_finder_tAggregateRow_1.AddressID;
+				operation_result_tAggregateRow_1.AddressType = operation_finder_tAggregateRow_1.AddressType;
+				operation_result_tAggregateRow_1.AddressLine1 = operation_finder_tAggregateRow_1.AddressLine1;
+				operation_result_tAggregateRow_1.AddressLine2 = operation_finder_tAggregateRow_1.AddressLine2;
+				operation_result_tAggregateRow_1.City = operation_finder_tAggregateRow_1.City;
+				operation_result_tAggregateRow_1.StateProvince = operation_finder_tAggregateRow_1.StateProvince;
+				operation_result_tAggregateRow_1.CountryRegion = operation_finder_tAggregateRow_1.CountryRegion;
+				operation_result_tAggregateRow_1.PostalCode = operation_finder_tAggregateRow_1.PostalCode;
+				
+		
+		
 
-				/**
-				 * [tMap_1 end ] start
-				 */
+		hash_tAggregateRow_1.put(operation_result_tAggregateRow_1, operation_result_tAggregateRow_1);
+	
+	} // G_OutMain_AggR_001
 
-				currentComponent = "tMap_1";
+
+	
+
+
+ 
+
+
+	tos_count_tAggregateRow_1_AGGOUT++;
+
+/**
+ * [tAggregateRow_1_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "saida_CustomerAddress"
+
+
+
+	
+		} // close loop of lookup 'row2' // G_TM_M_043
+	
+	
+	/**
+	 * [tMap_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_1 != null) {
+		rs_tDBInput_1.close();
+	}
+	if (stmt_tDBInput_1 != null) {
+		stmt_tDBInput_1.close();
+	}
+		if(conn_tDBInput_1 != null && !conn_tDBInput_1.isClosed()) {
+			
+			conn_tDBInput_1.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+		}
+}
+globalMap.put("tDBInput_1_NB_LINE",nb_line_tDBInput_1);
+
+ 
+
+ok_Hash.put("tDBInput_1", true);
+end_Hash.put("tDBInput_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_1 end ] stop
+ */
+
+	
+	/**
+	 * [tMap_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
 
 // ###############################
 // # Lookup hashes releasing
-				if (tHash_Lookup_row2 != null) {
-					tHash_Lookup_row2.endGet();
-				}
-				globalMap.remove("tHash_Lookup_row2");
+					if(tHash_Lookup_row2 != null) {
+						tHash_Lookup_row2.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_row2" );
 
+					
+					
+				
 // ###############################      
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
-				}
 
-				ok_Hash.put("tMap_1", true);
-				end_Hash.put("tMap_1", System.currentTimeMillis());
 
-				/**
-				 * [tMap_1 end ] stop
-				 */
 
-				/**
-				 * [tAggregateRow_1_AGGOUT end ] start
-				 */
 
-				currentVirtualComponent = "tAggregateRow_1";
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
+ 
 
-				currentComponent = "tAggregateRow_1_AGGOUT";
+ok_Hash.put("tMap_1", true);
+end_Hash.put("tMap_1", System.currentTimeMillis());
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "saida_CustomerAddress");
-				}
 
-				ok_Hash.put("tAggregateRow_1_AGGOUT", true);
-				end_Hash.put("tAggregateRow_1_AGGOUT", System.currentTimeMillis());
 
-				/**
-				 * [tAggregateRow_1_AGGOUT end ] stop
-				 */
 
-				/**
-				 * [tFileOutputDelimited_1 begin ] start
-				 */
+/**
+ * [tMap_1 end ] stop
+ */
 
-				ok_Hash.put("tFileOutputDelimited_1", false);
-				start_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT end ] start
+	 */
 
-				currentComponent = "tFileOutputDelimited_1";
+	
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
-				}
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
 
-				int tos_count_tFileOutputDelimited_1 = 0;
+	
 
-				String fileName_tFileOutputDelimited_1 = "";
-				fileName_tFileOutputDelimited_1 = (new java.io.File(
-						"C:/Users/USER/OneDrive/FIAP/12ABD/repos/DataOps/Dados/HARMONIZED/CustomerAddress_HARM.csv"))
-								.getAbsolutePath().replace("\\", "/");
-				String fullName_tFileOutputDelimited_1 = null;
-				String extension_tFileOutputDelimited_1 = null;
-				String directory_tFileOutputDelimited_1 = null;
-				if ((fileName_tFileOutputDelimited_1.indexOf("/") != -1)) {
-					if (fileName_tFileOutputDelimited_1.lastIndexOf(".") < fileName_tFileOutputDelimited_1
-							.lastIndexOf("/")) {
-						fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1;
-						extension_tFileOutputDelimited_1 = "";
-					} else {
-						fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0,
-								fileName_tFileOutputDelimited_1.lastIndexOf("."));
-						extension_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1
-								.substring(fileName_tFileOutputDelimited_1.lastIndexOf("."));
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"saida_CustomerAddress");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_1_AGGOUT", true);
+end_Hash.put("tAggregateRow_1_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_1_AGGOUT end ] stop
+ */
+
+
+	
+	/**
+	 * [tFileOutputDelimited_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_1", false);
+		start_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
 					}
-					directory_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0,
-							fileName_tFileOutputDelimited_1.lastIndexOf("/"));
-				} else {
-					if (fileName_tFileOutputDelimited_1.lastIndexOf(".") != -1) {
-						fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0,
-								fileName_tFileOutputDelimited_1.lastIndexOf("."));
-						extension_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1
-								.substring(fileName_tFileOutputDelimited_1.lastIndexOf("."));
-					} else {
-						fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1;
-						extension_tFileOutputDelimited_1 = "";
+				
+		int tos_count_tFileOutputDelimited_1 = 0;
+		
+
+String fileName_tFileOutputDelimited_1 = "";
+    fileName_tFileOutputDelimited_1 = (new java.io.File("C:/Repos/DataOps/Dados/HARMONIZED/CustomerAddress_HARM.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_1 = null;
+    String extension_tFileOutputDelimited_1 = null;
+    String directory_tFileOutputDelimited_1 = null;
+    if((fileName_tFileOutputDelimited_1.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_1.lastIndexOf(".") < fileName_tFileOutputDelimited_1.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1;
+            extension_tFileOutputDelimited_1 = "";
+        } else {
+            fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0, fileName_tFileOutputDelimited_1.lastIndexOf("."));
+            extension_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(fileName_tFileOutputDelimited_1.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0, fileName_tFileOutputDelimited_1.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_1.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0, fileName_tFileOutputDelimited_1.lastIndexOf("."));
+            extension_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(fileName_tFileOutputDelimited_1.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1;
+            extension_tFileOutputDelimited_1 = "";
+        }
+        directory_tFileOutputDelimited_1 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_1 = true;
+    java.io.File filetFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
+    globalMap.put("tFileOutputDelimited_1_FILE_NAME",fileName_tFileOutputDelimited_1);
+                String[] headColutFileOutputDelimited_1=new String[9];
+            class CSVBasicSet_tFileOutputDelimited_1{
+                private char field_Delim;
+                private char row_Delim;
+                private char escape;
+                private char textEnclosure;
+                private boolean useCRLFRecordDelimiter;
+
+                public boolean isUseCRLFRecordDelimiter() {
+                    return useCRLFRecordDelimiter;
+                }
+
+                public void setFieldSeparator(String fieldSep) throws IllegalArgumentException{
+                    char field_Delim_tFileOutputDelimited_1[] = null;
+
+                    //support passing value (property: Field Separator) by 'context.fs' or 'globalMap.get("fs")'.
+                    if (fieldSep.length() > 0 ){
+                        field_Delim_tFileOutputDelimited_1 = fieldSep.toCharArray();
+                    }else {
+                        throw new IllegalArgumentException("Field Separator must be assigned a char.");
+                    }
+                    this.field_Delim = field_Delim_tFileOutputDelimited_1[0];
+                }
+
+                public char getFieldDelim(){
+                    if(this.field_Delim==0){
+                        setFieldSeparator(";");
+                    }
+                    return this.field_Delim;
+                }
+
+                public void setRowSeparator(String rowSep){
+                    if("\r\n".equals(rowSep)) {
+                        useCRLFRecordDelimiter = true;
+                        return;
+                    }
+                    char row_DelimtFileOutputDelimited_1[] = null;
+
+                    //support passing value (property: Row Separator) by 'context.rs' or 'globalMap.get("rs")'.
+                    if (rowSep.length() > 0 ){
+                        row_DelimtFileOutputDelimited_1 = rowSep.toCharArray();
+                    }else {
+                        throw new IllegalArgumentException("Row Separator must be assigned a char.");
+                    }
+                    this.row_Delim = row_DelimtFileOutputDelimited_1[0];
+                }
+
+                public char getRowDelim(){
+                    if(this.row_Delim==0){
+                        setRowSeparator("\n");
+                    }
+                    return this.row_Delim;
+                }
+
+                public void setEscapeAndTextEnclosure(String strEscape, String strTextEnclosure) throws IllegalArgumentException{
+                    if(strEscape.length() <= 0 ){
+                        throw new IllegalArgumentException("Escape Char must be assigned a char.");
+                    }
+
+                    if ("".equals(strTextEnclosure)) strTextEnclosure = "\0";
+                    char textEnclosure_tFileOutputDelimited_1[] = null;
+
+                    if(strTextEnclosure.length() > 0 ){
+                        textEnclosure_tFileOutputDelimited_1 = strTextEnclosure.toCharArray();
+                    }else {
+                        throw new IllegalArgumentException("Text Enclosure must be assigned a char.");
+                    }
+
+                    this.textEnclosure = textEnclosure_tFileOutputDelimited_1[0];
+
+                    if(("\\").equals(strEscape)){
+                        this.escape = '\\';
+                    }else if(strEscape.equals(strTextEnclosure)){
+                        this.escape = this.textEnclosure;
+                    } else {
+                        //the default escape mode is double escape
+                        this.escape = this.textEnclosure;
+                    }
+
+
+                }
+
+                public char getEscapeChar(){
+                    return (char)this.escape;
+                }
+
+                public char getTextEnclosure(){
+                    return this.textEnclosure;
+                }
+            }
+
+            int nb_line_tFileOutputDelimited_1 = 0;
+            int splitedFileNo_tFileOutputDelimited_1 =0;
+            int currentRow_tFileOutputDelimited_1 = 0;
+
+
+            CSVBasicSet_tFileOutputDelimited_1 csvSettings_tFileOutputDelimited_1 = new CSVBasicSet_tFileOutputDelimited_1();
+            csvSettings_tFileOutputDelimited_1.setFieldSeparator(";");
+            csvSettings_tFileOutputDelimited_1.setRowSeparator("\n");
+            csvSettings_tFileOutputDelimited_1.setEscapeAndTextEnclosure("\"","\"");
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_1 != null && directory_tFileOutputDelimited_1.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_1 = new java.io.File(directory_tFileOutputDelimited_1);
+                        if(!dir_tFileOutputDelimited_1.exists()) {
+                            dir_tFileOutputDelimited_1.mkdirs();
+                        }
+                    }
+                            com.talend.csv.CSVWriter CsvWritertFileOutputDelimited_1 = null;
+
+                            java.io.File fileToDelete_tFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
+                            if(fileToDelete_tFileOutputDelimited_1.exists()) {
+                                fileToDelete_tFileOutputDelimited_1.delete();
+                            }
+                            CsvWritertFileOutputDelimited_1 = new com.talend.csv.CSVWriter(new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                            new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, false), "UTF-8")));
+                            CsvWritertFileOutputDelimited_1.setSeparator(csvSettings_tFileOutputDelimited_1.getFieldDelim());
+                    if(!csvSettings_tFileOutputDelimited_1.isUseCRLFRecordDelimiter() && csvSettings_tFileOutputDelimited_1.getRowDelim()!='\r' && csvSettings_tFileOutputDelimited_1.getRowDelim()!='\n') {
+                        CsvWritertFileOutputDelimited_1.setLineEnd(""+csvSettings_tFileOutputDelimited_1.getRowDelim());
+                    }
+                        if(filetFileOutputDelimited_1.length()==0){
+                                    headColutFileOutputDelimited_1[0]="CustomerID";
+                                    headColutFileOutputDelimited_1[1]="AddressID";
+                                    headColutFileOutputDelimited_1[2]="AddressType";
+                                    headColutFileOutputDelimited_1[3]="AddressLine1";
+                                    headColutFileOutputDelimited_1[4]="AddressLine2";
+                                    headColutFileOutputDelimited_1[5]="City";
+                                    headColutFileOutputDelimited_1[6]="StateProvince";
+                                    headColutFileOutputDelimited_1[7]="CountryRegion";
+                                    headColutFileOutputDelimited_1[8]="PostalCode";
+                            CsvWritertFileOutputDelimited_1.writeNext(headColutFileOutputDelimited_1);
+                            CsvWritertFileOutputDelimited_1.flush();
+                        }
+                CsvWritertFileOutputDelimited_1.setEscapeChar(csvSettings_tFileOutputDelimited_1.getEscapeChar());
+                CsvWritertFileOutputDelimited_1.setQuoteChar(csvSettings_tFileOutputDelimited_1.getTextEnclosure());
+                CsvWritertFileOutputDelimited_1.setQuoteStatus(com.talend.csv.CSVWriter.QuoteStatus.FORCE);
+
+
+
+    resourceMap.put("CsvWriter_tFileOutputDelimited_1", CsvWritertFileOutputDelimited_1);
+resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_1_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_1_AGGIN", false);
+		start_Hash.put("tAggregateRow_1_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+		int tos_count_tAggregateRow_1_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_1> values_tAggregateRow_1 = hash_tAggregateRow_1.values();
+
+globalMap.put("tAggregateRow_1_NB_LINE", values_tAggregateRow_1.size());
+
+for(AggOperationStruct_tAggregateRow_1 aggregated_row_tAggregateRow_1 : values_tAggregateRow_1) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+
+            				    row3.CustomerID = aggregated_row_tAggregateRow_1.CustomerID;
+            				    
+            				    row3.AddressID = aggregated_row_tAggregateRow_1.AddressID;
+            				    
+            				    row3.AddressType = aggregated_row_tAggregateRow_1.AddressType;
+            				    
+            				    row3.AddressLine1 = aggregated_row_tAggregateRow_1.AddressLine1;
+            				    
+            				    row3.AddressLine2 = aggregated_row_tAggregateRow_1.AddressLine2;
+            				    
+            				    row3.City = aggregated_row_tAggregateRow_1.City;
+            				    
+            				    row3.StateProvince = aggregated_row_tAggregateRow_1.StateProvince;
+            				    
+            				    row3.CountryRegion = aggregated_row_tAggregateRow_1.CountryRegion;
+            				    
+            				    row3.PostalCode = aggregated_row_tAggregateRow_1.PostalCode;
+            				    
+
+ 
+
+
+	tos_count_tAggregateRow_1_AGGIN++;
+
+/**
+ * [tAggregateRow_1_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_1";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row3");
 					}
-					directory_tFileOutputDelimited_1 = "";
-				}
-				boolean isFileGenerated_tFileOutputDelimited_1 = true;
-				java.io.File filetFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
-				globalMap.put("tFileOutputDelimited_1_FILE_NAME", fileName_tFileOutputDelimited_1);
-				String[] headColutFileOutputDelimited_1 = new String[9];
-				class CSVBasicSet_tFileOutputDelimited_1 {
-					private char field_Delim;
-					private char row_Delim;
-					private char escape;
-					private char textEnclosure;
-					private boolean useCRLFRecordDelimiter;
-
-					public boolean isUseCRLFRecordDelimiter() {
-						return useCRLFRecordDelimiter;
-					}
-
-					public void setFieldSeparator(String fieldSep) throws IllegalArgumentException {
-						char field_Delim_tFileOutputDelimited_1[] = null;
-
-						// support passing value (property: Field Separator) by 'context.fs' or
-						// 'globalMap.get("fs")'.
-						if (fieldSep.length() > 0) {
-							field_Delim_tFileOutputDelimited_1 = fieldSep.toCharArray();
-						} else {
-							throw new IllegalArgumentException("Field Separator must be assigned a char.");
-						}
-						this.field_Delim = field_Delim_tFileOutputDelimited_1[0];
-					}
-
-					public char getFieldDelim() {
-						if (this.field_Delim == 0) {
-							setFieldSeparator(";");
-						}
-						return this.field_Delim;
-					}
-
-					public void setRowSeparator(String rowSep) {
-						if ("\r\n".equals(rowSep)) {
-							useCRLFRecordDelimiter = true;
-							return;
-						}
-						char row_DelimtFileOutputDelimited_1[] = null;
-
-						// support passing value (property: Row Separator) by 'context.rs' or
-						// 'globalMap.get("rs")'.
-						if (rowSep.length() > 0) {
-							row_DelimtFileOutputDelimited_1 = rowSep.toCharArray();
-						} else {
-							throw new IllegalArgumentException("Row Separator must be assigned a char.");
-						}
-						this.row_Delim = row_DelimtFileOutputDelimited_1[0];
-					}
-
-					public char getRowDelim() {
-						if (this.row_Delim == 0) {
-							setRowSeparator("\n");
-						}
-						return this.row_Delim;
-					}
-
-					public void setEscapeAndTextEnclosure(String strEscape, String strTextEnclosure)
-							throws IllegalArgumentException {
-						if (strEscape.length() <= 0) {
-							throw new IllegalArgumentException("Escape Char must be assigned a char.");
-						}
-
-						if ("".equals(strTextEnclosure))
-							strTextEnclosure = "\0";
-						char textEnclosure_tFileOutputDelimited_1[] = null;
-
-						if (strTextEnclosure.length() > 0) {
-							textEnclosure_tFileOutputDelimited_1 = strTextEnclosure.toCharArray();
-						} else {
-							throw new IllegalArgumentException("Text Enclosure must be assigned a char.");
-						}
-
-						this.textEnclosure = textEnclosure_tFileOutputDelimited_1[0];
-
-						if (("\\").equals(strEscape)) {
-							this.escape = '\\';
-						} else if (strEscape.equals(strTextEnclosure)) {
-							this.escape = this.textEnclosure;
-						} else {
-							// the default escape mode is double escape
-							this.escape = this.textEnclosure;
-						}
-
-					}
-
-					public char getEscapeChar() {
-						return (char) this.escape;
-					}
-
-					public char getTextEnclosure() {
-						return this.textEnclosure;
-					}
-				}
-
-				int nb_line_tFileOutputDelimited_1 = 0;
-				int splitedFileNo_tFileOutputDelimited_1 = 0;
-				int currentRow_tFileOutputDelimited_1 = 0;
-
-				CSVBasicSet_tFileOutputDelimited_1 csvSettings_tFileOutputDelimited_1 = new CSVBasicSet_tFileOutputDelimited_1();
-				csvSettings_tFileOutputDelimited_1.setFieldSeparator(";");
-				csvSettings_tFileOutputDelimited_1.setRowSeparator("\n");
-				csvSettings_tFileOutputDelimited_1.setEscapeAndTextEnclosure("\"", "\"");
-				// create directory only if not exists
-				if (directory_tFileOutputDelimited_1 != null && directory_tFileOutputDelimited_1.trim().length() != 0) {
-					java.io.File dir_tFileOutputDelimited_1 = new java.io.File(directory_tFileOutputDelimited_1);
-					if (!dir_tFileOutputDelimited_1.exists()) {
-						dir_tFileOutputDelimited_1.mkdirs();
-					}
-				}
-				com.talend.csv.CSVWriter CsvWritertFileOutputDelimited_1 = null;
+					
 
-				java.io.File fileToDelete_tFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
-				if (fileToDelete_tFileOutputDelimited_1.exists()) {
-					fileToDelete_tFileOutputDelimited_1.delete();
-				}
-				CsvWritertFileOutputDelimited_1 = new com.talend.csv.CSVWriter(
-						new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-								new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, false), "UTF-8")));
-				CsvWritertFileOutputDelimited_1.setSeparator(csvSettings_tFileOutputDelimited_1.getFieldDelim());
-				if (!csvSettings_tFileOutputDelimited_1.isUseCRLFRecordDelimiter()
-						&& csvSettings_tFileOutputDelimited_1.getRowDelim() != '\r'
-						&& csvSettings_tFileOutputDelimited_1.getRowDelim() != '\n') {
-					CsvWritertFileOutputDelimited_1.setLineEnd("" + csvSettings_tFileOutputDelimited_1.getRowDelim());
-				}
-				if (filetFileOutputDelimited_1.length() == 0) {
-					headColutFileOutputDelimited_1[0] = "CustomerID";
-					headColutFileOutputDelimited_1[1] = "AddressID";
-					headColutFileOutputDelimited_1[2] = "AddressType";
-					headColutFileOutputDelimited_1[3] = "AddressLine1";
-					headColutFileOutputDelimited_1[4] = "AddressLine2";
-					headColutFileOutputDelimited_1[5] = "City";
-					headColutFileOutputDelimited_1[6] = "StateProvince";
-					headColutFileOutputDelimited_1[7] = "CountryRegion";
-					headColutFileOutputDelimited_1[8] = "PostalCode";
-					CsvWritertFileOutputDelimited_1.writeNext(headColutFileOutputDelimited_1);
-					CsvWritertFileOutputDelimited_1.flush();
-				}
-				CsvWritertFileOutputDelimited_1.setEscapeChar(csvSettings_tFileOutputDelimited_1.getEscapeChar());
-				CsvWritertFileOutputDelimited_1.setQuoteChar(csvSettings_tFileOutputDelimited_1.getTextEnclosure());
-				CsvWritertFileOutputDelimited_1.setQuoteStatus(com.talend.csv.CSVWriter.QuoteStatus.FORCE);
-
-				resourceMap.put("CsvWriter_tFileOutputDelimited_1", CsvWritertFileOutputDelimited_1);
-				resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
 
-				/**
-				 * [tFileOutputDelimited_1 begin ] stop
-				 */
+                        String[] rowtFileOutputDelimited_1=new String[9];
+                            rowtFileOutputDelimited_1[0]=row3.CustomerID == null ? null : String.valueOf(row3.CustomerID);
+                            rowtFileOutputDelimited_1[1]=row3.AddressID == null ? null : String.valueOf(row3.AddressID);
+                            rowtFileOutputDelimited_1[2]=row3.AddressType == null ? null : row3.AddressType;
+                            rowtFileOutputDelimited_1[3]=row3.AddressLine1 == null ? null : row3.AddressLine1;
+                            rowtFileOutputDelimited_1[4]=row3.AddressLine2 == null ? null : row3.AddressLine2;
+                            rowtFileOutputDelimited_1[5]=row3.City == null ? null : row3.City;
+                            rowtFileOutputDelimited_1[6]=row3.StateProvince == null ? null : row3.StateProvince;
+                            rowtFileOutputDelimited_1[7]=row3.CountryRegion == null ? null : row3.CountryRegion;
+                            rowtFileOutputDelimited_1[8]=row3.PostalCode == null ? null : row3.PostalCode;
+                nb_line_tFileOutputDelimited_1++;
+                resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
+                                       CsvWritertFileOutputDelimited_1.writeNext(rowtFileOutputDelimited_1);
 
-				/**
-				 * [tAggregateRow_1_AGGIN begin ] start
-				 */
 
-				ok_Hash.put("tAggregateRow_1_AGGIN", false);
-				start_Hash.put("tAggregateRow_1_AGGIN", System.currentTimeMillis());
 
-				currentVirtualComponent = "tAggregateRow_1";
 
-				currentComponent = "tAggregateRow_1_AGGIN";
+ 
 
-				int tos_count_tAggregateRow_1_AGGIN = 0;
 
-				java.util.Collection<AggOperationStruct_tAggregateRow_1> values_tAggregateRow_1 = hash_tAggregateRow_1
-						.values();
+	tos_count_tFileOutputDelimited_1++;
 
-				globalMap.put("tAggregateRow_1_NB_LINE", values_tAggregateRow_1.size());
+/**
+ * [tFileOutputDelimited_1 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_1 process_data_begin ] start
+	 */
 
-				for (AggOperationStruct_tAggregateRow_1 aggregated_row_tAggregateRow_1 : values_tAggregateRow_1) { // G_AggR_600
+	
 
-					/**
-					 * [tAggregateRow_1_AGGIN begin ] stop
-					 */
+	
+	
+	currentComponent="tFileOutputDelimited_1";
 
-					/**
-					 * [tAggregateRow_1_AGGIN main ] start
-					 */
+	
 
-					currentVirtualComponent = "tAggregateRow_1";
+ 
 
-					currentComponent = "tAggregateRow_1_AGGIN";
 
-					row3.CustomerID = aggregated_row_tAggregateRow_1.CustomerID;
 
-					row3.AddressID = aggregated_row_tAggregateRow_1.AddressID;
+/**
+ * [tFileOutputDelimited_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_1 process_data_end ] start
+	 */
 
-					row3.AddressType = aggregated_row_tAggregateRow_1.AddressType;
+	
 
-					row3.AddressLine1 = aggregated_row_tAggregateRow_1.AddressLine1;
+	
+	
+	currentComponent="tFileOutputDelimited_1";
 
-					row3.AddressLine2 = aggregated_row_tAggregateRow_1.AddressLine2;
+	
 
-					row3.City = aggregated_row_tAggregateRow_1.City;
+ 
 
-					row3.StateProvince = aggregated_row_tAggregateRow_1.StateProvince;
 
-					row3.CountryRegion = aggregated_row_tAggregateRow_1.CountryRegion;
 
-					row3.PostalCode = aggregated_row_tAggregateRow_1.PostalCode;
+/**
+ * [tFileOutputDelimited_1 process_data_end ] stop
+ */
 
-					tos_count_tAggregateRow_1_AGGIN++;
 
-					/**
-					 * [tAggregateRow_1_AGGIN main ] stop
-					 */
 
-					/**
-					 * [tAggregateRow_1_AGGIN process_data_begin ] start
-					 */
+	
+	/**
+	 * [tAggregateRow_1_AGGIN process_data_end ] start
+	 */
 
-					currentVirtualComponent = "tAggregateRow_1";
+	
 
-					currentComponent = "tAggregateRow_1_AGGIN";
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
 
-					/**
-					 * [tAggregateRow_1_AGGIN process_data_begin ] stop
-					 */
+	
 
-					/**
-					 * [tFileOutputDelimited_1 main ] start
-					 */
+ 
 
-					currentComponent = "tFileOutputDelimited_1";
 
-					if (execStat) {
-						runStat.updateStatOnConnection(iterateId, 1, 1, "row3");
-					}
 
-					String[] rowtFileOutputDelimited_1 = new String[9];
-					rowtFileOutputDelimited_1[0] = row3.CustomerID == null ? null : String.valueOf(row3.CustomerID);
-					rowtFileOutputDelimited_1[1] = row3.AddressID == null ? null : String.valueOf(row3.AddressID);
-					rowtFileOutputDelimited_1[2] = row3.AddressType == null ? null : row3.AddressType;
-					rowtFileOutputDelimited_1[3] = row3.AddressLine1 == null ? null : row3.AddressLine1;
-					rowtFileOutputDelimited_1[4] = row3.AddressLine2 == null ? null : row3.AddressLine2;
-					rowtFileOutputDelimited_1[5] = row3.City == null ? null : row3.City;
-					rowtFileOutputDelimited_1[6] = row3.StateProvince == null ? null : row3.StateProvince;
-					rowtFileOutputDelimited_1[7] = row3.CountryRegion == null ? null : row3.CountryRegion;
-					rowtFileOutputDelimited_1[8] = row3.PostalCode == null ? null : row3.PostalCode;
-					nb_line_tFileOutputDelimited_1++;
-					resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
-					CsvWritertFileOutputDelimited_1.writeNext(rowtFileOutputDelimited_1);
+/**
+ * [tAggregateRow_1_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGIN end ] start
+	 */
 
-					tos_count_tFileOutputDelimited_1++;
+	
 
-					/**
-					 * [tFileOutputDelimited_1 main ] stop
-					 */
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
 
-					/**
-					 * [tFileOutputDelimited_1 process_data_begin ] start
-					 */
+	
 
-					currentComponent = "tFileOutputDelimited_1";
+} // G_AggR_600
 
-					/**
-					 * [tFileOutputDelimited_1 process_data_begin ] stop
-					 */
+ 
 
-					/**
-					 * [tFileOutputDelimited_1 process_data_end ] start
-					 */
+ok_Hash.put("tAggregateRow_1_AGGIN", true);
+end_Hash.put("tAggregateRow_1_AGGIN", System.currentTimeMillis());
 
-					currentComponent = "tFileOutputDelimited_1";
 
-					/**
-					 * [tFileOutputDelimited_1 process_data_end ] stop
-					 */
 
-					/**
-					 * [tAggregateRow_1_AGGIN process_data_end ] start
-					 */
 
-					currentVirtualComponent = "tAggregateRow_1";
+/**
+ * [tAggregateRow_1_AGGIN end ] stop
+ */
 
-					currentComponent = "tAggregateRow_1_AGGIN";
+	
+	/**
+	 * [tFileOutputDelimited_1 end ] start
+	 */
 
-					/**
-					 * [tAggregateRow_1_AGGIN process_data_end ] stop
-					 */
+	
 
-					/**
-					 * [tAggregateRow_1_AGGIN end ] start
-					 */
+	
+	
+	currentComponent="tFileOutputDelimited_1";
 
-					currentVirtualComponent = "tAggregateRow_1";
+	
 
-					currentComponent = "tAggregateRow_1_AGGIN";
 
-				} // G_AggR_600
 
-				ok_Hash.put("tAggregateRow_1_AGGIN", true);
-				end_Hash.put("tAggregateRow_1_AGGIN", System.currentTimeMillis());
+		
+			
+		
+				
+					if(CsvWritertFileOutputDelimited_1!=null) {
+				    	CsvWritertFileOutputDelimited_1.close();
+				    }
+					
+		    	globalMap.put("tFileOutputDelimited_1_NB_LINE",nb_line_tFileOutputDelimited_1);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_1", true);
+	
 
-				/**
-				 * [tAggregateRow_1_AGGIN end ] stop
-				 */
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
+			  	}
+			  	
+ 
 
-				/**
-				 * [tFileOutputDelimited_1 end ] start
-				 */
+ok_Hash.put("tFileOutputDelimited_1", true);
+end_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
 
-				currentComponent = "tFileOutputDelimited_1";
 
-				if (CsvWritertFileOutputDelimited_1 != null) {
-					CsvWritertFileOutputDelimited_1.close();
-				}
 
-				globalMap.put("tFileOutputDelimited_1_NB_LINE", nb_line_tFileOutputDelimited_1);
 
-				resourceMap.put("finish_tFileOutputDelimited_1", true);
+/**
+ * [tFileOutputDelimited_1 end ] stop
+ */
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
-				}
 
-				ok_Hash.put("tFileOutputDelimited_1", true);
-				end_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
 
-				/**
-				 * [tFileOutputDelimited_1 end ] stop
-				 */
 
-			} // end the resume
 
-		} catch (java.lang.Exception e) {
 
-			TalendException te = new TalendException(e, currentComponent, globalMap);
 
-			te.setVirtualComponentName(currentVirtualComponent);
 
-			throw te;
-		} catch (java.lang.Error error) {
 
-			runStat.stopThreadStat();
 
-			throw error;
-		} finally {
 
-			// free memory for "tAggregateRow_1_AGGIN"
-			globalMap.remove("tAggregateRow_1");
 
-			// free memory for "tMap_1"
-			globalMap.remove("tHash_Lookup_row2");
+				}//end the resume
 
-			try {
+				
 
-				/**
-				 * [tDBInput_1 finally ] start
-				 */
 
-				currentComponent = "tDBInput_1";
 
-				/**
-				 * [tDBInput_1 finally ] stop
-				 */
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+					te.setVirtualComponentName(currentVirtualComponent);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+							//free memory for "tAggregateRow_1_AGGIN"
+							globalMap.remove("tAggregateRow_1");
+						
+					     			//free memory for "tMap_1"
+					     			globalMap.remove("tHash_Lookup_row2"); 
+				     			
+				try{
+					
+	
+	/**
+	 * [tDBInput_1 finally ] start
+	 */
 
-				/**
-				 * [tMap_1 finally ] start
-				 */
+	
 
-				currentComponent = "tMap_1";
+	
+	
+	currentComponent="tDBInput_1";
 
-				/**
-				 * [tMap_1 finally ] stop
-				 */
+	
 
-				/**
-				 * [tAggregateRow_1_AGGOUT finally ] start
-				 */
+ 
 
-				currentVirtualComponent = "tAggregateRow_1";
 
-				currentComponent = "tAggregateRow_1_AGGOUT";
 
-				/**
-				 * [tAggregateRow_1_AGGOUT finally ] stop
-				 */
+/**
+ * [tDBInput_1 finally ] stop
+ */
 
-				/**
-				 * [tAggregateRow_1_AGGIN finally ] start
-				 */
+	
+	/**
+	 * [tMap_1 finally ] start
+	 */
 
-				currentVirtualComponent = "tAggregateRow_1";
+	
 
-				currentComponent = "tAggregateRow_1_AGGIN";
+	
+	
+	currentComponent="tMap_1";
 
-				/**
-				 * [tAggregateRow_1_AGGIN finally ] stop
-				 */
+	
 
-				/**
-				 * [tFileOutputDelimited_1 finally ] start
-				 */
+ 
 
-				currentComponent = "tFileOutputDelimited_1";
 
-				if (resourceMap.get("finish_tFileOutputDelimited_1") == null) {
 
-					com.talend.csv.CSVWriter CsvWritertFileOutputDelimited_1 = (com.talend.csv.CSVWriter) resourceMap
-							.get("CsvWriter_tFileOutputDelimited_1");
+/**
+ * [tMap_1 finally ] stop
+ */
 
-					if (CsvWritertFileOutputDelimited_1 != null) {
-						CsvWritertFileOutputDelimited_1.close();
-					}
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT finally ] start
+	 */
 
-				}
+	
 
-				/**
-				 * [tFileOutputDelimited_1 finally ] stop
-				 */
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
 
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_1_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_1";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_1") == null){ 
+			
+				
+			
+					com.talend.csv.CSVWriter CsvWritertFileOutputDelimited_1 = (com.talend.csv.CSVWriter)resourceMap.get("CsvWriter_tFileOutputDelimited_1");
+					
+						if(CsvWritertFileOutputDelimited_1!=null) {
+					    	CsvWritertFileOutputDelimited_1.close();
+					    }
+						
+			
 		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_1 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
 
 		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 1);
 	}
+	
 
-	public static class row2Struct implements routines.system.IPersistableComparableLookupRow<row2Struct> {
-		final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
 
-		public String loopKey;
+public static class row2Struct implements routines.system.IPersistableComparableLookupRow<row2Struct> {
+    final static byte[] commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+    static byte[] commonByteArray_ADVENTURE_PROJECT_CustomerAddress_HARM = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
 
-		public int CustomerID;
+    public String loopKey;
 
-		public int getCustomerID() {
-			return this.CustomerID;
-		}
 
-		public int AddressID;
 
-		public int getAddressID() {
-			return this.AddressID;
-		}
+	
+			    public int CustomerID;
 
-		public String AddressType;
-
-		public String getAddressType() {
-			return this.AddressType;
-		}
-
-		public Object rowguid;
-
-		public Object getRowguid() {
-			return this.rowguid;
-		}
-
-		public java.util.Date ModifiedDate;
-
-		public java.util.Date getModifiedDate() {
-			return this.ModifiedDate;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + (int) this.AddressID;
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row2Struct other = (row2Struct) obj;
-
-			if (this.AddressID != other.AddressID)
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row2Struct other) {
-
-			other.CustomerID = this.CustomerID;
-			other.AddressID = this.AddressID;
-			other.AddressType = this.AddressType;
-			other.rowguid = this.rowguid;
-			other.ModifiedDate = this.ModifiedDate;
-
-		}
-
-		public void copyKeysDataTo(row2Struct other) {
-
-			other.AddressID = this.AddressID;
-
-		}
-
-		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				dis.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private java.util.Date readDate(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		public void readKeysData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
-
-				try {
-
-					int length = 0;
-
-					this.AddressID = dis.readInt();
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
+				public int getCustomerID () {
+					return this.CustomerID;
 				}
+				
+			    public int AddressID;
 
-			}
+				public int getAddressID () {
+					return this.AddressID;
+				}
+				
+			    public String AddressType;
 
+				public String getAddressType () {
+					return this.AddressType;
+				}
+				
+			    public Object rowguid;
+
+				public Object getRowguid () {
+					return this.rowguid;
+				}
+				
+			    public java.util.Date ModifiedDate;
+
+				public java.util.Date getModifiedDate () {
+					return this.ModifiedDate;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.AddressID;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeKeysData(ObjectOutputStream dos) {
-			try {
-
-				// int
-
-				dos.writeInt(this.AddressID);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		/**
-		 * Fill Values data by reading ObjectInputStream.
-		 */
-		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-			try {
-
-				int length = 0;
-
-				this.CustomerID = dis.readInt();
-
-				this.AddressType = readString(dis, ois);
-
-				this.rowguid = (Object) ois.readObject();
-
-				this.ModifiedDate = readDate(dis, ois);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			} catch (ClassNotFoundException eCNFE) {
-				throw new RuntimeException(eCNFE);
-
-			}
-
-		}
-
-		/**
-		 * Return a byte array which represents Values data.
-		 */
-		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-			try {
-
-				dos.writeInt(this.CustomerID);
-
-				writeString(this.AddressType, dos, oos);
-
-				oos.writeObject(this.rowguid);
-
-				writeDate(this.ModifiedDate, dos, oos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("CustomerID=" + String.valueOf(CustomerID));
-			sb.append(",AddressID=" + String.valueOf(AddressID));
-			sb.append(",AddressType=" + AddressType);
-			sb.append(",rowguid=" + String.valueOf(rowguid));
-			sb.append(",ModifiedDate=" + String.valueOf(ModifiedDate));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row2Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBInput_2_SUBPROCESS_STATE", 0);
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row2Struct other = (row2Struct) obj;
+		
+						if (this.AddressID != other.AddressID)
+							return false;
+					
 
-		final boolean execStat = this.execStat;
+		return true;
+    }
 
+	public void copyDataTo(row2Struct other) {
+
+		other.CustomerID = this.CustomerID;
+	            other.AddressID = this.AddressID;
+	            other.AddressType = this.AddressType;
+	            other.rowguid = this.rowguid;
+	            other.ModifiedDate = this.ModifiedDate;
+	            
+	}
+
+	public void copyKeysDataTo(row2Struct other) {
+
+		other.AddressID = this.AddressID;
+	            	
+	}
+
+
+
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+
+	private java.util.Date readDate(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		java.util.Date dateReturn = null;
+		int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+	private void writeDate(java.util.Date date1, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+	}
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ADVENTURE_PROJECT_CustomerAddress_HARM) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.AddressID = dis.readInt();
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.AddressID);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+			            this.CustomerID = dis.readInt();
+					
+						this.AddressType = readString(dis,ois);
+					
+       			    	this.rowguid = (Object) ois.readObject();
+					
+						this.ModifiedDate = readDate(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+			} catch(ClassNotFoundException eCNFE) {
+				 throw new RuntimeException(eCNFE);
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+		            	dos.writeInt(this.CustomerID);
+					
+						writeString(this.AddressType, dos, oos);
+					
+       			    	oos.writeObject(this.rowguid);
+					
+						writeDate(this.ModifiedDate, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("CustomerID="+String.valueOf(CustomerID));
+		sb.append(",AddressID="+String.valueOf(AddressID));
+		sb.append(",AddressType="+AddressType);
+		sb.append(",rowguid="+String.valueOf(rowguid));
+		sb.append(",ModifiedDate="+String.valueOf(ModifiedDate));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row2Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tDBInput_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_2_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				row2Struct row2 = new row2Struct();
 
-				/**
-				 * [tAdvancedHash_row2 begin ] start
-				 */
 
-				ok_Hash.put("tAdvancedHash_row2", false);
-				start_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+		row2Struct row2 = new row2Struct();
 
-				currentComponent = "tAdvancedHash_row2";
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
-				}
 
-				int tos_count_tAdvancedHash_row2 = 0;
 
-				// connection name:row2
-				// source node:tDBInput_2 - inputs:(after_tDBInput_1) outputs:(row2,row2) |
-				// target node:tAdvancedHash_row2 - inputs:(row2) outputs:()
-				// linked node: tMap_1 - inputs:(row1,row2) outputs:(saida_CustomerAddress)
+	
+	/**
+	 * [tAdvancedHash_row2 begin ] start
+	 */
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row2 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
+	
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row2Struct>getLookup(matchingModeEnum_row2);
+	
+		
+		ok_Hash.put("tAdvancedHash_row2", false);
+		start_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_row2";
 
-				globalMap.put("tHash_Lookup_row2", tHash_Lookup_row2);
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
+					}
+				
+		int tos_count_tAdvancedHash_row2 = 0;
+		
 
-				/**
-				 * [tAdvancedHash_row2 begin ] stop
-				 */
+			   		// connection name:row2
+			   		// source node:tDBInput_2 - inputs:(after_tDBInput_1) outputs:(row2,row2) | target node:tAdvancedHash_row2 - inputs:(row2) outputs:()
+			   		// linked node: tMap_1 - inputs:(row1,row2) outputs:(saida_CustomerAddress)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row2 = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<row2Struct>getLookup(matchingModeEnum_row2);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_row2", tHash_Lookup_row2);
+		   	   	   
+				
+           
 
-				/**
-				 * [tDBInput_2 begin ] start
-				 */
+ 
 
-				ok_Hash.put("tDBInput_2", false);
-				start_Hash.put("tDBInput_2", System.currentTimeMillis());
 
-				currentComponent = "tDBInput_2";
 
-				int tos_count_tDBInput_2 = 0;
+/**
+ * [tAdvancedHash_row2 begin ] stop
+ */
 
-				org.talend.designer.components.util.mssql.MSSqlGenerateTimestampUtil mssqlGTU_tDBInput_2 = org.talend.designer.components.util.mssql.MSSqlUtilFactory
-						.getMSSqlGenerateTimestampUtil();
 
-				java.util.List<String> talendToDBList_tDBInput_2 = new java.util.ArrayList();
-				String[] talendToDBArray_tDBInput_2 = new String[] { "FLOAT", "NUMERIC", "NUMERIC IDENTITY", "DECIMAL",
-						"DECIMAL IDENTITY", "REAL" };
-				java.util.Collections.addAll(talendToDBList_tDBInput_2, talendToDBArray_tDBInput_2);
-				int nb_line_tDBInput_2 = 0;
-				java.sql.Connection conn_tDBInput_2 = null;
+
+	
+	/**
+	 * [tDBInput_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_2", false);
+		start_Hash.put("tDBInput_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_2";
+
+	
+		int tos_count_tDBInput_2 = 0;
+		
+	
+    
+	
+			org.talend.designer.components.util.mssql.MSSqlGenerateTimestampUtil mssqlGTU_tDBInput_2 = org.talend.designer.components.util.mssql.MSSqlUtilFactory.getMSSqlGenerateTimestampUtil();
+			
+			java.util.List<String> talendToDBList_tDBInput_2 = new java.util.ArrayList();
+			String[] talendToDBArray_tDBInput_2  = new String[]{"FLOAT","NUMERIC","NUMERIC IDENTITY","DECIMAL","DECIMAL IDENTITY","REAL"}; 
+			java.util.Collections.addAll(talendToDBList_tDBInput_2, talendToDBArray_tDBInput_2); 
+		    int nb_line_tDBInput_2 = 0;
+		    java.sql.Connection conn_tDBInput_2 = null;
 				String driverClass_tDBInput_2 = "net.sourceforge.jtds.jdbc.Driver";
-				java.lang.Class jdbcclazz_tDBInput_2 = java.lang.Class.forName(driverClass_tDBInput_2);
+			    java.lang.Class jdbcclazz_tDBInput_2 = java.lang.Class.forName(driverClass_tDBInput_2);
 				String dbUser_tDBInput_2 = "sqlfamily";
-
-				final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil.decryptPassword(
-						"enc:routine.encryption.key.v1:yVLqXS8UQ8VOlp8eqD+cyyW9FXNorpcVbVMxtDUDxxe2eMWekg==");
-
+				
+				 
+	final String decryptedPassword_tDBInput_2 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:l2hJElZ4nE+3BXVrrhrI5+diGTZsgN3DRLFBhC0sIv/3JWeHwg==");
+				
 				String dbPwd_tDBInput_2 = decryptedPassword_tDBInput_2;
+				
+		    String port_tDBInput_2 = "1433";
+		    String dbname_tDBInput_2 = "AdventureWorks" ;
+			String url_tDBInput_2 = "jdbc:jtds:sqlserver://" + "sqlservercentralpublic.database.windows.net" ;
+		    if (!"".equals(port_tDBInput_2)) {
+		    	url_tDBInput_2 += ":" + "1433";
+		    }
+		    if (!"".equals(dbname_tDBInput_2)) {
+				url_tDBInput_2 += "//" + "AdventureWorks"; 
+		    }
+		    url_tDBInput_2 += ";appName=" + projectName + ";" + "";
+		    String dbschema_tDBInput_2 = "SalesLT";
+				
+				conn_tDBInput_2 = java.sql.DriverManager.getConnection(url_tDBInput_2,dbUser_tDBInput_2,dbPwd_tDBInput_2);
+		        
+		    
+			java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
 
-				String port_tDBInput_2 = "1433";
-				String dbname_tDBInput_2 = "AdventureWorks";
-				String url_tDBInput_2 = "jdbc:jtds:sqlserver://" + "sqlservercentralpublic.database.windows.net";
-				if (!"".equals(port_tDBInput_2)) {
-					url_tDBInput_2 += ":" + "1433";
-				}
-				if (!"".equals(dbname_tDBInput_2)) {
-					url_tDBInput_2 += "//" + "AdventureWorks";
-				}
-				url_tDBInput_2 += ";appName=" + projectName + ";" + "";
-				String dbschema_tDBInput_2 = "SalesLT";
+		    String dbquery_tDBInput_2 = "SELECT SalesLT.CustomerAddress.CustomerID,\n		SalesLT.CustomerAddress.AddressID,\n		SalesLT.CustomerAddress.AddressType,\n"
++"		SalesLT.CustomerAddress.rowguid,\n		SalesLT.CustomerAddress.ModifiedDate\nFROM	SalesLT.CustomerAddress";
+			
 
-				conn_tDBInput_2 = java.sql.DriverManager.getConnection(url_tDBInput_2, dbUser_tDBInput_2,
-						dbPwd_tDBInput_2);
+            	globalMap.put("tDBInput_2_QUERY",dbquery_tDBInput_2);
+		    java.sql.ResultSet rs_tDBInput_2 = null;
 
-				java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
+		    try {
+		    	rs_tDBInput_2 = stmt_tDBInput_2.executeQuery(dbquery_tDBInput_2);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_2 = rs_tDBInput_2.getMetaData();
+		    	int colQtyInRs_tDBInput_2 = rsmd_tDBInput_2.getColumnCount();
 
-				String dbquery_tDBInput_2 = "SELECT SalesLT.CustomerAddress.CustomerID,\n		SalesLT.CustomerAddress.AddressID,\n		SalesLT.CustomerAddress.AddressType,\n"
-						+ "		SalesLT.CustomerAddress.rowguid,\n		SalesLT.CustomerAddress.ModifiedDate\nFROM	SalesLT.CustomerAddress";
-
-				globalMap.put("tDBInput_2_QUERY", dbquery_tDBInput_2);
-				java.sql.ResultSet rs_tDBInput_2 = null;
-
-				try {
-					rs_tDBInput_2 = stmt_tDBInput_2.executeQuery(dbquery_tDBInput_2);
-					java.sql.ResultSetMetaData rsmd_tDBInput_2 = rs_tDBInput_2.getMetaData();
-					int colQtyInRs_tDBInput_2 = rsmd_tDBInput_2.getColumnCount();
-
-					String tmpContent_tDBInput_2 = null;
-
-					while (rs_tDBInput_2.next()) {
-						nb_line_tDBInput_2++;
-
-						if (colQtyInRs_tDBInput_2 < 1) {
-							row2.CustomerID = 0;
-						} else {
-
-							row2.CustomerID = rs_tDBInput_2.getInt(1);
-							if (rs_tDBInput_2.wasNull()) {
-								throw new RuntimeException("Null value in non-Nullable column");
-							}
-						}
-						if (colQtyInRs_tDBInput_2 < 2) {
-							row2.AddressID = 0;
-						} else {
-
-							row2.AddressID = rs_tDBInput_2.getInt(2);
-							if (rs_tDBInput_2.wasNull()) {
-								throw new RuntimeException("Null value in non-Nullable column");
-							}
-						}
-						if (colQtyInRs_tDBInput_2 < 3) {
-							row2.AddressType = null;
-						} else {
-
-							tmpContent_tDBInput_2 = rs_tDBInput_2.getString(3);
-							if (tmpContent_tDBInput_2 != null) {
-								if (talendToDBList_tDBInput_2.contains(
-										rsmd_tDBInput_2.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
-									row2.AddressType = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
-								} else {
-									row2.AddressType = tmpContent_tDBInput_2;
-								}
+		    String tmpContent_tDBInput_2 = null;
+		    
+		    
+		    while (rs_tDBInput_2.next()) {
+		        nb_line_tDBInput_2++;
+		        
+							if(colQtyInRs_tDBInput_2 < 1) {
+								row2.CustomerID = 0;
 							} else {
+		                          
+            row2.CustomerID = rs_tDBInput_2.getInt(1);
+            if(rs_tDBInput_2.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_2 < 2) {
+								row2.AddressID = 0;
+							} else {
+		                          
+            row2.AddressID = rs_tDBInput_2.getInt(2);
+            if(rs_tDBInput_2.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_2 < 3) {
 								row2.AddressType = null;
-							}
-						}
-						if (colQtyInRs_tDBInput_2 < 4) {
-							row2.rowguid = null;
-						} else {
+							} else {
+	                         		
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(3);
+            if(tmpContent_tDBInput_2 != null) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
+            		row2.AddressType = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
+            	} else {
+                	row2.AddressType = tmpContent_tDBInput_2;
+                }
+            } else {
+                row2.AddressType = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_2 < 4) {
+								row2.rowguid = null;
+							} else {
+		                          
+            row2.rowguid = rs_tDBInput_2.getObject(4);
+            if(rs_tDBInput_2.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_2 < 5) {
+								row2.ModifiedDate = null;
+							} else {
+										
+			row2.ModifiedDate = mssqlGTU_tDBInput_2.getDate(rsmd_tDBInput_2, rs_tDBInput_2, 5);
+			
+		                    }
+					
 
-							row2.rowguid = rs_tDBInput_2.getObject(4);
-							if (rs_tDBInput_2.wasNull()) {
-								throw new RuntimeException("Null value in non-Nullable column");
-							}
-						}
-						if (colQtyInRs_tDBInput_2 < 5) {
-							row2.ModifiedDate = null;
-						} else {
 
-							row2.ModifiedDate = mssqlGTU_tDBInput_2.getDate(rsmd_tDBInput_2, rs_tDBInput_2, 5);
 
-						}
 
-						/**
-						 * [tDBInput_2 begin ] stop
-						 */
 
-						/**
-						 * [tDBInput_2 main ] start
-						 */
+ 
 
-						currentComponent = "tDBInput_2";
 
-						tos_count_tDBInput_2++;
 
-						/**
-						 * [tDBInput_2 main ] stop
-						 */
+/**
+ * [tDBInput_2 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_2 main ] start
+	 */
 
-						/**
-						 * [tDBInput_2 process_data_begin ] start
-						 */
+	
 
-						currentComponent = "tDBInput_2";
+	
+	
+	currentComponent="tDBInput_2";
 
-						/**
-						 * [tDBInput_2 process_data_begin ] stop
-						 */
+	
 
-						/**
-						 * [tAdvancedHash_row2 main ] start
-						 */
+ 
 
-						currentComponent = "tAdvancedHash_row2";
 
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1, "row2");
-						}
+	tos_count_tDBInput_2++;
 
-						row2Struct row2_HashRow = new row2Struct();
+/**
+ * [tDBInput_2 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_2 process_data_begin ] start
+	 */
 
-						row2_HashRow.CustomerID = row2.CustomerID;
+	
 
-						row2_HashRow.AddressID = row2.AddressID;
+	
+	
+	currentComponent="tDBInput_2";
 
-						row2_HashRow.AddressType = row2.AddressType;
+	
 
-						row2_HashRow.rowguid = row2.rowguid;
+ 
 
-						row2_HashRow.ModifiedDate = row2.ModifiedDate;
 
-						tHash_Lookup_row2.put(row2_HashRow);
 
-						tos_count_tAdvancedHash_row2++;
+/**
+ * [tDBInput_2 process_data_begin ] stop
+ */
 
-						/**
-						 * [tAdvancedHash_row2 main ] stop
-						 */
+	
+	/**
+	 * [tAdvancedHash_row2 main ] start
+	 */
 
-						/**
-						 * [tAdvancedHash_row2 process_data_begin ] start
-						 */
+	
 
-						currentComponent = "tAdvancedHash_row2";
+	
+	
+	currentComponent="tAdvancedHash_row2";
 
-						/**
-						 * [tAdvancedHash_row2 process_data_begin ] stop
-						 */
-
-						/**
-						 * [tAdvancedHash_row2 process_data_end ] start
-						 */
-
-						currentComponent = "tAdvancedHash_row2";
-
-						/**
-						 * [tAdvancedHash_row2 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_2 process_data_end ] start
-						 */
-
-						currentComponent = "tDBInput_2";
-
-						/**
-						 * [tDBInput_2 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_2 end ] start
-						 */
-
-						currentComponent = "tDBInput_2";
-
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row2");
 					}
-				} finally {
-					if (rs_tDBInput_2 != null) {
-						rs_tDBInput_2.close();
-					}
-					if (stmt_tDBInput_2 != null) {
-						stmt_tDBInput_2.close();
-					}
-					if (conn_tDBInput_2 != null && !conn_tDBInput_2.isClosed()) {
+					
 
-						conn_tDBInput_2.close();
 
-						if ("com.mysql.cj.jdbc.Driver".equals((String) globalMap.get("driverClass_"))
-								&& routines.system.BundleUtils.inOSGi()) {
-							Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread")
-									.getMethod("checkedShutdown").invoke(null, (Object[]) null);
-						}
+			   
+			   
 
-					}
-				}
-				globalMap.put("tDBInput_2_NB_LINE", nb_line_tDBInput_2);
+					row2Struct row2_HashRow = new row2Struct();
+		   	   	   
+				
+				row2_HashRow.CustomerID = row2.CustomerID;
+				
+				row2_HashRow.AddressID = row2.AddressID;
+				
+				row2_HashRow.AddressType = row2.AddressType;
+				
+				row2_HashRow.rowguid = row2.rowguid;
+				
+				row2_HashRow.ModifiedDate = row2.ModifiedDate;
+				
+			tHash_Lookup_row2.put(row2_HashRow);
+			
+            
 
-				ok_Hash.put("tDBInput_2", true);
-				end_Hash.put("tDBInput_2", System.currentTimeMillis());
 
-				/**
-				 * [tDBInput_2 end ] stop
-				 */
 
-				/**
-				 * [tAdvancedHash_row2 end ] start
-				 */
 
-				currentComponent = "tAdvancedHash_row2";
+ 
 
-				tHash_Lookup_row2.endPut();
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
-				}
+	tos_count_tAdvancedHash_row2++;
 
-				ok_Hash.put("tAdvancedHash_row2", true);
-				end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+/**
+ * [tAdvancedHash_row2 main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row2 process_data_begin ] start
+	 */
 
-				/**
-				 * [tAdvancedHash_row2 end ] stop
-				 */
+	
 
-			} // end the resume
+	
+	
+	currentComponent="tAdvancedHash_row2";
 
-		} catch (java.lang.Exception e) {
+	
 
-			TalendException te = new TalendException(e, currentComponent, globalMap);
+ 
 
-			throw te;
-		} catch (java.lang.Error error) {
 
-			runStat.stopThreadStat();
 
-			throw error;
-		} finally {
+/**
+ * [tAdvancedHash_row2 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row2 process_data_end ] start
+	 */
 
-			try {
+	
 
-				/**
-				 * [tDBInput_2 finally ] start
-				 */
+	
+	
+	currentComponent="tAdvancedHash_row2";
 
-				currentComponent = "tDBInput_2";
+	
 
-				/**
-				 * [tDBInput_2 finally ] stop
-				 */
+ 
 
-				/**
-				 * [tAdvancedHash_row2 finally ] start
-				 */
 
-				currentComponent = "tAdvancedHash_row2";
 
-				/**
-				 * [tAdvancedHash_row2 finally ] stop
-				 */
+/**
+ * [tAdvancedHash_row2 process_data_end ] stop
+ */
 
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
+
+
+	
+	/**
+	 * [tDBInput_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_2 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_2";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_2 != null) {
+		rs_tDBInput_2.close();
+	}
+	if (stmt_tDBInput_2 != null) {
+		stmt_tDBInput_2.close();
+	}
+		if(conn_tDBInput_2 != null && !conn_tDBInput_2.isClosed()) {
+			
+			conn_tDBInput_2.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
 			}
-			resourceMap = null;
+			
 		}
+}
+globalMap.put("tDBInput_2_NB_LINE",nb_line_tDBInput_2);
+
+ 
+
+ok_Hash.put("tDBInput_2", true);
+end_Hash.put("tDBInput_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_2 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row2";
+
+	
+
+tHash_Lookup_row2.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_row2", true);
+end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_row2 end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tDBInput_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_2 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row2";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row2 finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
 
 		globalMap.put("tDBInput_2_SUBPROCESS_STATE", 1);
 	}
+	
+    public String resuming_logs_dir_path = null;
+    public String resuming_checkpoint_path = null;
+    public String parent_part_launcher = null;
+    private String resumeEntryMethodName = null;
+    private boolean globalResumeTicket = false;
 
-	public String resuming_logs_dir_path = null;
-	public String resuming_checkpoint_path = null;
-	public String parent_part_launcher = null;
-	private String resumeEntryMethodName = null;
-	private boolean globalResumeTicket = false;
+    public boolean watch = false;
+    // portStats is null, it means don't execute the statistics
+    public Integer portStats = null;
+    public int portTraces = 4334;
+    public String clientHost;
+    public String defaultClientHost = "localhost";
+    public String contextStr = "Default";
+    public boolean isDefaultContext = true;
+    public String pid = "0";
+    public String rootPid = null;
+    public String fatherPid = null;
+    public String fatherNode = null;
+    public long startTime = 0;
+    public boolean isChildJob = false;
+    public String log4jLevel = "";
+    
+    private boolean enableLogStash;
 
-	public boolean watch = false;
-	// portStats is null, it means don't execute the statistics
-	public Integer portStats = null;
-	public int portTraces = 4334;
-	public String clientHost;
-	public String defaultClientHost = "localhost";
-	public String contextStr = "Default";
-	public boolean isDefaultContext = true;
-	public String pid = "0";
-	public String rootPid = null;
-	public String fatherPid = null;
-	public String fatherNode = null;
-	public long startTime = 0;
-	public boolean isChildJob = false;
-	public String log4jLevel = "";
+    private boolean execStat = true;
 
-	private boolean enableLogStash;
+    private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
+        protected java.util.Map<String, String> initialValue() {
+            java.util.Map<String,String> threadRunResultMap = new java.util.HashMap<String, String>();
+            threadRunResultMap.put("errorCode", null);
+            threadRunResultMap.put("status", "");
+            return threadRunResultMap;
+        };
+    };
 
-	private boolean execStat = true;
 
-	private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
-		protected java.util.Map<String, String> initialValue() {
-			java.util.Map<String, String> threadRunResultMap = new java.util.HashMap<String, String>();
-			threadRunResultMap.put("errorCode", null);
-			threadRunResultMap.put("status", "");
-			return threadRunResultMap;
-		};
-	};
+    private PropertiesWithType context_param = new PropertiesWithType();
+    public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
 
-	private PropertiesWithType context_param = new PropertiesWithType();
-	public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
+    public String status= "";
+    
 
-	public String status = "";
+    public static void main(String[] args){
+        final CustomerAddress_HARM CustomerAddress_HARMClass = new CustomerAddress_HARM();
 
-	public static void main(String[] args) {
-		final CustomerAddress_HARM CustomerAddress_HARMClass = new CustomerAddress_HARM();
+        int exitCode = CustomerAddress_HARMClass.runJobInTOS(args);
 
-		int exitCode = CustomerAddress_HARMClass.runJobInTOS(args);
+        System.exit(exitCode);
+    }
 
-		System.exit(exitCode);
-	}
 
-	public String[][] runJob(String[] args) {
+    public String[][] runJob(String[] args) {
 
-		int exitCode = runJobInTOS(args);
-		String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
+        int exitCode = runJobInTOS(args);
+        String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
 
-		return bufferValue;
-	}
+        return bufferValue;
+    }
 
-	public boolean hastBufferOutputComponent() {
+    public boolean hastBufferOutputComponent() {
 		boolean hastBufferOutput = false;
+    	
+        return hastBufferOutput;
+    }
 
-		return hastBufferOutput;
-	}
+    public int runJobInTOS(String[] args) {
+	   	// reset status
+	   	status = "";
+	   	
+        String lastStr = "";
+        for (String arg : args) {
+            if (arg.equalsIgnoreCase("--context_param")) {
+                lastStr = arg;
+            } else if (lastStr.equals("")) {
+                evalParam(arg);
+            } else {
+                evalParam(lastStr + " " + arg);
+                lastStr = "";
+            }
+        }
+        enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
 
-	public int runJobInTOS(String[] args) {
-		// reset status
-		status = "";
+    	
+    	
 
-		String lastStr = "";
-		for (String arg : args) {
-			if (arg.equalsIgnoreCase("--context_param")) {
-				lastStr = arg;
-			} else if (lastStr.equals("")) {
-				evalParam(arg);
-			} else {
-				evalParam(lastStr + " " + arg);
-				lastStr = "";
-			}
-		}
-		enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
+        if(clientHost == null) {
+            clientHost = defaultClientHost;
+        }
 
-		if (clientHost == null) {
-			clientHost = defaultClientHost;
-		}
+        if(pid == null || "0".equals(pid)) {
+            pid = TalendString.getAsciiRandomString(6);
+        }
 
-		if (pid == null || "0".equals(pid)) {
-			pid = TalendString.getAsciiRandomString(6);
-		}
+        if (rootPid==null) {
+            rootPid = pid;
+        }
+        if (fatherPid==null) {
+            fatherPid = pid;
+        }else{
+            isChildJob = true;
+        }
 
-		if (rootPid == null) {
-			rootPid = pid;
-		}
-		if (fatherPid == null) {
-			fatherPid = pid;
-		} else {
-			isChildJob = true;
-		}
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
-		if (portStats != null) {
-			// portStats = -1; //for testing
-			if (portStats < 0 || portStats > 65535) {
-				// issue:10869, the portStats is invalid, so this client socket can't open
-				System.err.println("The statistics socket port " + portStats + " is invalid.");
-				execStat = false;
-			}
-		} else {
-			execStat = false;
-		}
+        try {
+            //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
+            java.io.InputStream inContext = CustomerAddress_HARM.class.getClassLoader().getResourceAsStream("adventure_project/customeraddress_harm_0_1/contexts/" + contextStr + ".properties");
+            if (inContext == null) {
+                inContext = CustomerAddress_HARM.class.getClassLoader().getResourceAsStream("config/contexts/" + contextStr + ".properties");
+            }
+            if (inContext != null) {
+                //defaultProps is in order to keep the original context value
+                if(context != null && context.isEmpty()) {
+	                defaultProps.load(inContext);
+	                context = new ContextProperties(defaultProps);
+                }
+                
+                inContext.close();
+            } else if (!isDefaultContext) {
+                //print info and job continue to run, for case: context_param is not empty.
+                System.err.println("Could not find the context " + contextStr);
+            }
 
-		try {
-			// call job/subjob with an existing context, like: --context=production. if
-			// without this parameter, there will use the default context instead.
-			java.io.InputStream inContext = CustomerAddress_HARM.class.getClassLoader().getResourceAsStream(
-					"adventure_project/customeraddress_harm_0_1/contexts/" + contextStr + ".properties");
-			if (inContext == null) {
-				inContext = CustomerAddress_HARM.class.getClassLoader()
-						.getResourceAsStream("config/contexts/" + contextStr + ".properties");
-			}
-			if (inContext != null) {
-				// defaultProps is in order to keep the original context value
-				if (context != null && context.isEmpty()) {
-					defaultProps.load(inContext);
-					context = new ContextProperties(defaultProps);
-				}
-
-				inContext.close();
-			} else if (!isDefaultContext) {
-				// print info and job continue to run, for case: context_param is not empty.
-				System.err.println("Could not find the context " + contextStr);
-			}
-
-			if (!context_param.isEmpty()) {
-				context.putAll(context_param);
-				// set types for params from parentJobs
-				for (Object key : context_param.keySet()) {
+            if(!context_param.isEmpty()) {
+                context.putAll(context_param);
+				//set types for params from parentJobs
+				for (Object key: context_param.keySet()){
 					String context_key = key.toString();
 					String context_type = context_param.getContextType(context_key);
 					context.setContextType(context_key, context_type);
 
 				}
-			}
-			class ContextProcessing {
-				private void processContext_0() {
-				}
+            }
+            class ContextProcessing {
+                private void processContext_0() {
+                } 
+                public void processAllContext() {
+                        processContext_0();
+                }
+            }
 
-				public void processAllContext() {
-					processContext_0();
-				}
-			}
+            new ContextProcessing().processAllContext();
+        } catch (java.io.IOException ie) {
+            System.err.println("Could not load context "+contextStr);
+            ie.printStackTrace();
+        }
 
-			new ContextProcessing().processAllContext();
-		} catch (java.io.IOException ie) {
-			System.err.println("Could not load context " + contextStr);
-			ie.printStackTrace();
-		}
+        // get context value from parent directly
+        if (parentContextMap != null && !parentContextMap.isEmpty()) {
+        }
 
-		// get context value from parent directly
-		if (parentContextMap != null && !parentContextMap.isEmpty()) {
-		}
-
-		// Resume: init the resumeUtil
-		resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
-		resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
-		resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
+        //Resume: init the resumeUtil
+        resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
+        resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
+        resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
 
 		List<String> parametersToEncrypt = new java.util.ArrayList<String>();
-		// Resume: jobStart
-		resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "",
-				"", "", "", "", resumeUtil.convertToJsonText(context, parametersToEncrypt));
+        //Resume: jobStart
+        resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
-		if (execStat) {
-			try {
-				runStat.openSocket(!isChildJob);
-				runStat.setAllPID(rootPid, fatherPid, pid, jobName);
-				runStat.startThreadStat(clientHost, portStats);
-				runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
-			} catch (java.io.IOException ioException) {
-				ioException.printStackTrace();
-			}
-		}
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
-		java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
-		globalMap.put("concurrentHashMap", concurrentHashMap);
 
-		long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-		long endUsedMemory = 0;
-		long end = 0;
 
-		startTime = System.currentTimeMillis();
+	
+	    java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
+	    globalMap.put("concurrentHashMap", concurrentHashMap);
+	
 
-		this.globalResumeTicket = true;// to run tPreJob
+    long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+    long endUsedMemory = 0;
+    long end = 0;
 
-		this.globalResumeTicket = false;// to run others jobs
+    startTime = System.currentTimeMillis();
 
-		try {
-			errorCode = null;
-			tDBInput_1Process(globalMap);
-			if (!"failure".equals(status)) {
-				status = "end";
-			}
-		} catch (TalendException e_tDBInput_1) {
-			globalMap.put("tDBInput_1_SUBPROCESS_STATE", -1);
 
-			e_tDBInput_1.printStackTrace();
 
-		}
 
-		this.globalResumeTicket = true;// to run tPostJob
+this.globalResumeTicket = true;//to run tPreJob
 
-		end = System.currentTimeMillis();
 
-		if (watch) {
-			System.out.println((end - startTime) + " milliseconds");
-		}
 
-		endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-		if (false) {
-			System.out.println(
-					(endUsedMemory - startUsedMemory) + " bytes memory increase when running : CustomerAddress_HARM");
-		}
 
-		if (execStat) {
-			runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
-			runStat.stopThreadStat();
-		}
-		int returnCode = 0;
-		if (errorCode == null) {
-			returnCode = status != null && status.equals("failure") ? 1 : 0;
-		} else {
-			returnCode = errorCode.intValue();
-		}
-		resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "",
-				"" + returnCode, "", "", "");
+this.globalResumeTicket = false;//to run others jobs
 
-		return returnCode;
+try {
+errorCode = null;tDBInput_1Process(globalMap);
+if(!"failure".equals(status)) { status = "end"; }
+}catch (TalendException e_tDBInput_1) {
+globalMap.put("tDBInput_1_SUBPROCESS_STATE", -1);
 
-	}
+e_tDBInput_1.printStackTrace();
 
-	// only for OSGi env
-	public void destroy() {
+}
 
-	}
+this.globalResumeTicket = true;//to run tPostJob
 
-	private java.util.Map<String, Object> getSharedConnections4REST() {
-		java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
 
-		return connections;
-	}
 
-	private void evalParam(String arg) {
-		if (arg.startsWith("--resuming_logs_dir_path")) {
-			resuming_logs_dir_path = arg.substring(25);
-		} else if (arg.startsWith("--resuming_checkpoint_path")) {
-			resuming_checkpoint_path = arg.substring(27);
-		} else if (arg.startsWith("--parent_part_launcher")) {
-			parent_part_launcher = arg.substring(23);
-		} else if (arg.startsWith("--watch")) {
-			watch = true;
-		} else if (arg.startsWith("--stat_port=")) {
-			String portStatsStr = arg.substring(12);
-			if (portStatsStr != null && !portStatsStr.equals("null")) {
-				portStats = Integer.parseInt(portStatsStr);
-			}
-		} else if (arg.startsWith("--trace_port=")) {
-			portTraces = Integer.parseInt(arg.substring(13));
-		} else if (arg.startsWith("--client_host=")) {
-			clientHost = arg.substring(14);
-		} else if (arg.startsWith("--context=")) {
-			contextStr = arg.substring(10);
-			isDefaultContext = false;
-		} else if (arg.startsWith("--father_pid=")) {
-			fatherPid = arg.substring(13);
-		} else if (arg.startsWith("--root_pid=")) {
-			rootPid = arg.substring(11);
-		} else if (arg.startsWith("--father_node=")) {
-			fatherNode = arg.substring(14);
-		} else if (arg.startsWith("--pid=")) {
-			pid = arg.substring(6);
-		} else if (arg.startsWith("--context_type")) {
-			String keyValue = arg.substring(15);
+
+        end = System.currentTimeMillis();
+
+        if (watch) {
+            System.out.println((end-startTime)+" milliseconds");
+        }
+
+        endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        if (false) {
+            System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : CustomerAddress_HARM");
+        }
+
+
+
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
+    int returnCode = 0;
+    if(errorCode == null) {
+         returnCode = status != null && status.equals("failure") ? 1 : 0;
+    } else {
+         returnCode = errorCode.intValue();
+    }
+    resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","" + returnCode,"","","");
+
+    return returnCode;
+
+  }
+
+    // only for OSGi env
+    public void destroy() {
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private java.util.Map<String, Object> getSharedConnections4REST() {
+        java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
+
+
+
+
+
+
+
+        return connections;
+    }
+
+    private void evalParam(String arg) {
+        if (arg.startsWith("--resuming_logs_dir_path")) {
+            resuming_logs_dir_path = arg.substring(25);
+        } else if (arg.startsWith("--resuming_checkpoint_path")) {
+            resuming_checkpoint_path = arg.substring(27);
+        } else if (arg.startsWith("--parent_part_launcher")) {
+            parent_part_launcher = arg.substring(23);
+        } else if (arg.startsWith("--watch")) {
+            watch = true;
+        } else if (arg.startsWith("--stat_port=")) {
+            String portStatsStr = arg.substring(12);
+            if (portStatsStr != null && !portStatsStr.equals("null")) {
+                portStats = Integer.parseInt(portStatsStr);
+            }
+        } else if (arg.startsWith("--trace_port=")) {
+            portTraces = Integer.parseInt(arg.substring(13));
+        } else if (arg.startsWith("--client_host=")) {
+            clientHost = arg.substring(14);
+        } else if (arg.startsWith("--context=")) {
+            contextStr = arg.substring(10);
+            isDefaultContext = false;
+        } else if (arg.startsWith("--father_pid=")) {
+            fatherPid = arg.substring(13);
+        } else if (arg.startsWith("--root_pid=")) {
+            rootPid = arg.substring(11);
+        } else if (arg.startsWith("--father_node=")) {
+            fatherNode = arg.substring(14);
+        } else if (arg.startsWith("--pid=")) {
+            pid = arg.substring(6);
+        } else if (arg.startsWith("--context_type")) {
+            String keyValue = arg.substring(15);
 			int index = -1;
-			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-				if (fatherPid == null) {
-					context_param.setContextType(keyValue.substring(0, index),
-							replaceEscapeChars(keyValue.substring(index + 1)));
-				} else { // the subjob won't escape the especial chars
-					context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1));
-				}
+            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+                if (fatherPid==null) {
+                    context_param.setContextType(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+                } else { // the subjob won't escape the especial chars
+                    context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1) );
+                }
 
-			}
+            }
 
 		} else if (arg.startsWith("--context_param")) {
-			String keyValue = arg.substring(16);
-			int index = -1;
-			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-				if (fatherPid == null) {
-					context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
-				} else { // the subjob won't escape the especial chars
-					context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1));
-				}
-			}
-		} else if (arg.startsWith("--log4jLevel=")) {
-			log4jLevel = arg.substring(13);
-		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {// for trunjob call
-			final int equal = arg.indexOf('=');
+            String keyValue = arg.substring(16);
+            int index = -1;
+            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+                if (fatherPid==null) {
+                    context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+                } else { // the subjob won't escape the especial chars
+                    context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1) );
+                }
+            }
+        } else if (arg.startsWith("--log4jLevel=")) {
+            log4jLevel = arg.substring(13);
+		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {//for trunjob call
+		    final int equal = arg.indexOf('=');
 			final String key = arg.substring("--".length(), equal);
 			System.setProperty(key, arg.substring(equal + 1));
 		}
-	}
+    }
+    
+    private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
 
-	private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
-
-	private final String[][] escapeChars = { { "\\\\", "\\" }, { "\\n", "\n" }, { "\\'", "\'" }, { "\\r", "\r" },
-			{ "\\f", "\f" }, { "\\b", "\b" }, { "\\t", "\t" } };
-
-	private String replaceEscapeChars(String keyValue) {
+    private final String[][] escapeChars = {
+        {"\\\\","\\"},{"\\n","\n"},{"\\'","\'"},{"\\r","\r"},
+        {"\\f","\f"},{"\\b","\b"},{"\\t","\t"}
+        };
+    private String replaceEscapeChars (String keyValue) {
 
 		if (keyValue == null || ("").equals(keyValue.trim())) {
 			return keyValue;
@@ -3959,17 +4761,15 @@ public class CustomerAddress_HARM implements TalendJob {
 			int index = -1;
 			// judege if the left string includes escape chars
 			for (String[] strArray : escapeChars) {
-				index = keyValue.indexOf(strArray[0], currIndex);
-				if (index >= 0) {
+				index = keyValue.indexOf(strArray[0],currIndex);
+				if (index>=0) {
 
-					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0],
-							strArray[1]));
+					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0], strArray[1]));
 					currIndex = index + strArray[0].length();
 					break;
 				}
 			}
-			// if the left string doesn't include escape chars, append the left into the
-			// result
+			// if the left string doesn't include escape chars, append the left into the result
 			if (index < 0) {
 				result.append(keyValue.substring(currIndex));
 				currIndex = currIndex + keyValue.length();
@@ -3977,19 +4777,20 @@ public class CustomerAddress_HARM implements TalendJob {
 		}
 
 		return result.toString();
-	}
+    }
 
-	public Integer getErrorCode() {
-		return errorCode;
-	}
+    public Integer getErrorCode() {
+        return errorCode;
+    }
 
-	public String getStatus() {
-		return status;
-	}
 
-	ResumeUtil resumeUtil = null;
+    public String getStatus() {
+        return status;
+    }
+
+    ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 123449 characters generated by Talend Open Studio for Big Data on the 9 de
- * Julho de 2021 23h21min8s BRT
+ *     123418 characters generated by Talend Open Studio for Big Data 
+ *     on the 13 de Julho de 2021 14h36min2s BRT
  ************************************************************************************************/
