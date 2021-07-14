@@ -34,7 +34,7 @@
     <talend.job.date>${maven.build.timestamp}</talend.job.date>
     <current.resources.dir>${basedir}/src/main/ext-resources</current.resources.dir>
     <talend.job.name>REL_Semanal_Vendas</talend.job.name>
-    <talend.job.id>_TkCjwONQEeu4Y76m70UyTA</talend.job.id>
+    <talend.job.id>_bUt_AORGEeupN8uDJR4HYA</talend.job.id>
     <talend.project.id>0</talend.project.id>
     <talend.job.folder>dataops/curated/</talend.job.folder>
     <talend.job.framework></talend.job.framework>

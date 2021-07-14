@@ -429,16 +429,10 @@ public static class row7Struct implements routines.system.IPersistableRow<row7St
 					return this.SemanaAno;
 				}
 				
-			    public Integer OnlineOrderFlag;
+			    public java.util.Date OrderDate;
 
-				public Integer getOnlineOrderFlag () {
-					return this.OnlineOrderFlag;
-				}
-				
-			    public String Categoria;
-
-				public String getCategoria () {
-					return this.Categoria;
+				public java.util.Date getOrderDate () {
+					return this.OrderDate;
 				}
 				
 			    public String CountryRegion;
@@ -447,16 +441,28 @@ public static class row7Struct implements routines.system.IPersistableRow<row7St
 					return this.CountryRegion;
 				}
 				
-			    public String CompanyName;
-
-				public String getCompanyName () {
-					return this.CompanyName;
-				}
-				
 			    public String SalesPerson;
 
 				public String getSalesPerson () {
 					return this.SalesPerson;
+				}
+				
+			    public String ProductNumber;
+
+				public String getProductNumber () {
+					return this.ProductNumber;
+				}
+				
+			    public String ProductName;
+
+				public String getProductName () {
+					return this.ProductName;
+				}
+				
+			    public Integer OrderQty;
+
+				public Integer getOrderQty () {
+					return this.OrderQty;
 				}
 				
 			    public Float ValorVenda;
@@ -487,6 +493,27 @@ public static class row7Struct implements routines.system.IPersistableRow<row7St
 	    	dos.writeInt(intNum);
     	}
 	}
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
 	private String readString(ObjectInputStream dis) throws IOException{
 		String strReturn = null;
@@ -532,15 +559,17 @@ public static class row7Struct implements routines.system.IPersistableRow<row7St
 					
 						this.SemanaAno = readInteger(dis);
 					
-						this.OnlineOrderFlag = readInteger(dis);
-					
-					this.Categoria = readString(dis);
+					this.OrderDate = readDate(dis);
 					
 					this.CountryRegion = readString(dis);
 					
-					this.CompanyName = readString(dis);
-					
 					this.SalesPerson = readString(dis);
+					
+					this.ProductNumber = readString(dis);
+					
+					this.ProductName = readString(dis);
+					
+						this.OrderQty = readInteger(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -579,13 +608,9 @@ public static class row7Struct implements routines.system.IPersistableRow<row7St
 				
 						writeInteger(this.SemanaAno,dos);
 					
-					// Integer
+					// java.util.Date
 				
-						writeInteger(this.OnlineOrderFlag,dos);
-					
-					// String
-				
-						writeString(this.Categoria,dos);
+						writeDate(this.OrderDate,dos);
 					
 					// String
 				
@@ -593,11 +618,19 @@ public static class row7Struct implements routines.system.IPersistableRow<row7St
 					
 					// String
 				
-						writeString(this.CompanyName,dos);
+						writeString(this.SalesPerson,dos);
 					
 					// String
 				
-						writeString(this.SalesPerson,dos);
+						writeString(this.ProductNumber,dos);
+					
+					// String
+				
+						writeString(this.ProductName,dos);
+					
+					// Integer
+				
+						writeInteger(this.OrderQty,dos);
 					
 					// Float
 				
@@ -624,11 +657,12 @@ public static class row7Struct implements routines.system.IPersistableRow<row7St
 		sb.append("Ano="+String.valueOf(Ano));
 		sb.append(",Mes="+String.valueOf(Mes));
 		sb.append(",SemanaAno="+String.valueOf(SemanaAno));
-		sb.append(",OnlineOrderFlag="+String.valueOf(OnlineOrderFlag));
-		sb.append(",Categoria="+Categoria);
+		sb.append(",OrderDate="+String.valueOf(OrderDate));
 		sb.append(",CountryRegion="+CountryRegion);
-		sb.append(",CompanyName="+CompanyName);
 		sb.append(",SalesPerson="+SalesPerson);
+		sb.append(",ProductNumber="+ProductNumber);
+		sb.append(",ProductName="+ProductName);
+		sb.append(",OrderQty="+String.valueOf(OrderQty));
 		sb.append(",ValorVenda="+String.valueOf(ValorVenda));
 	    sb.append("]");
 
@@ -693,16 +727,10 @@ public static class OnRowsEndStructtAggregateRow_1 implements routines.system.IP
 					return this.SemanaAno;
 				}
 				
-			    public Integer OnlineOrderFlag;
+			    public java.util.Date OrderDate;
 
-				public Integer getOnlineOrderFlag () {
-					return this.OnlineOrderFlag;
-				}
-				
-			    public String Categoria;
-
-				public String getCategoria () {
-					return this.Categoria;
+				public java.util.Date getOrderDate () {
+					return this.OrderDate;
 				}
 				
 			    public String CountryRegion;
@@ -711,16 +739,28 @@ public static class OnRowsEndStructtAggregateRow_1 implements routines.system.IP
 					return this.CountryRegion;
 				}
 				
-			    public String CompanyName;
-
-				public String getCompanyName () {
-					return this.CompanyName;
-				}
-				
 			    public String SalesPerson;
 
 				public String getSalesPerson () {
 					return this.SalesPerson;
+				}
+				
+			    public String ProductNumber;
+
+				public String getProductNumber () {
+					return this.ProductNumber;
+				}
+				
+			    public String ProductName;
+
+				public String getProductName () {
+					return this.ProductName;
+				}
+				
+			    public Integer OrderQty;
+
+				public Integer getOrderQty () {
+					return this.OrderQty;
 				}
 				
 			    public Float ValorVenda;
@@ -751,6 +791,27 @@ public static class OnRowsEndStructtAggregateRow_1 implements routines.system.IP
 	    	dos.writeInt(intNum);
     	}
 	}
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
 	private String readString(ObjectInputStream dis) throws IOException{
 		String strReturn = null;
@@ -796,15 +857,17 @@ public static class OnRowsEndStructtAggregateRow_1 implements routines.system.IP
 					
 						this.SemanaAno = readInteger(dis);
 					
-						this.OnlineOrderFlag = readInteger(dis);
-					
-					this.Categoria = readString(dis);
+					this.OrderDate = readDate(dis);
 					
 					this.CountryRegion = readString(dis);
 					
-					this.CompanyName = readString(dis);
-					
 					this.SalesPerson = readString(dis);
+					
+					this.ProductNumber = readString(dis);
+					
+					this.ProductName = readString(dis);
+					
+						this.OrderQty = readInteger(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -843,13 +906,9 @@ public static class OnRowsEndStructtAggregateRow_1 implements routines.system.IP
 				
 						writeInteger(this.SemanaAno,dos);
 					
-					// Integer
+					// java.util.Date
 				
-						writeInteger(this.OnlineOrderFlag,dos);
-					
-					// String
-				
-						writeString(this.Categoria,dos);
+						writeDate(this.OrderDate,dos);
 					
 					// String
 				
@@ -857,11 +916,19 @@ public static class OnRowsEndStructtAggregateRow_1 implements routines.system.IP
 					
 					// String
 				
-						writeString(this.CompanyName,dos);
+						writeString(this.SalesPerson,dos);
 					
 					// String
 				
-						writeString(this.SalesPerson,dos);
+						writeString(this.ProductNumber,dos);
+					
+					// String
+				
+						writeString(this.ProductName,dos);
+					
+					// Integer
+				
+						writeInteger(this.OrderQty,dos);
 					
 					// Float
 				
@@ -888,11 +955,12 @@ public static class OnRowsEndStructtAggregateRow_1 implements routines.system.IP
 		sb.append("Ano="+String.valueOf(Ano));
 		sb.append(",Mes="+String.valueOf(Mes));
 		sb.append(",SemanaAno="+String.valueOf(SemanaAno));
-		sb.append(",OnlineOrderFlag="+String.valueOf(OnlineOrderFlag));
-		sb.append(",Categoria="+Categoria);
+		sb.append(",OrderDate="+String.valueOf(OrderDate));
 		sb.append(",CountryRegion="+CountryRegion);
-		sb.append(",CompanyName="+CompanyName);
 		sb.append(",SalesPerson="+SalesPerson);
+		sb.append(",ProductNumber="+ProductNumber);
+		sb.append(",ProductName="+ProductName);
+		sb.append(",OrderQty="+String.valueOf(OrderQty));
 		sb.append(",ValorVenda="+String.valueOf(ValorVenda));
 	    sb.append("]");
 
@@ -957,16 +1025,10 @@ public static class saida_Rel_VendasStruct implements routines.system.IPersistab
 					return this.SemanaAno;
 				}
 				
-			    public Integer OnlineOrderFlag;
+			    public java.util.Date OrderDate;
 
-				public Integer getOnlineOrderFlag () {
-					return this.OnlineOrderFlag;
-				}
-				
-			    public String Categoria;
-
-				public String getCategoria () {
-					return this.Categoria;
+				public java.util.Date getOrderDate () {
+					return this.OrderDate;
 				}
 				
 			    public String CountryRegion;
@@ -975,22 +1037,34 @@ public static class saida_Rel_VendasStruct implements routines.system.IPersistab
 					return this.CountryRegion;
 				}
 				
-			    public String CompanyName;
-
-				public String getCompanyName () {
-					return this.CompanyName;
-				}
-				
 			    public String SalesPerson;
 
 				public String getSalesPerson () {
 					return this.SalesPerson;
 				}
 				
+			    public String ProductNumber;
+
+				public String getProductNumber () {
+					return this.ProductNumber;
+				}
+				
+			    public String ProductName;
+
+				public String getProductName () {
+					return this.ProductName;
+				}
+				
 			    public Float ValorVenda;
 
 				public Float getValorVenda () {
 					return this.ValorVenda;
+				}
+				
+			    public Integer OrderQty;
+
+				public Integer getOrderQty () {
+					return this.OrderQty;
 				}
 				
 
@@ -1015,6 +1089,27 @@ public static class saida_Rel_VendasStruct implements routines.system.IPersistab
 	    	dos.writeInt(intNum);
     	}
 	}
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
 	private String readString(ObjectInputStream dis) throws IOException{
 		String strReturn = null;
@@ -1060,15 +1155,15 @@ public static class saida_Rel_VendasStruct implements routines.system.IPersistab
 					
 						this.SemanaAno = readInteger(dis);
 					
-						this.OnlineOrderFlag = readInteger(dis);
-					
-					this.Categoria = readString(dis);
+					this.OrderDate = readDate(dis);
 					
 					this.CountryRegion = readString(dis);
 					
-					this.CompanyName = readString(dis);
-					
 					this.SalesPerson = readString(dis);
+					
+					this.ProductNumber = readString(dis);
+					
+					this.ProductName = readString(dis);
 					
 			            length = dis.readByte();
            				if (length == -1) {
@@ -1076,6 +1171,8 @@ public static class saida_Rel_VendasStruct implements routines.system.IPersistab
            				} else {
            			    	this.ValorVenda = dis.readFloat();
            				}
+					
+						this.OrderQty = readInteger(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -1107,13 +1204,9 @@ public static class saida_Rel_VendasStruct implements routines.system.IPersistab
 				
 						writeInteger(this.SemanaAno,dos);
 					
-					// Integer
+					// java.util.Date
 				
-						writeInteger(this.OnlineOrderFlag,dos);
-					
-					// String
-				
-						writeString(this.Categoria,dos);
+						writeDate(this.OrderDate,dos);
 					
 					// String
 				
@@ -1121,11 +1214,15 @@ public static class saida_Rel_VendasStruct implements routines.system.IPersistab
 					
 					// String
 				
-						writeString(this.CompanyName,dos);
+						writeString(this.SalesPerson,dos);
 					
 					// String
 				
-						writeString(this.SalesPerson,dos);
+						writeString(this.ProductNumber,dos);
+					
+					// String
+				
+						writeString(this.ProductName,dos);
 					
 					// Float
 				
@@ -1135,6 +1232,10 @@ public static class saida_Rel_VendasStruct implements routines.system.IPersistab
                				dos.writeByte(0);
            			    	dos.writeFloat(this.ValorVenda);
 		            	}
+					
+					// Integer
+				
+						writeInteger(this.OrderQty,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -1152,12 +1253,13 @@ public static class saida_Rel_VendasStruct implements routines.system.IPersistab
 		sb.append("Ano="+String.valueOf(Ano));
 		sb.append(",Mes="+String.valueOf(Mes));
 		sb.append(",SemanaAno="+String.valueOf(SemanaAno));
-		sb.append(",OnlineOrderFlag="+String.valueOf(OnlineOrderFlag));
-		sb.append(",Categoria="+Categoria);
+		sb.append(",OrderDate="+String.valueOf(OrderDate));
 		sb.append(",CountryRegion="+CountryRegion);
-		sb.append(",CompanyName="+CompanyName);
 		sb.append(",SalesPerson="+SalesPerson);
+		sb.append(",ProductNumber="+ProductNumber);
+		sb.append(",ProductName="+ProductName);
 		sb.append(",ValorVenda="+String.valueOf(ValorVenda));
+		sb.append(",OrderQty="+String.valueOf(OrderQty));
 	    sb.append("]");
 
 	    return sb.toString();
@@ -1956,11 +2058,12 @@ java.util.Map hashAggreg_tAggregateRow_1 = new java.util.HashMap();
     				Integer Ano;
     				Integer Mes;
     				Integer SemanaAno;
-    				Integer OnlineOrderFlag;
-    				String Categoria;
+    				java.util.Date OrderDate;
     				String CountryRegion;
-    				String CompanyName;
-    				String SalesPerson;BigDecimal ValorVenda_sum;
+    				String SalesPerson;
+    				String ProductNumber;
+    				String ProductName;
+         			Integer OrderQty_sum;BigDecimal ValorVenda_sum;
            			
         
 	    @Override
@@ -1975,15 +2078,15 @@ java.util.Map hashAggreg_tAggregateRow_1 = new java.util.HashMap();
 							
 							result = prime * result + ((this.SemanaAno == null) ? 0 : this.SemanaAno.hashCode());
 							
-							result = prime * result + ((this.OnlineOrderFlag == null) ? 0 : this.OnlineOrderFlag.hashCode());
-							
-							result = prime * result + ((this.Categoria == null) ? 0 : this.Categoria.hashCode());
+							result = prime * result + ((this.OrderDate == null) ? 0 : this.OrderDate.hashCode());
 							
 							result = prime * result + ((this.CountryRegion == null) ? 0 : this.CountryRegion.hashCode());
 							
-							result = prime * result + ((this.CompanyName == null) ? 0 : this.CompanyName.hashCode());
-							
 							result = prime * result + ((this.SalesPerson == null) ? 0 : this.SalesPerson.hashCode());
+							
+							result = prime * result + ((this.ProductNumber == null) ? 0 : this.ProductNumber.hashCode());
+							
+							result = prime * result + ((this.ProductName == null) ? 0 : this.ProductName.hashCode());
 							
 	    		this.hashCode = result;
 	    		this.hashCodeDirty = false;		
@@ -2016,16 +2119,10 @@ java.util.Map hashAggreg_tAggregateRow_1 = new java.util.HashMap();
 							} else if (!this.SemanaAno.equals(other.SemanaAno)) 
 								return false;
 						
-							if (this.OnlineOrderFlag == null) {
-								if (other.OnlineOrderFlag != null) 
+							if (this.OrderDate == null) {
+								if (other.OrderDate != null) 
 									return false;
-							} else if (!this.OnlineOrderFlag.equals(other.OnlineOrderFlag)) 
-								return false;
-						
-							if (this.Categoria == null) {
-								if (other.Categoria != null) 
-									return false;
-							} else if (!this.Categoria.equals(other.Categoria)) 
+							} else if (!this.OrderDate.equals(other.OrderDate)) 
 								return false;
 						
 							if (this.CountryRegion == null) {
@@ -2034,16 +2131,22 @@ java.util.Map hashAggreg_tAggregateRow_1 = new java.util.HashMap();
 							} else if (!this.CountryRegion.equals(other.CountryRegion)) 
 								return false;
 						
-							if (this.CompanyName == null) {
-								if (other.CompanyName != null) 
-									return false;
-							} else if (!this.CompanyName.equals(other.CompanyName)) 
-								return false;
-						
 							if (this.SalesPerson == null) {
 								if (other.SalesPerson != null) 
 									return false;
 							} else if (!this.SalesPerson.equals(other.SalesPerson)) 
+								return false;
+						
+							if (this.ProductNumber == null) {
+								if (other.ProductNumber != null) 
+									return false;
+							} else if (!this.ProductNumber.equals(other.ProductNumber)) 
+								return false;
+						
+							if (this.ProductName == null) {
+								if (other.ProductName != null) 
+									return false;
+							} else if (!this.ProductName.equals(other.ProductName)) 
 								return false;
 						
 			
@@ -3495,12 +3598,13 @@ if(!rejectedInnerJoin_tMap_1 ) {
 saida_Rel_Vendas_tmp.Ano = row2.Ano ;
 saida_Rel_Vendas_tmp.Mes = row2.Mes ;
 saida_Rel_Vendas_tmp.SemanaAno = row2.SemanaAno ;
-saida_Rel_Vendas_tmp.OnlineOrderFlag = row1.OnlineOrderFlag ;
-saida_Rel_Vendas_tmp.Categoria = row3.Categoria ;
+saida_Rel_Vendas_tmp.OrderDate = row1.OrderDate ;
 saida_Rel_Vendas_tmp.CountryRegion = row4.CountryRegion ;
-saida_Rel_Vendas_tmp.CompanyName = row4.CompanyName ;
 saida_Rel_Vendas_tmp.SalesPerson = row5.SalesPerson ;
+saida_Rel_Vendas_tmp.ProductNumber = row3.ProductNumber ;
+saida_Rel_Vendas_tmp.ProductName = row3.Name ;
 saida_Rel_Vendas_tmp.ValorVenda = row1.LineTotal ;
+saida_Rel_Vendas_tmp.OrderQty = row1.OrderQty ;
 saida_Rel_Vendas = saida_Rel_Vendas_tmp;
 }  // closing inner join bracket (2)
 // ###############################
@@ -3573,11 +3677,11 @@ if(saida_Rel_Vendas != null) {
 operation_finder_tAggregateRow_1.Ano = saida_Rel_Vendas.Ano;
 			operation_finder_tAggregateRow_1.Mes = saida_Rel_Vendas.Mes;
 			operation_finder_tAggregateRow_1.SemanaAno = saida_Rel_Vendas.SemanaAno;
-			operation_finder_tAggregateRow_1.OnlineOrderFlag = saida_Rel_Vendas.OnlineOrderFlag;
-			operation_finder_tAggregateRow_1.Categoria = saida_Rel_Vendas.Categoria;
+			operation_finder_tAggregateRow_1.OrderDate = saida_Rel_Vendas.OrderDate;
 			operation_finder_tAggregateRow_1.CountryRegion = saida_Rel_Vendas.CountryRegion;
-			operation_finder_tAggregateRow_1.CompanyName = saida_Rel_Vendas.CompanyName;
 			operation_finder_tAggregateRow_1.SalesPerson = saida_Rel_Vendas.SalesPerson;
+			operation_finder_tAggregateRow_1.ProductNumber = saida_Rel_Vendas.ProductNumber;
+			operation_finder_tAggregateRow_1.ProductName = saida_Rel_Vendas.ProductName;
 			
 
 	operation_finder_tAggregateRow_1.hashCodeDirty = true;
@@ -3593,11 +3697,11 @@ operation_finder_tAggregateRow_1.Ano = saida_Rel_Vendas.Ano;
 		operation_result_tAggregateRow_1.Ano = operation_finder_tAggregateRow_1.Ano;
 				operation_result_tAggregateRow_1.Mes = operation_finder_tAggregateRow_1.Mes;
 				operation_result_tAggregateRow_1.SemanaAno = operation_finder_tAggregateRow_1.SemanaAno;
-				operation_result_tAggregateRow_1.OnlineOrderFlag = operation_finder_tAggregateRow_1.OnlineOrderFlag;
-				operation_result_tAggregateRow_1.Categoria = operation_finder_tAggregateRow_1.Categoria;
+				operation_result_tAggregateRow_1.OrderDate = operation_finder_tAggregateRow_1.OrderDate;
 				operation_result_tAggregateRow_1.CountryRegion = operation_finder_tAggregateRow_1.CountryRegion;
-				operation_result_tAggregateRow_1.CompanyName = operation_finder_tAggregateRow_1.CompanyName;
 				operation_result_tAggregateRow_1.SalesPerson = operation_finder_tAggregateRow_1.SalesPerson;
+				operation_result_tAggregateRow_1.ProductNumber = operation_finder_tAggregateRow_1.ProductNumber;
+				operation_result_tAggregateRow_1.ProductName = operation_finder_tAggregateRow_1.ProductName;
 				
 		
 		
@@ -3608,6 +3712,16 @@ operation_finder_tAggregateRow_1.Ano = saida_Rel_Vendas.Ano;
 
 
 	
+				if(saida_Rel_Vendas.OrderQty != null) { // G_OutMain_AggR_546
+				
+					if(operation_result_tAggregateRow_1.OrderQty_sum == null) {
+						operation_result_tAggregateRow_1.OrderQty_sum = (int) 0;
+					}
+					
+					if( saida_Rel_Vendas.OrderQty != null)
+						operation_result_tAggregateRow_1.OrderQty_sum += saida_Rel_Vendas.OrderQty;
+				} // G_OutMain_AggR_546
+				
 				if(saida_Rel_Vendas.ValorVenda != null) { // G_OutMain_AggR_546
 				
 					if(operation_result_tAggregateRow_1.ValorVenda_sum == null) {
@@ -3973,15 +4087,17 @@ String fileName_tFileOutputDelimited_1 = "";
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
                                         outtFileOutputDelimited_1.write("SemanaAno");
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-                                        outtFileOutputDelimited_1.write("OnlineOrderFlag");
-                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-                                        outtFileOutputDelimited_1.write("Categoria");
+                                        outtFileOutputDelimited_1.write("OrderDate");
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
                                         outtFileOutputDelimited_1.write("CountryRegion");
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-                                        outtFileOutputDelimited_1.write("CompanyName");
-                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
                                         outtFileOutputDelimited_1.write("SalesPerson");
+                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+                                        outtFileOutputDelimited_1.write("ProductNumber");
+                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+                                        outtFileOutputDelimited_1.write("ProductName");
+                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+                                        outtFileOutputDelimited_1.write("OrderQty");
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
                                         outtFileOutputDelimited_1.write("ValorVenda");
                                         outtFileOutputDelimited_1.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
@@ -4059,16 +4175,17 @@ for(AggOperationStruct_tAggregateRow_1 aggregated_row_tAggregateRow_1 : values_t
             				    
             				    row7.SemanaAno = aggregated_row_tAggregateRow_1.SemanaAno;
             				    
-            				    row7.OnlineOrderFlag = aggregated_row_tAggregateRow_1.OnlineOrderFlag;
-            				    
-            				    row7.Categoria = aggregated_row_tAggregateRow_1.Categoria;
+            				    row7.OrderDate = aggregated_row_tAggregateRow_1.OrderDate;
             				    
             				    row7.CountryRegion = aggregated_row_tAggregateRow_1.CountryRegion;
             				    
-            				    row7.CompanyName = aggregated_row_tAggregateRow_1.CompanyName;
-            				    
             				    row7.SalesPerson = aggregated_row_tAggregateRow_1.SalesPerson;
             				    
+            				    row7.ProductNumber = aggregated_row_tAggregateRow_1.ProductNumber;
+            				    
+            				    row7.ProductName = aggregated_row_tAggregateRow_1.ProductName;
+            				    row7.OrderQty = aggregated_row_tAggregateRow_1.OrderQty_sum;
+                                	
     								if(aggregated_row_tAggregateRow_1.ValorVenda_sum != null) {
     								row7.ValorVenda = aggregated_row_tAggregateRow_1.ValorVenda_sum.floatValue();
 										
@@ -4147,15 +4264,9 @@ for(AggOperationStruct_tAggregateRow_1 aggregated_row_tAggregateRow_1 : values_t
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row7.OnlineOrderFlag != null) {
+                            if(row7.OrderDate != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row7.OnlineOrderFlag
-                        );
-                            }
-                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row7.Categoria != null) {
-                        sb_tFileOutputDelimited_1.append(
-                            row7.Categoria
+                            FormatterUtils.format_Date(row7.OrderDate, "dd-MM-yyyy")
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
@@ -4165,15 +4276,27 @@ for(AggOperationStruct_tAggregateRow_1 aggregated_row_tAggregateRow_1 : values_t
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row7.CompanyName != null) {
-                        sb_tFileOutputDelimited_1.append(
-                            row7.CompanyName
-                        );
-                            }
-                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
                             if(row7.SalesPerson != null) {
                         sb_tFileOutputDelimited_1.append(
                             row7.SalesPerson
+                        );
+                            }
+                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+                            if(row7.ProductNumber != null) {
+                        sb_tFileOutputDelimited_1.append(
+                            row7.ProductNumber
+                        );
+                            }
+                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+                            if(row7.ProductName != null) {
+                        sb_tFileOutputDelimited_1.append(
+                            row7.ProductName
+                        );
+                            }
+                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+                            if(row7.OrderQty != null) {
+                        sb_tFileOutputDelimited_1.append(
+                            row7.OrderQty
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
@@ -11108,6 +11231,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     278268 characters generated by Talend Open Studio for Big Data 
- *     on the 13 de Julho de 2021 14h30min56s BRT
+ *     281845 characters generated by Talend Open Studio for Big Data 
+ *     on the 14 de Julho de 2021 0h30min19s BRT
  ************************************************************************************************/
