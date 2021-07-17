@@ -3819,3 +3819,177 @@ org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.la
 
 !ENTRY org.eclipse.core.resources 2 10035 2021-07-14 00:37:53.352
 !MESSAGE The workspace will exit with unsaved changes in this session.
+!SESSION 2021-07-17 19:21:32.680 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_291
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.jdt.launching.macosx 4 0 2021-07-17 19:21:35.172
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.macosx [19]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:451)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1762)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1725)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1656)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:233)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:343)
+
+!ENTRY org.eclipse.jdt.launching.ui.macosx 4 0 2021-07-17 19:21:35.178
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jdt.launching.ui.macosx [20]
+  Unresolved requirement: Require-Capability: eclipse.platform; filter:="(osgi.os=macosx)"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:451)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1783)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1762)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1725)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1656)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:233)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:343)
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:21:42.461
+!MESSAGE 2021-07-17 19:21:42,454 INFO  org.talend.utils.StudioKeysFileCheck  - encryptionKeyFilePath: C:\Users\USER\OneDrive\FIAP\TOS_BD-20200219_1130-V7.3.1\configuration\studio.keys
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-07-17 19:21:43.266
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:21:50.965
+!MESSAGE 2021-07-17 19:21:50,965 INFO  org.talend.repository.ui.login.LoginProjectPage  - validate updatesite...
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:23:54.055
+!MESSAGE 2021-07-17 19:23:54,054 WARN  org.talend.sdk.component.studio.logging.JULToOsgiHandler  - [org.talend.sdk.component.server.service.ComponentManagerService.init] No system property 'jdk.serialFilter', ensure it is intended
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:24:05.689
+!MESSAGE 2021-07-17 19:24:05,688 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /ADVENTURE_PROJECT_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:24:05.692
+!MESSAGE 2021-07-17 19:24:05,691 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Resources folder /ADVENTURE_PROJECT_ROUTINES/src/main/java overlaps with sources folder /ADVENTURE_PROJECT_ROUTINES/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:24:05.707
+!MESSAGE 2021-07-17 19:24:05,706 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /ADVENTURE_PROJECT_ROUTINES/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:24:05.710
+!MESSAGE 2021-07-17 19:24:05,709 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /ADVENTURE_PROJECT_ROUTINES/src/test/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:24:12.909
+!MESSAGE 2021-07-17 19:24:12,909 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  - C:\Repos\DataOps\Source\workspace\ADVENTURE_PROJECT\poms\code\routines
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:24:12.912
+!MESSAGE 2021-07-17 19:24:12,912 INFO  org.eclipse.m2e.internal.launch.MavenLaunchDelegate  -  mvn -B -o -s C:\Users\USER\OneDrive\FIAP\TOS_BD-20200219_1130-V7.3.1\configuration\maven_user_settings.xml install -llr -Dmaven.main.skip=true -Dci.builder.skip=true
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:24:20.963
+!MESSAGE 2021-07-17 19:24:20,962 INFO  org.talend.core.repository.model.ProxyRepositoryFactory  - user@talend.com logged on Adventure_Project
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:24:22.884
+!MESSAGE 2021-07-17 19:24:22,883 INFO  org.talend.core.repository.logintask.ReadOnlyProjectConfirm  - ReadOnly confirm
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:01.785
+!MESSAGE 2021-07-17 19:25:01,784 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:01.798
+!MESSAGE 2021-07-17 19:25:01,797 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:01.845
+!MESSAGE 2021-07-17 19:25:01,844 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:01.866
+!MESSAGE 2021-07-17 19:25:01,866 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: esb-java-11-group
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:01.875
+!MESSAGE 2021-07-17 19:25:01,875 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:01.894
+!MESSAGE 2021-07-17 19:25:01,893 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:01.907
+!MESSAGE 2021-07-17 19:25:01,906 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.000
+!MESSAGE 2021-07-17 19:25:01,999 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.262
+!MESSAGE 2021-07-17 19:25:02,261 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: esb-java-11-group
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.349
+!MESSAGE 2021-07-17 19:25:02,348 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.579
+!MESSAGE 2021-07-17 19:25:02,579 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.611
+!MESSAGE 2021-07-17 19:25:02,602 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.666
+!MESSAGE 2021-07-17 19:25:02,665 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.683
+!MESSAGE 2021-07-17 19:25:02,681 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.742
+!MESSAGE 2021-07-17 19:25:02,741 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.758
+!MESSAGE 2021-07-17 19:25:02,758 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 2 0 2021-07-17 19:25:02.775
+!MESSAGE 2021-07-17 19:25:02,774 WARN  org.talend.commons.exception.CommonExceptionHandler  - Missing module group definition: HDFS-LIB-CDH_5_4_LASTEST
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:25:11.758
+!MESSAGE 2021-07-17 19:25:11,757 INFO  org.eclipse.m2e.core.internal.project.WorkspaceClassifierResolverManager  - Resolving P/ADVENTURE_PROJECT_ROUTINES: org.example.adventure_project.code:routines:7.3.1 with classifier  to /ADVENTURE_PROJECT_ROUTINES/target/classes
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:25:12.139
+!MESSAGE 2021-07-17 19:25:12,138 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /ADVENTURE_PROJECT_HARMONIZED_0.1/src/main/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:25:12.140
+!MESSAGE 2021-07-17 19:25:12,140 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /ADVENTURE_PROJECT_HARMONIZED_0.1/src/main/resources
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:25:12.145
+!MESSAGE 2021-07-17 19:25:12,144 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding source folder /ADVENTURE_PROJECT_HARMONIZED_0.1/src/test/java
+
+
+!ENTRY org.talend.platform.logging 1 0 2021-07-17 19:25:12.148
+!MESSAGE 2021-07-17 19:25:12,146 INFO  org.eclipse.m2e.jdt.internal.AbstractJavaProjectConfigurator  - Adding resource folder /ADVENTURE_PROJECT_HARMONIZED_0.1/src/test/resources
+
+
+!ENTRY org.eclipse.core.resources 2 10035 2021-07-17 19:25:56.492
+!MESSAGE The workspace will exit with unsaved changes in this session.
